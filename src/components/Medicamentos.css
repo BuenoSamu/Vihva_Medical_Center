@@ -1,0 +1,179 @@
+/* src/components/Medicamentos.css */
+
+/* Estilo do container principal */
+.medicamentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #FFFAF5; /* Cor de fundo para harmonizar com a página */
+    border-radius: 8px; /* Bordas arredondadas para consistência */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+    margin-top: 80px; /* Espaço para não passar atrás da navbar */
+}
+
+/* Estilo dos cartões */
+.card {
+    background-color: #FFFFFF; /* Branco para consistência com o login */
+    border: 1px solid #ADD8E6; /* Borda azul clara igual ao login */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    overflow: hidden;
+    width: 200px; /* Ajusta a largura do container */
+    transition: transform 0.2s, box-shadow 0.2s; /* Adiciona transição para sombra */
+}
+
+/* Efeito de hover nos cartões */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao hover */
+}
+
+/* Estilo das imagens dentro dos cartões */
+.card-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid #dee2e6; /* Linha separadora para um visual mais clean */
+}
+
+/* Estilo do conteúdo dos cartões */
+.card-content {
+    padding: 15px;
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo do título dos cartões */
+.card-content h3 {
+    font-size: 1.2em; /* Ajusta o tamanho da fonte */
+    margin-bottom: 10px;
+    color: #6096a8; /* Cor azul harmoniosa com o título principal */
+}
+
+/* Estilo do texto dentro dos cartões */
+.card-content p {
+    font-size: 0.9em; /* Ajusta o tamanho da fonte */
+    color: #6c757d;
+}
+
+/* Fundo da página e remoção de margens e preenchimentos padrão */
+body {
+    background-color: #FFFAF5; /* Cor de fundo da página */
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    height: 100vh; /* Define a altura da página para ocupar 100% da tela */
+    display: flex; /* Define o display como flexbox */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+}
+
+/* Estilo do título principal no topo da página */
+.title {
+    width: 100%; /* Largura total da tela */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    font-size: 36px; /* Tamanho da fonte do título */
+    color: #6096a8; /* Cor do texto */
+    margin-top: 20px; /* Espaço acima do título */
+    margin-bottom: 40px; /* Espaço abaixo do título */
+    position: absolute; /* Mantém o título no topo da tela */
+    top: 0; /* Alinha o título ao topo */
+    left: 0; /* Alinha o título à esquerda */
+    right: 0; /* Alinha o título à direita */
+}
+
+/* Estilo do container principal do login */
+.login-container {
+    max-width: 400px; /* Largura máxima do container */
+    margin: 100px auto; /* Centraliza o container verticalmente e adiciona espaçamento no topo */
+    padding: 20px; /* Padding interno do container */
+    border: 1px solid #ADD8E6; /* Borda do container */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: white; /* Cor de fundo do container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
+    display: flex; /* Define o display como flexbox */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+}
+
+/* Estilo do formulário dentro do container */
+.login-container form {
+    width: 100%; /* Largura total do formulário */
+}
+
+/* Estilo dos inputs do formulário */
+.login-container input[type="text"],
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%; /* Largura total dos inputs */
+    padding: 10px; /* Padding interno dos inputs */
+    font-size: 16px; /* Tamanho da fonte dos inputs */
+    border: 1px solid #ccc; /* Borda dos inputs */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-bottom: 15px; /* Espaço abaixo dos inputs */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+/* Estilo do container para o campo de senha e o ícone de visibilidade */
+.password-input {
+    position: relative; /* Posição relativa para posicionar o ícone */
+    margin-bottom: 15px; /* Espaço abaixo do campo de senha */
+}
+
+.password-input input {
+    width: calc(100% - 30px); /* Ajusta a largura para acomodar o ícone */
+    padding-right: 30px; /* Espaço para o ícone dentro do campo */
+}
+
+.password-input span {
+    position: absolute; /* Posição absoluta para posicionar o ícone */
+    top: 50%; /* Centraliza verticalmente o ícone */
+    transform: translateY(-50%); /* Ajusta a posição vertical */
+    right: 10px; /* Alinha o ícone à direita */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o ícone */
+}
+
+/* Estilo do botão de logar */
+.login-container button {
+    padding: 10px 15px; /* Padding dentro do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    color: white; /* Cor do texto do botão */
+    background-color: #ADD8E6; /* Cor de fundo do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
+    width: 100%; /* Largura total do botão */
+    max-width: 150px; /* Largura máxima do botão */
+    align-self: center; /* Centraliza o botão */
+    margin-top: 10px; /* Espaço acima do botão */
+}
+
+/* Estilo do botão ao passar o mouse por cima */
+.login-container button:hover {
+    background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+}
+
+/* Estilo links e texto */
+.login-container p {
+    margin-top: 20px; /* Espaço acima do texto */
+    text-align: center; /* Centraliza o texto */
+}
+
+.login-container a {
+    color: #007BFF; /* Cor do link */
+    text-decoration: none; /* Remove a decoração do link */
+}
+
+.login-container a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estilo da mensagem de erro */
+.error-message {
+    color: red; /* Cor da mensagem de erro */
+    margin-bottom: 15px; /* Espaço abaixo da mensagem de erro */
+    text-align: center; /* Centraliza a mensagem de erro */
+}

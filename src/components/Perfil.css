@@ -1,0 +1,119 @@
+/* src/components/Profile.css */
+
+/* Estilização do container principal do perfil */
+.profile-container {
+    width: 80%; /* Largura do container */
+    max-width: 600px; /* Largura máxima */
+    background-color: white; /* Cor de fundo branca */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #ADD8E6; /* Borda suave */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra para o contêiner */
+    margin: 20px auto; /* Centraliza o container na tela com espaçamento */
+    display: flex; /* Define o display como flexbox */
+    flex-direction: column; /* Alinha os filhos em coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+  }
+  
+  /* Estilização da foto do perfil */
+  .profile-photo {
+    width: 150px; /* Largura fixa para a foto */
+    height: 150px; /* Altura fixa para a foto */
+    display: block; /* Exibição em bloco */
+    margin: 20px auto; /* Centraliza e adiciona espaçamento vertical */
+    border-radius: 50%; /* Bordas arredondadas (círculo) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da foto */
+    border: 3px solid #ADD8E6; /* Borda ao redor da foto */
+  }
+  
+  /* Estilização dos detalhes do perfil */
+  .profile-details {
+    width: 100%; /* Largura total */
+    padding: 10px 0; /* Espaçamento interno vertical */
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  /* Estilização do texto dos detalhes do perfil */
+  .profile-details p {
+    margin: 10px 0; /* Espaçamento vertical */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #333; /* Cor do texto */
+  }
+  
+  /* Estilização do título do perfil */
+  .profile-title {
+    font-size: 24px; /* Tamanho da fonte */
+    color: #6096a8; /* Cor do texto */
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 20px; /* Espaçamento abaixo */
+  }
+  
+  /* Estilização dos botões do perfil */
+  .profile-container button {
+    padding: 10px 15px; /* Padding dentro do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    color: white; /* Cor do texto do botão */
+    background-color: #ADD8E6; /* Cor de fundo do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
+    width: 100%; /* Largura total do botão */
+    max-width: 200px; /* Largura máxima do botão */
+    margin-top: 20px; /* Espaçamento acima */
+    align-self: center; /* Centraliza o botão */
+  }
+  
+  /* Estiliza o botão ao passar o mouse por cima */
+  .profile-container button:hover {
+    background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+  }
+  
+  /* Estilização dos links do perfil */
+  .profile-details a {
+    color: #007BFF; /* Cor do link */
+    text-decoration: none; /* Remove a decoração do link */
+    margin-top: 15px; /* Espaçamento acima */
+  }
+  
+  .profile-details a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  }
+  
+  /* Estilização das mensagens de erro no perfil */
+  .error-message {
+    color: red; /* Cor da mensagem de erro */
+    margin-top: 15px; /* Espaçamento acima */
+    text-align: center; /* Centraliza a mensagem de erro */
+  }
+  
+  /* Estilização do corpo para centralização */
+  body {
+    background-color: #FFFAF5; /* Cor de fundo da página */
+    font-family: Arial, sans-serif; /* Define a fonte padrão */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    height: 100vh; /* Define a altura da página para ocupar 100% da tela */
+    display: flex; /* Define o display como flexbox */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+  }
+  
+  /* Estilização do botão de edição */
+.edit-profile-button {
+    padding: 10px 15px; /* Padding dentro do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    color: white; /* Cor do texto do botão */
+    background-color: #007BFF; /* Cor de fundo do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
+    margin-top: 20px; /* Espaçamento acima */
+    width: 100%; /* Largura total do botão */
+    max-width: 200px; /* Largura máxima do botão */
+  }
+  
+  /* Estiliza o botão ao passar o mouse por cima */
+  .edit-profile-button:hover {
+    background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+  }

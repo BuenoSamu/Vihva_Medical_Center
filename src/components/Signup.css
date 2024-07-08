@@ -1,0 +1,120 @@
+/* Define o fundo da página e remove margens e preenchimentos padrão */
+body {
+  background-color: #FFFAF5; /* Cor de fundo da página */
+  font-family: Arial, sans-serif; /* Define a fonte padrão */
+  margin: 0; /* Remove a margem padrão */
+  padding: 0; /* Remove o padding padrão */
+  height: 100vh; /* Define a altura da página para ocupar 100% da tela */
+  display: flex; /* Define o display como flexbox */
+  flex-direction: column; /* Organiza os filhos em uma coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  justify-content: center; /* Centraliza os filhos verticalmente */
+}
+
+/* Estiliza o título principal no topo da página */
+.title {
+  width: 100%; /* Largura total da tela */
+  text-align: center; /* Centraliza o texto horizontalmente */
+  font-size: 36px; /* Tamanho da fonte do título */
+  color: #6096a8; /* Cor do texto */
+  margin-top: 20px; /* Espaço acima do título */
+  margin-bottom: 40px; /* Espaço abaixo do título */
+  position: absolute; /* Mantém o título no topo da tela */
+  top: 0; /* Alinha o título ao topo */
+  left: 0; /* Alinha o título à esquerda */
+  right: 0; /* Alinha o título à direita */
+}
+
+/* Estiliza o container principal do cadastro */
+.signup-container {
+  max-width: 400px; /* Largura máxima do container */
+  margin: 100px auto; /* Centraliza o container verticalmente e adiciona espaçamento no topo */
+  padding: 20px; /* Padding interno do container */
+  border: 1px solid #ADD8E6; /* Borda do container */
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: white; /* Cor de fundo do container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
+  display: flex; /* Define o display como flexbox */
+  flex-direction: column; /* Organiza os filhos em uma coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  justify-content: center; /* Centraliza os filhos verticalmente */
+  text-align: center; /* Centraliza o texto e os elementos inline */
+}
+
+/* Estiliza o formulário dentro do container */
+.signup-container form {
+  width: 100%; /* Largura total do formulário */
+}
+
+/* Estiliza os inputs do formulário */
+.signup-container input[type="text"],
+.signup-container input[type="email"],
+.signup-container input[type="password"] {
+  width: 100%; /* Largura total dos inputs */
+  padding: 10px; /* Padding interno dos inputs */
+  font-size: 16px; /* Tamanho da fonte dos inputs */
+  border: 1px solid #ccc; /* Borda dos inputs */
+  border-radius: 5px; /* Bordas arredondadas */
+  margin-bottom: 15px; /* Espaço abaixo dos inputs */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+/* Estiliza o container para o campo de senha e o ícone de visibilidade */
+.password-input {
+  position: relative; /* Posição relativa para posicionar o ícone */
+  margin-bottom: 15px; /* Espaço abaixo do campo de senha */
+}
+
+.password-input input {
+  width: calc(100% - 30px); /* Ajusta a largura para acomodar o ícone */
+  padding-right: 30px; /* Espaço para o ícone dentro do campo */
+}
+
+.password-input span {
+  position: absolute; /* Posição absoluta para posicionar o ícone */
+  top: 50%; /* Centraliza verticalmente o ícone */
+  transform: translateY(-50%); /* Ajusta a posição vertical */
+  right: 10px; /* Alinha o ícone à direita */
+  cursor: pointer; /* Muda o cursor para pointer ao passar sobre o ícone */
+}
+
+/* Estiliza o botão de submit */
+.signup-container button {
+  padding: 10px 15px; /* Padding dentro do botão */
+  font-size: 16px; /* Tamanho da fonte do botão */
+  color: white; /* Cor do texto do botão */
+  background-color: #ADD8E6; /* Cor de fundo do botão */
+  border: none; /* Remove a borda do botão */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
+  width: 100%; /* Largura total do botão */
+  max-width: 150px; /* Largura máxima do botão */
+  margin: 10px auto 0; /* Centraliza o botão horizontalmente */
+}
+
+/* Estiliza o botão ao passar o mouse por cima */
+.signup-container button:hover {
+  background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+}
+
+/* Estiliza links e texto */
+.signup-container p {
+  margin-top: 20px; /* Espaço acima do texto */
+  text-align: center; /* Centraliza o texto */
+}
+
+.signup-container a {
+  color: #007BFF; /* Cor do link */
+  text-decoration: none; /* Remove a decoração do link */
+}
+
+.signup-container a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estiliza a mensagem de erro */
+.error-message {
+  color: red; /* Cor da mensagem de erro */
+  margin-bottom: 15px; /* Espaço abaixo da mensagem de erro */
+  text-align: center; /* Centraliza a mensagem de erro */
+}

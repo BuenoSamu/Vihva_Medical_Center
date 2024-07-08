@@ -36,3 +36,47 @@
     transform: rotate(360deg);
   }
 }
+/* src/App.css */
+.login-container, .signup-container, .dashboard-container {
+  max-width: 400px; /* Largura máxima do container */
+  margin: 100px auto; /* Centraliza o container verticalmente e adiciona espaçamento no topo */
+  padding: 20px; /* Padding interno do container */
+  border: 1px solid #ADD8E6; /* Borda do container */
+  border-radius: 10px; /* Bordas arredondadas */
+  background-color: white; /* Cor de fundo do container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
+  display: flex; /* Define o display como flexbox */
+  flex-direction: column; /* Organiza os filhos em uma coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  justify-content: center; /* Centraliza os filhos verticalmente */
+  text-align: center; /* Centraliza o texto e os elementos inline */
+}
+
+form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+form p {
+  color: red;
+  margin-bottom: 10px;
+}

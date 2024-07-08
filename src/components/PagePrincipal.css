@@ -1,0 +1,140 @@
+/* Container principal */
+.principal-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
+  background-color: #f4f4f4; /* Fundo claro para contraste */
+  padding: 20px;
+}
+
+/* Conteúdo */
+.content {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-top: 20px;
+  gap: 20px; /* Espaço entre os blocos */
+}
+
+/* Seções de adicionar paciente e solicitações */
+.adicionar-paciente,
+.solicitacoes,
+.pacientes {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px; /* Bordas mais arredondadas */
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
+  background-color: #fff; /* Fundo branco para contraste */
+  transition: transform 0.3s; /* Animação de hover */
+}
+
+/* Efeito de hover nas seções */
+.adicionar-paciente:hover,
+.solicitacoes:hover,
+.pacientes:hover {
+  transform: translateY(-5px); /* Elevação ao passar o mouse */
+}
+
+/* Títulos das seções */
+.adicionar-paciente h3,
+.solicitacoes h3,
+.pacientes h3 {
+  margin-bottom: 15px;
+  color: #333; /* Cor do texto */
+  font-size: 1.2em; /* Tamanho do texto */
+  border-bottom: 2px solid #007BFF; /* Linha de destaque abaixo do título */
+  padding-bottom: 5px;
+}
+
+/* Estilo do input */
+.adicionar-paciente input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Bordas arredondadas */
+  transition: border-color 0.3s;
+}
+
+/* Efeito de foco no input */
+.adicionar-paciente input:focus {
+  border-color: #007BFF; /* Cor ao focar */
+  outline: none; /* Remove o outline padrão */
+}
+
+/* Estilo do botão */
+.adicionar-paciente button {
+  padding: 10px 20px;
+  background-color: #007BFF; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Efeito de hover no botão */
+.adicionar-paciente button:hover {
+  background-color: #0056b3; /* Cor ao passar o mouse */
+  transform: translateY(-2px); /* Elevação leve */
+}
+
+/* Lista de solicitações */
+.solicitacoes ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Itens da lista de solicitações */
+.solicitacoes li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between; /* Espaçamento entre texto e botão */
+  align-items: center;
+}
+
+/* Último item da lista */
+.solicitacoes li:last-child {
+  border-bottom: none; /* Remove a borda do último item */
+}
+
+/* Card do paciente */
+.paciente-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s;
+  /*teste*/
+}
+
+/* Efeito de hover no card */
+.paciente-card:hover {
+  transform: translateY(-5px); /* Elevação ao passar o mouse */
+}
+
+/* Título do card */
+.paciente-card h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* Parágrafos no card */
+.paciente-card p {
+  margin: 5px 0;
+  color: #666;
+}
+
+/* Imagem do paciente */
+.paciente-imagem {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}

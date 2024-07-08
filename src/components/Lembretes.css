@@ -1,0 +1,179 @@
+/* Define o fundo da página e remove margens e preenchimentos padrão */
+body {
+    background-color: #FFFAF5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Estiliza o título principal no topo da página */
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: #6096a8;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Estiliza o contêiner de adicionar lembrete */
+  .add-reminder-container {
+    background: #F5F5F5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .add-reminder-container input,
+  .add-reminder-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Define o tamanho fixo do campo de conteúdo */
+  .add-reminder-container textarea {
+    height: 100px;
+    resize: none; /* Desativa o redimensionamento */
+  }
+  
+  .add-reminder-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6096A8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .add-reminder-container button:hover {
+    background-color: #507A89;
+    transform: translateY(-3px);
+  }
+  
+  /* Estiliza os lembretes individuais */
+  .reminder-item {
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    align-items: center; /* Centraliza o conteúdo dentro do contêiner */
+  }
+  
+  .reminder-item h4 {
+    margin: 0 0 10px 0;
+    color: #6096A8;
+    text-align: center;
+  }
+  
+  .reminder-item p {
+    margin: 0 0 10px 0;
+    height: 50px; /* Define um tamanho fixo para o conteúdo */
+    overflow: hidden; /* Esconde o texto excedente */
+    text-overflow: ellipsis; /* Adiciona reticências no texto excedente */
+    width: 100%;
+    text-align: center;
+  }
+  
+  .reminder-item button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100px; /* Define um tamanho fixo para os botões */
+    text-align: center;
+  }
+  
+  .reminder-item .button-container {
+    display: flex;
+    justify-content: center; /* Centraliza os botões dentro do contêiner */
+    margin-top: 10px;
+  }
+  
+  button.edit-button {
+    background-color: #6096a8;
+  }
+  
+  button.delete-button {
+    background-color: #FF4500;
+  }
+  
+  /* Adiciona um espaço superior ao botão quando o modo de edição está ativo */
+  .edit-mode {
+    margin-bottom: 20px;
+    background: #F5F5F5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    whidt: 80%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .edit-mode input,
+  .edit-mode textarea{
+    whidt: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .edit-mode textarea{
+    height: 100px;
+    resize: none;
+  }
+  
+  .edit-mode button{
+    width: 100%;
+    padding: 10px;
+    background-color: #6096a8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.3 ease;
+  }
+  
+  .edit-mode button:hover{
+    background-color: #507A89;
+    transform: translateY(-3px);
+  }

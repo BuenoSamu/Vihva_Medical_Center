@@ -1,0 +1,59 @@
+/* src/components/EditarPerfil.css */
+
+.editar-perfil-container {
+  max-width: 600px; /* Aumentei a largura máxima para 600px */
+  margin: 100px auto; /* Centraliza o container verticalmente e adiciona espaçamento no topo */
+  padding: 50px; /* Padding interno do container */
+  border: 1px solid #ADD8E6; /* Borda do container */
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: white; /* Cor de fundo do container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
+  display: flex; /* Define o display como flexbox */
+  flex-direction: column; /* Organiza os filhos em uma coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  justify-content: center; /* Centraliza os filhos verticalmente */
+  margin-right: 50px; /* Adiciona margem à direita para aumentar o espaço do container */
+}
+
+.editar-perfil-container h2 {
+  font-size: 24px;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.editar-perfil-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.editar-perfil-form label {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.editar-perfil-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.editar-perfil-button {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 150px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.editar-perfil-button:hover {
+  background-color: #0056b3;
+}

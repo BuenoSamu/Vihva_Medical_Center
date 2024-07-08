@@ -1,0 +1,73 @@
+/* Estiliza o container principal do perfil */
+.Criaperfil-container {
+    max-width: 400px; /* Largura máxima do container */
+    margin: 100px auto; /* Centraliza o container verticalmente e adiciona espaçamento no topo */
+    padding: 20px; /* Padding interno do container */
+    border: 1px solid #ADD8E6; /* Borda do container */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: white; /* Cor de fundo do container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
+    display: flex; /* Define o display como flexbox */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+    text-align: center; /* Centraliza o texto e os elementos inline */
+  }
+  
+  /* Estiliza o formulário dentro do container do perfil */
+  .Criaperfil-container form {
+    width: 100%; /* Largura total do formulário */
+  }
+  
+  /* Estiliza os inputs do formulário do perfil */
+  .Criaperfil-container input[type="text"] {
+    width: 100%; /* Largura total dos inputs */
+    padding: 10px; /* Padding interno dos inputs */
+    font-size: 16px; /* Tamanho da fonte dos inputs */
+    border: 1px solid #ccc; /* Borda dos inputs */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-bottom: 15px; /* Espaço abaixo dos inputs */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+  }
+  
+  /* Estiliza o botão de submit do perfil */
+  .Criaperfil-container button {
+    padding: 10px 15px; /* Padding dentro do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    color: white; /* Cor do texto do botão */
+    background-color: #ADD8E6; /* Cor de fundo do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
+    width: 100%; /* Largura total do botão */
+    max-width: 150px; /* Largura máxima do botão */
+    margin: 10px auto 0; /* Centraliza o botão horizontalmente */
+  }
+  
+  /* Estiliza o botão ao passar o mouse por cima no perfil */
+  .Criaperfil-container button:hover {
+    background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+  }
+  
+  /* Estiliza links e texto dentro do perfil */
+  .Criaperfil-container p {
+    margin-top: 20px; /* Espaço acima do texto */
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  .Criaperfil-container a {
+    color: #007BFF; /* Cor do link */
+    text-decoration: none; /* Remove a decoração do link */
+  }
+  
+  .Criaperfil-container a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+  }
+  
+  /* Estiliza a mensagem de erro dentro do perfil */
+  .Criaperfil-container .error-message {
+    color: red; /* Cor da mensagem de erro */
+    margin-bottom: 15px; /* Espaço abaixo da mensagem de erro */
+    text-align: center; /* Centraliza a mensagem de erro */
+  }
+  
