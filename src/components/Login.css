@@ -1,43 +1,200 @@
 /* Define o fundo da página e remove margens e preenchimentos padrão */
 body {
-  background-color: #FFFAF5; /* Cor de fundo da página */
-  font-family: Arial, sans-serif; /* Define a fonte padrão */
   margin: 0; /* Remove a margem padrão */
   padding: 0; /* Remove o padding padrão */
   height: 100vh; /* Define a altura da página para ocupar 100% da tela */
   display: flex; /* Define o display como flexbox */
-  flex-direction: column; /* Organiza os filhos em uma coluna */
-  align-items: center; /* Centraliza os filhos horizontalmente */
-  justify-content: center; /* Centraliza os filhos verticalmente */
+  overflow: hidden; /* Impede a rolagem */
 }
 
-/* Estiliza o título principal no topo da página */
-.title {
+
+.titlea{
+  width: 100%;
+  text-align: center; 
+  font-size: 55px; 
+  color: #6096a8; 
+  font-family: Cloudb;
+  font-weight: 100;
+  margin-left: 400px;
+  margin-top: 50px;
+  left: 0; 
+  right: 0; 
+}
+
+.descTitle{
+  width: 100%;
+  text-align: center; 
+  font-size: 30px; 
+  color: #8c8c8c; 
+  font-family: Cloudb;
+  font-weight: 100;
+  top: 0;
+  bottom: 0;
+  left: 0; 
+  right: 0; 
+}
+
+.titleBemvindo {
   width: 100%; /* Largura total da tela */
   text-align: center; /* Centraliza o texto horizontalmente */
-  font-size: 36px; /* Tamanho da fonte do título */
-  color: #6096a8; /* Cor do texto */
-  margin-top: 20px; /* Espaço acima do título */
-  margin-bottom: 40px; /* Espaço abaixo do título */
-  position: absolute; /* Mantém o título no topo da tela */
-  top: 0; /* Alinha o título ao topo */
+  font-size: 70px; /* Tamanho da fonte do título */
+  color: white; /* Cor do texto */
+  font-family: Peanut;
+  font-weight: 100;
+  margin-bottom: 30px;
   left: 0; /* Alinha o título à esquerda */
   right: 0; /* Alinha o título à direita */
 }
 
+.naotenhoconta{
+  padding: 10px 15px; 
+  font-size: 18px;
+  color: white; 
+  background-color: #6096a8; 
+  font-family: Cloudb;
+  border: 1px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 150px;
+  text-decoration: none;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+
+.buttonLogin{
+  padding: 10px 15px; 
+  font-size: 18px;
+  color: white; 
+  background-color: #6096a8; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.buttonLogin:hover{
+  background-color: #007ca5;
+  border: 2px solid #FFFAF5;
+  color: #FFFAF5; 
+}
+
+
+.naotenhoconta a {
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Herda a cor do texto do elemento pai */
+}
+
+.slogan{
+  font-family: Cloudb;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0; /* Remove qualquer margem superior para aproximar do título */
+  font-size: 20px;
+}
+
+.naotenhoconta:hover{
+  background-color: white;
+  border: 1px solid #6096a8;
+  color: #6096a8; 
+}
+
+.ContainerBemVindo {
+  font-family: Cloudb;
+  width: 800px;
+  color: white;
+  background-color: #6096a8;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 0; 
+  padding: 0; 
+  position: absolute; 
+  left: 0;
+  top: 0; 
+  height: 100%; 
+  flex-direction: column; /* Organiza os filhos em uma coluna */
+}
+
 /* Estiliza o container principal do login */
-.login-container {
-  max-width: 400px; /* Largura máxima do container */
-  margin: 100px auto; /* Centraliza o container verticalmente e adiciona espaçamento no topo */
+.Clogin{
+  margin-left: 800px;
+  height: 400px;
+  width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: white;
+  border: 2px solid #6096a8;
+  border-radius: 30px;
+  margin-bottom: 100px;
   padding: 20px; /* Padding interno do container */
-  border: 1px solid #ADD8E6; /* Borda do container */
-  border-radius: 5px; /* Bordas arredondadas */
-  background-color: white; /* Cor de fundo do container */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
   display: flex; /* Define o display como flexbox */
   flex-direction: column; /* Organiza os filhos em uma coluna */
   align-items: center; /* Centraliza os filhos horizontalmente */
   justify-content: center; /* Centraliza os filhos verticalmente */
+  text-align: center; /* Centraliza o texto e os elementos inline */
+}
+
+.inputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.imgLogo{
+  width: 200px;
+  height: 200px;
+}
+
+.inputLogin{
+  width: 400px; /* Largura total dos inputs */
+  height: 70px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px;
+  color: #6096a8;
+  padding-right: 40px;
+  padding-left: 10px; /* Padding interno dos inputs */
+  font-size: 20px; /* Tamanho da fonte dos inputs */
+  font-family: Cloudb;
+  border-radius: 20px;
+  border: 2px solid #6096a8; /* Borda dos inputs */
+  margin-bottom: 15px; /* Espaço abaixo dos inputs */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.textEsqueciSenha{
+  color: #6096a8;
+  font-family: Cloudb;
+  font-size: 20px;
+}
+
+.inputLogin:focus{
+  border-color: #007ca5;
+  outline: none; 
+}
+
+.icon {
+  position: absolute;
+  right: 20px;
+  bottom: 43px;
+  color: #6096a8; 
+}
+
+.iconPassword {
+  position: absolute;
+  right: 20px;
+  bottom: 39px;
+  color: #6096a8; 
+  cursor: pointer;
 }
 
 /* Estiliza o formulário dentro do container */
@@ -52,8 +209,8 @@ body {
   width: 100%; /* Largura total dos inputs */
   padding: 10px; /* Padding interno dos inputs */
   font-size: 16px; /* Tamanho da fonte dos inputs */
-  border: 1px solid #ccc; /* Borda dos inputs */
-  border-radius: 5px; /* Bordas arredondadas */
+  font-family: Cloudb;
+  border: 1px solid #6096a8; /* Borda dos inputs */
   margin-bottom: 15px; /* Espaço abaixo dos inputs */
   box-sizing: border-box; /* Inclui padding e borda na largura total */
 }
@@ -61,7 +218,7 @@ body {
 /* Estiliza o container para o campo de senha e o ícone de visibilidade */
 .password-input {
   position: relative; /* Posição relativa para posicionar o ícone */
-  margin-bottom: 15px; /* Espaço abaixo do campo de senha */
+  margin-top: 30px;/* Espaço abaixo do campo de senha */
 }
 
 .password-input input {
@@ -83,6 +240,7 @@ body {
   font-size: 16px; /* Tamanho da fonte do botão */
   color: white; /* Cor do texto do botão */
   background-color: #ADD8E6; /* Cor de fundo do botão */
+  font-family: Cloudb;
   border: none; /* Remove a borda do botão */
   border-radius: 5px; /* Bordas arredondadas */
   cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
@@ -115,6 +273,7 @@ body {
 /* Estiliza a mensagem de erro */
 .error-message {
   color: red; /* Cor da mensagem de erro */
+  font-family: Cloudb;
   margin-bottom: 15px; /* Espaço abaixo da mensagem de erro */
   text-align: center; /* Centraliza a mensagem de erro */
 }
