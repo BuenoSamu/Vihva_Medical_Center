@@ -8,6 +8,7 @@ body {
 }
 
 
+
 .titlea{
   width: 100%;
   text-align: center; 
@@ -16,11 +17,13 @@ body {
   font-family: Cloudb;
   font-weight: 100;
   margin-left: 400px;
-  margin-top: 50px;
+  margin-top: 80px;
   left: 0; 
   right: 0; 
 }
+/*
 
+*/
 .descTitle{
   width: 100%;
   text-align: center; 

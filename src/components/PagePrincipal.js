@@ -3,7 +3,7 @@ import './PagePrincipal.css';
 import Navbar from './Navbar';
 import { auth, db } from './firebaseConfig';
 import { onAuthStateChanged } from "firebase/auth";
-import { collection, query, where, getDocs, addDoc, onSnapshot, doc, updateDoc, arrayUnion } from "firebase/firestore";
+import { collection, query, where, getDocs, addDoc, onSnapshot, doc, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
 
 const Principal = () => {
   const [uid, setUid] = useState('');
@@ -15,10 +15,10 @@ const Principal = () => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setMedicoId(user.uid);
-        fetchPacientes(user.uid); 
+        fetchPacientes(user.uid);
       } else {
         setMedicoId(null);
-        setPacientes([]); 
+        setPacientes([]);
       }
     });
 
@@ -56,55 +56,48 @@ const Principal = () => {
 
   useEffect(() => {
     if (medicoId) {
-      const unsubscribe = onSnapshot(query(collection(db, 'solicitacoesAmizade'), where('medicoId', '==', medicoId)), (snapshot) => {
-        const solicitacoesData = snapshot.docs.map((doc) => ({
-          id: doc.id,
-          ...doc.data(),
-        }));
-        setSolicitacoes(solicitacoesData);
-      });
-
-      return () => unsubscribe();
-    }
-  }, [medicoId]);
-
-  useEffect(() => {
-    const atualizarPerfilMedico = async (medicoId, pacienteUid) => {
-      try {
-        const medicoDocRef = doc(db, 'medicos', medicoId); 
-        await updateDoc(medicoDocRef, {
-          pacientes: arrayUnion(pacienteUid) 
-        });
-        await fetchPacientes(medicoId); 
-      } catch (error) {
-        console.error("Erro ao atualizar o perfil do médico:", error);
-      }
-    };
-
-    if (medicoId) {
-      const unsubscribe = onSnapshot(query(collection(db, 'solicitacoesAmizade'), where('medicoId', '==', medicoId)), (snapshot) => {
-        snapshot.docChanges().forEach(async (change) => {
-          if (change.type === 'modified') {
-            const solicitacao = change.doc.data();
-            if (solicitacao.status === 'aceita') {
-              await atualizarPerfilMedico(medicoId, solicitacao.pacienteId);
+      const unsubscribe = onSnapshot(
+        query(collection(db, 'solicitacoesAmizade'), where('medicoId', '==', medicoId)), 
+        (snapshot) => {
+          snapshot.docChanges().forEach(async (change) => {
+            if (change.type === 'modified') {
+              const solicitacao = change.doc.data();
+              if (solicitacao.status === 'aceita') {
+                await atualizarPerfilMedico(medicoId, solicitacao.pacienteId);
+              }
             }
-          }
-        });
-      });
+          });
+
+          const solicitacoesData = snapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          setSolicitacoes(solicitacoesData);
+        }
+      );
 
       return () => unsubscribe();
     }
   }, [medicoId]);
+
+  const atualizarPerfilMedico = async (medicoId, pacienteUid) => {
+    try {
+      const medicoDocRef = doc(db, 'medicos', medicoId);
+      await updateDoc(medicoDocRef, {
+        pacientes: arrayUnion(pacienteUid)
+      });
+      await fetchPacientes(medicoId);
+    } catch (error) {
+      console.error("Erro ao atualizar o perfil do médico:", error);
+    }
+  };
 
   const fetchPacientes = async (medicoId) => {
     try {
-      const medicoDoc = await getDocs(query(collection(db, 'medicos'), where('uid', '==', medicoId)));
-      if (!medicoDoc.empty) {
-        const medicoData = medicoDoc.docs[0].data();
+      const medicoDoc = await getDoc(doc(db, 'medicos', medicoId));
+      if (medicoDoc.exists()) {
+        const medicoData = medicoDoc.data();
         if (medicoData.pacientes && medicoData.pacientes.length > 0) {
-
-          // Recupera os documentos dos pacientes
           const pacientesSnapshot = await Promise.all(
             medicoData.pacientes.map(async (pacienteUid) => {
               const pacienteDoc = await getDocs(query(collection(db, 'clientes'), where('uid', '==', pacienteUid)));
@@ -116,10 +109,9 @@ const Principal = () => {
             })
           );
 
-          // Filtra pacientes não encontrados e atualiza o estado
           setPacientes(pacientesSnapshot.filter(paciente => paciente !== null));
         } else {
-          setPacientes([]); 
+          setPacientes([]);
         }
       }
     } catch (error) {

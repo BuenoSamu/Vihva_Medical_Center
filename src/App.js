@@ -1,5 +1,6 @@
 // src/App.js
 import React from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -12,7 +13,9 @@ import Medicamentos from './components/Medicamentos';
 
 function App() {
   return (
+    
     <Router>
+      <AnimatePresence>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -23,8 +26,9 @@ function App() {
         <Route path="/EditarPerfil" element = {<EditarPerfil/>} />
         <Route path ="/Medicamentos" element = {<Medicamentos/>} />
       </Routes>
+      </AnimatePresence>
     </Router>
   );
 }
 
-export default App;
+export default (App);

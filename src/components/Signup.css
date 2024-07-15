@@ -1,28 +1,100 @@
 /* Define o fundo da página e remove margens e preenchimentos padrão */
 body {
-  background-color: #FFFAF5; /* Cor de fundo da página */
-  font-family: Arial, sans-serif; /* Define a fonte padrão */
   margin: 0; /* Remove a margem padrão */
   padding: 0; /* Remove o padding padrão */
   height: 100vh; /* Define a altura da página para ocupar 100% da tela */
   display: flex; /* Define o display como flexbox */
+  overflow: hidden; /* Impede a rolagem */
+}
+
+.ContainerCadastro {
+  font-family: Cloudb;
+  width: 800px;
+  color: white;
+  background-color: #6096a8;
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 0; 
+  padding: 0; 
+  position: absolute; 
+  right: 0;
+  top: 0; 
+  height: 100%; 
+  flex-direction: column;
+}
+
+
+
+.Ccadastro{
+  height: 450px;
+  margin-right: 800px;
+  width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: white;
+  border: 2px solid #6096a8;
+  border-radius: 30px;
+  margin-bottom: 100px;
+  padding: 20px; /* Padding interno do container */
+  display: flex; /* Define o display como flexbox */
   flex-direction: column; /* Organiza os filhos em uma coluna */
   align-items: center; /* Centraliza os filhos horizontalmente */
   justify-content: center; /* Centraliza os filhos verticalmente */
+  text-align: center; /* Centraliza o texto e os elementos inline */
 }
 
-/* Estiliza o título principal no topo da página */
-.title {
-  width: 100%; /* Largura total da tela */
-  text-align: center; /* Centraliza o texto horizontalmente */
-  font-size: 36px; /* Tamanho da fonte do título */
-  color: #6096a8; /* Cor do texto */
-  margin-top: 20px; /* Espaço acima do título */
-  margin-bottom: 40px; /* Espaço abaixo do título */
-  position: absolute; /* Mantém o título no topo da tela */
-  top: 0; /* Alinha o título ao topo */
-  left: 0; /* Alinha o título à esquerda */
-  right: 0; /* Alinha o título à direita */
+.titleCadas {
+  margin-left: 165px;
+  width: 100%;
+  text-align: left; /* Alinha o texto à esquerda */
+  font-size: 55px;
+  color: #6096a8;
+  font-family: Cloudb;
+  font-weight: 100;
+  margin-top: 50px;
+}
+
+.buttonCadastro{
+  padding: 10px 15px; 
+  font-size: 18px;
+  color: white; 
+  background-color: #6096a8; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 10px;
+  margin-bottom: 30px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.naotenhoconta{
+  padding: 10px 15px; 
+  font-size: 18px;
+  color: white; 
+  background-color: #6096a8; 
+  font-family: Cloudb;
+  border: 1px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 150px;
+  text-decoration: none;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+
+.naotenhoconta:hover{
+  background-color: white;
+  border: 1px solid #6096a8;
+  color: #6096a8; 
 }
 
 /* Estiliza o container principal do cadastro */
@@ -114,7 +186,8 @@ body {
 
 /* Estiliza a mensagem de erro */
 .error-message {
-  color: red; /* Cor da mensagem de erro */
+  color: red;
+  font-family: Cloudb;
   margin-bottom: 15px; /* Espaço abaixo da mensagem de erro */
   text-align: center; /* Centraliza a mensagem de erro */
 }

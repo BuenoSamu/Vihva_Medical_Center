@@ -13,16 +13,46 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #6096a8;
+  transform-origin: left;
 }
+
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #6096a8;
+  transform-origin: right;
+}
+
+.slide-in-verted {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #6096a8;
+  transform-origin: right;
+}
+
+.slide-out-inverted {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background: #6096a8;
+  transform-origin: left;
+}
+
 
 .App-link {
   color: #61dafb;
@@ -92,6 +122,73 @@
   justify-content: center; /* Centraliza os filhos verticalmente */
   text-align: center; /* Centraliza o texto e os elementos inline */
 }
+
+.icon {
+  position: absolute;
+  right: 20px;
+  bottom: 43px;
+  color: #6096a8; 
+}
+
+.iconPassword {
+  position: absolute;
+  right: 20px;
+  bottom: 39px;
+  color: #6096a8; 
+  cursor: pointer;
+}
+
+.inputLogin{
+  width: 400px; /* Largura total dos inputs */
+  height: 70px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px;
+  color: #6096a8;
+  padding-right: 40px;
+  padding-left: 10px; /* Padding interno dos inputs */
+  font-size: 20px; /* Tamanho da fonte dos inputs */
+  font-family: Cloudb;
+  border-radius: 20px;
+  border: 2px solid #6096a8; /* Borda dos inputs */
+  margin-bottom: 15px; /* Espaço abaixo dos inputs */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.textEsqueciSenha{
+  color: #6096a8;
+  font-family: Cloudb;
+  font-size: 20px;
+}
+
+.inputLogin:focus{
+  border-color: #007ca5;
+  outline: none; 
+}
+
+.buttonLogin{
+  padding: 10px 15px; 
+  font-size: 18px;
+  color: white; 
+  background-color: #6096a8; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.buttonLogin:hover{
+  background-color: #007ca5;
+  border: 2px solid #FFFAF5;
+  color: #FFFAF5; 
+}
+
+
 
 form input {
   display: block;
