@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './PagePrincipal.css';
 import Navbar from './Navbar';
 import { auth, db } from './firebaseConfig';
@@ -147,10 +148,12 @@ const Principal = () => {
           <h3>Pacientes Adicionados</h3>
           {pacientes.map(paciente => (
             <div key={paciente.id} className='paciente-card'>
-              <p><strong>Nome:</strong> {paciente.nome}</p>
-              <p><strong>Sobrenome:</strong> {paciente.sobrenome}</p>
-              <p><strong>UID:</strong> {paciente.uid}</p>
-              {paciente.imageUrl && <img src={paciente.imageUrl} alt={`${paciente.nome} ${paciente.sobrenome}`} className='paciente-imagem' />}
+              <Link to={`/PerfilPaciente/${paciente.id}`}>
+                <p><strong>Nome:</strong> {paciente.nome}</p>
+                <p><strong>Sobrenome:</strong> {paciente.sobrenome}</p>
+                <p><strong>Código do paciente:</strong> {paciente.uid}</p>
+                {paciente.imageUrl && <img src={paciente.imageUrl} alt={`${paciente.nome} ${paciente.sobrenome}`} className='paciente-imagem' />}
+              </Link>
             </div>
           ))}
         </div>

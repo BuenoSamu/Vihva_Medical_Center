@@ -1,0 +1,41 @@
+/* src/components/DetalhesMedicamentos.css */
+
+.medicamento-detalhes-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 50px;
+    border: 1px solid #ADD8E6;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .medicamento-detalhes-container h1 {
+    font-size: 32px;
+    color: #333333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .medicamento-detalhes-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .medicamento-detalhes-container p {
+    font-size: 18px;
+    color: #555555;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .medicamento-detalhes-container p strong {
+    color: #333333;
+  }
+  

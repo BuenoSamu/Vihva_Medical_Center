@@ -101,19 +101,19 @@
   
   /* Estilização do botão de edição */
 .edit-profile-button {
-    padding: 10px 15px; /* Padding dentro do botão */
-    font-size: 16px; /* Tamanho da fonte do botão */
-    color: white; /* Cor do texto do botão */
-    background-color: #007BFF; /* Cor de fundo do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
-    margin-top: 20px; /* Espaçamento acima */
-    width: 100%; /* Largura total do botão */
-    max-width: 200px; /* Largura máxima do botão */
+    padding: 10px 15px; 
+    font-size: 16px; 
+    color: white; 
+    background-color: #007BFF; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    width: 100%; 
+    max-width: 200px; 
   }
   
   /* Estiliza o botão ao passar o mouse por cima */
   .edit-profile-button:hover {
-    background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+    background-color: #0056b3;
   }
