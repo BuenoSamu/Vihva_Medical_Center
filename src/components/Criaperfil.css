@@ -13,6 +13,124 @@
     justify-content: center; /* Centraliza os filhos verticalmente */
     text-align: center; /* Centraliza o texto e os elementos inline */
   }
+
+  .inputNomeCria{
+    width: 200px; /* Largura total dos inputs */
+    height: 70px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 30px;
+    margin-right: 10px;
+    color: #6096a8;
+    padding-left: 10px; /* Padding interno dos inputs */
+    font-size: 20px; /* Tamanho da fonte dos inputs */
+    font-family: Cloudb;
+    border-radius: 20px;
+    border: 2px solid #6096a8; /* Borda dos inputs */
+    margin-bottom: 15px; /* Espaço abaixo dos inputs */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+  }
+
+  .fileLabel {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #6096a8;
+    color: #fff;
+    text-align: center;
+    line-height: 150px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+  }
+  
+  .fileLabel:hover {
+    background-color: #0056b3;
+  }
+  
+  .profile-photoCria {
+    width: 100%; /* Largura fixa para a foto */
+    height: 100%; /* Altura fixa para a foto */
+    display: block;
+    object-fit: cover; /* Exibição em bloco */
+    border-radius: 50%; /* Bordas arredondadas (círculo) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da foto */
+  }
+  
+  
+  .inputDadosCria{
+    width: 410px; /* Largura total dos inputs */
+    height: 70px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 30px;
+    color: #6096a8;
+    padding-left: 10px; /* Padding interno dos inputs */
+    font-size: 20px; /* Tamanho da fonte dos inputs */
+    font-family: Cloudb;
+    border-radius: 20px;
+    border: 2px solid #6096a8; /* Borda dos inputs */
+    margin-bottom: 15px; /* Espaço abaixo dos inputs */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+  }
+
+  .inputDadosCria:focus{
+    border-color: #007ca5;
+    outline: none; 
+  }
+  
+  .inputNomeCria:focus{
+    border-color: #007ca5;
+    outline: none; 
+  }
+
+  .ContainerCria{
+    font-family: Cloudb;
+    width: 800px;
+    color: white;
+    background-color: #6096a8;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 0; 
+    padding: 0; 
+    position: absolute; 
+    right: 0;
+    top: 0; 
+    height: 100%; 
+    flex-direction: column;
+  }
+  
+
+  .titleCriaperfil {
+    width: 100%; 
+    text-align: center; 
+    font-size: 70px;
+    color: white; 
+    font-family: Cloudb;
+    font-weight: 100;
+    margin-bottom: 30px;
+    left: 0; 
+    right: 0;
+  }
+
+  .Ccriaperfil{
+    height: 650px;
+    margin-right: 800px;
+    width: 700px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    background-color: white;
+    border: 2px solid #6096a8;
+    border-radius: 30px;
+    margin-top: 50px;
+    padding: 20px; /* Padding interno do container */
+    display: flex; /* Define o display como flexbox */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+    text-align: center; /* Centraliza o texto e os elementos inline */
+  }
   
   /* Estiliza o formulário dentro do container do perfil */
   .Criaperfil-container form {

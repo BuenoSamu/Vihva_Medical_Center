@@ -33,7 +33,7 @@
   transform-origin: right;
 }
 
-.slide-in-verted {
+.inverted-in {
   position: fixed;
   top: 0;
   right: 0;
@@ -43,7 +43,7 @@
   transform-origin: right;
 }
 
-.slide-out-inverted {
+.inverted-out {
   position: fixed;
   top: 0;
   right: 0;
@@ -160,10 +160,6 @@
   font-size: 20px;
 }
 
-.inputLogin:focus{
-  border-color: #007ca5;
-  outline: none; 
-}
 
 .buttonLogin{
   padding: 10px 15px; 
@@ -188,8 +184,6 @@
   color: #FFFAF5; 
 }
 
-
-
 form input {
   display: block;
   width: 100%;
@@ -211,7 +205,7 @@ form button {
 }
 
 form button:hover {
-  background-color: #0056b3;
+  background-color: #007ca5;
 }
 
 form p {

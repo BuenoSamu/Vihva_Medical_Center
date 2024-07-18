@@ -6,9 +6,9 @@ import { doc, setDoc } from 'firebase/firestore';
 import { FaEnvelope } from 'react-icons/fa';
 import { FiEye, FiEyeOff } from 'react-icons/fi'; 
 import './Signup.css';
+import { motion } from 'framer-motion';
 import logo from './vivah_logo_500x.png'; 
-import { AnimatePresence } from 'framer-motion';
-import transitionCada from '../transition';
+import transitionCada from '../transitionCada';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
@@ -17,6 +17,36 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  const containerAnimation = {
+    hidden: {
+      x: 1000,
+      opacity: 0,
+    },
+    show: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        delay: 1,
+        ease: [0.250, 0.100, 0.250, 1.000],
+        duration: 1,
+      },
+    },
+  };
+
+  const loginOpacityAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 1.3,
+        ease: 'easeOut',
+        duration: 0.5,
+      },
+    },
+  };
 
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -52,16 +82,16 @@ const Signup = () => {
 
   return (
     <div>
-      <div className='ContainerCadastro'>
-        <img src={logo} className='imgLogo' alt='Logo' />
-        <h1 className='titleBemvindo'>Vihva Medical Center</h1>
-        <p className='slogan'>Elevando o nível do atendimento de clientes dia após dia</p>
-        <p className='slogan'>Caso já tenha conta, entre agora!</p>
-          <Link to="/"><button className='naotenhoconta'>Fazer login</button></Link>
-      </div>
+      <motion.div className='ContainerCadastro' initial="hidden" animate="show" variants={containerAnimation}>
+        <motion.img src={logo} className='imgLogo' alt='Logo' initial="hidden" animate="show" variants={loginOpacityAnimation}/>
+        <motion.h1 className='titleBemvindo' initial="hidden" animate="show" variants={loginOpacityAnimation}>Vihva Medical Center</motion.h1>
+        <motion.p className='slogan' initial="hidden" animate="show" variants={loginOpacityAnimation}>Elevando o nível do atendimento de clientes dia após dia</motion.p>
+        <motion.p className='slogan' initial="hidden" animate="show" variants={loginOpacityAnimation}>Caso já tenha conta, entre agora!</motion.p>
+        <Link to="/"><motion.button className='naotenhoconta' initial="hidden" animate="show" variants={loginOpacityAnimation}>Fazer login</motion.button></Link>
+      </motion.div>
       <div>
         <h1 className="titleCadas">Cadastro</h1>
-        <div className="Ccadastro">
+        <motion.div className="Ccadastro" variants={loginOpacityAnimation}>
           <h2 className='descTitle'>Criação de Conta</h2>
           <form onSubmit={handleSignup}>
             <div className='inputContainer'>
@@ -105,7 +135,7 @@ const Signup = () => {
             {error && <p>{error}</p>}
             <button type="submit" className='buttonCadastro'>Criar Conta</button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

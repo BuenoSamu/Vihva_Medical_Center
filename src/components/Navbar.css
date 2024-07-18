@@ -1,34 +1,84 @@
 /* src/components/Navbar.css */
 .navbar {
-    width: 100px;
-    background-color: #ADD8E6;
-    color: white;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-  
-  .navbar h2 {
-    margin-bottom: 20px;
-  }
-  
-  .navbar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .navbar ul li {
-    margin: 10px 0;
-  }
-  
-  .navbar ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .navbar ul li a:hover {
-    text-decoration: underline;
-  }
-  
+  width: 200px;
+  background-color: #6096a8;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  text-align: center;
+  font-family: Cloudb;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgNavbar {
+  width: 120px;
+  height: 120px;
+}
+
+.iconNavbar {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+
+.navbar h2 {
+  margin-top: auto;
+  font-size: 20px;
+  margin-bottom: 32px;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin-top: 30px;
+  padding: 0;
+  width: 100%;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.navbar ul li {
+  justify-content: center;
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+  font-size: 20px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul li a {
+  color: white;
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 15px; 
+  transition: background-color 0.5s; 
+}
+
+.navbar ul li.active {
+  background-color: #FFFAF5;
+  border-radius: 15px;
+}
+
+.navbar ul li.active a {
+  color: #6096a8;
+}
+
+
+.navbar ul li:hover {
+  background-color: #007ca5;
+  transition: 0.5s; 
+}
+
+.navbar ul li:hover a {
+  text-decoration: none;
+}
