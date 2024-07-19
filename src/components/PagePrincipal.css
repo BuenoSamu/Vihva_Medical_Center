@@ -1,20 +1,61 @@
 /* Container principal */
 .principal-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  font-family: 'Arial', sans-serif; /* Fonte limpa e moderna */
-  background-color: #9aeef4; /* Fundo claro para contraste */
+  font-family: 'Arial', sans-serif;
   padding: 20px;
 }
 
 /* Conteúdo */
 .content {
-  display: flex;
-  justify-content: space-around;
-  width: 80%;
+  flex-direction: column;
   margin-top: 20px;
-  gap: 20px; /* Espaço entre os blocos */
+  margin-right: 100px;
+  gap: 20px;
+}
+
+/* Container Adicionar Paciente */
+.containerAdicionarPac {
+  font-family: Cloudb;
+  align-items: center;
+  width: 700px;
+  color: #6096a8;
+  height: 340px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 2px solid #6096a8;
+  border-radius: 30px;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+/* Container Paciente */
+.containerPac {
+  font-family: Cloudb;
+  margin-top: 20px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 700px;
+  height: 340px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 2px solid #6096a8;
+  border-radius: 30px;
+  padding: 20px;
+}
+
+/* Container Perfil */
+.containerPerfil {
+  right: 0;
+}
+
+/* Informações do Paciente */
+.pacienteInfo {
+  display: flex;
+  align-items: center;
 }
 
 /* Seções de adicionar paciente e solicitações */
@@ -23,18 +64,18 @@
 .pacientes {
   border: 1px solid #ddd;
   padding: 20px;
-  border-radius: 10px; /* Bordas mais arredondadas */
+  border-radius: 10px;
   width: 30%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */
-  background-color: #fff; /* Fundo branco para contraste */
-  transition: transform 0.3s; /* Animação de hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  transition: transform 0.3s;
 }
 
 /* Efeito de hover nas seções */
 .adicionar-paciente:hover,
 .solicitacoes:hover,
 .pacientes:hover {
-  transform: translateY(-5px); /* Elevação ao passar o mouse */
+  transform: translateY(-5px);
 }
 
 /* Títulos das seções */
@@ -42,10 +83,16 @@
 .solicitacoes h3,
 .pacientes h3 {
   margin-bottom: 15px;
-  color: #333; /* Cor do texto */
-  font-size: 1.2em; /* Tamanho do texto */
-  border-bottom: 2px solid #007BFF; /* Linha de destaque abaixo do título */
+  color: #333;
+  font-size: 1.2em;
+  border-bottom: 2px solid #007BFF;
   padding-bottom: 5px;
+}
+
+.textPacAdd{
+  font-family: Cloudb;
+  color: #6096a8;
+  font-size: 30px;
 }
 
 /* Estilo do input */
@@ -54,21 +101,21 @@
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px; /* Bordas arredondadas */
+  border-radius: 5px;
   transition: border-color 0.3s;
 }
 
 /* Efeito de foco no input */
 .adicionar-paciente input:focus {
-  border-color: #007BFF; /* Cor ao focar */
-  outline: none; /* Remove o outline padrão */
+  border-color: #007BFF;
+  outline: none;
 }
 
 /* Estilo do botão */
 .adicionar-paciente button {
   padding: 10px 20px;
-  background-color: #007BFF; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto */
+  background-color: #007BFF;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -77,8 +124,8 @@
 
 /* Efeito de hover no botão */
 .adicionar-paciente button:hover {
-  background-color: #0056b3; /* Cor ao passar o mouse */
-  transform: translateY(-2px); /* Elevação leve */
+  background-color: #0056b3;
+  transform: translateY(-2px);
 }
 
 /* Lista de solicitações */
@@ -93,30 +140,34 @@
   padding: 10px;
   border-bottom: 1px solid #eee;
   display: flex;
-  justify-content: space-between; /* Espaçamento entre texto e botão */
+  justify-content: space-between;
   align-items: center;
 }
 
 /* Último item da lista */
 .solicitacoes li:last-child {
-  border-bottom: none; /* Remove a borda do último item */
+  border-bottom: none;
 }
 
 /* Card do paciente */
 .paciente-card {
-  border: 1px solid #ddd;
+  position: relative;
   padding: 15px;
-  border-radius: 10px;
-  margin-top: 20px;
+  width: 450px;
+  min-height: 170px;
+  margin-bottom: 70px;
+  background: linear-gradient(to bottom, #B2DAE7, #D5E5EB);
+  border-radius: 20px;
+  border: 2px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
   transition: transform 0.3s;
-  /*teste*/
+  display: flex;
+  flex-direction: column; /* Alinha o conteúdo verticalmente */
 }
 
 /* Efeito de hover no card */
 .paciente-card:hover {
-  transform: translateY(-5px); /* Elevação ao passar o mouse */
+  transform: translateY(-5px);
 }
 
 /* Título do card */
@@ -126,15 +177,29 @@
 }
 
 /* Parágrafos no card */
-.paciente-card p {
-  margin: 5px 0;
-  color: #666;
+.pacienteNome {
+  margin-top: 20px;
+  color: #247894;
+  font-size: 30px;
+}
+
+a {
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.pacienteCodigo {
+  position: absolute;
+  margin-top: 40px;
+  left: 25px;
+  color: #247894;
+  font-size: 15px;
 }
 
 /* Imagem do paciente */
 .paciente-imagem {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 10px;
+  width: 150px;
+  height: 150px;
+  border: solid 2px #247894;
+  border-radius: 50%;
+  margin-right: 15px;
 }

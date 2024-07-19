@@ -11,7 +11,6 @@ const Navbar = () => {
       <img src={logo} className='imgNavbar' alt='Logo'/>
       <ul>
         <NavItem to="/Principal" text="Início" currentPath={location.pathname} />
-        <NavItem to="/perfil" text="Perfil" currentPath={location.pathname} />
         <NavItem to="/Lembretes" text="Lembretes" currentPath={location.pathname} />
         <NavItem to="/consultas" text="Consultas" currentPath={location.pathname} />
         <NavItem to="/Medicamentos" text="Medicamentos" currentPath={location.pathname} />

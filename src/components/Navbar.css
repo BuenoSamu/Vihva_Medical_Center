@@ -1,14 +1,17 @@
-/* src/components/Navbar.css */
 .navbar {
   width: 200px;
   background-color: #6096a8;
   color: white;
   padding: 20px;
-  height: 100vh;
+  height: 95vh;
+  margin-top: 3px;
+  margin-left: 5px;
+  border-radius: 30px;
   text-align: center;
   font-family: Cloudb;
   position: fixed;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   top: 0;
   left: 0;
   display: flex;
@@ -49,6 +52,7 @@
   border-radius: 15px;
   margin-top: 10px;
   font-size: 20px;
+  border-color: white;
   height: 45px;
   display: flex;
   align-items: center;
@@ -65,12 +69,13 @@
 }
 
 .navbar ul li.active {
-  background-color: #FFFAF5;
+  background-color: #007ca5;
   border-radius: 15px;
 }
 
 .navbar ul li.active a {
   color: #6096a8;
+  color: white;
 }
 
 

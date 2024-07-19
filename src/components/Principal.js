@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './PagePrincipal.css';
+import Profile from './Perfil';
 import Navbar from './Navbar';
 import { auth, db } from './firebaseConfig';
 import { onAuthStateChanged } from "firebase/auth";
@@ -124,17 +125,16 @@ const Principal = () => {
     <div className='principal-container'>
       <Navbar />
       <div className='content'>
-        <div className='adicionar-paciente'>
-          <h3>Adicionar Paciente</h3>
+        <div className='containerAdicionarPac'>
+        <h3>Adicionar Paciente</h3>
           <input
+          className='inputLogin'
             type='text'
             value={uid}
             onChange={(e) => setUid(e.target.value)}
             placeholder='Digite o código do paciente'
           />
-          <button onClick={handleAdicionarPaciente}>Adicionar Paciente</button>
-        </div>
-        <div className='solicitacoes'>
+          <button className='buttonLogin' onClick={handleAdicionarPaciente}>Adicionar Paciente</button>
           <h3>Solicitações de Amizade</h3>
           <ul>
             {solicitacoes.map((solicitacao) => (
@@ -144,20 +144,28 @@ const Principal = () => {
             ))}
           </ul>
         </div>
-        <div className='pacientes'>
-          <h3>Pacientes Adicionados</h3>
+        <div className='containerPac'>
+          <h3 className='textPacAdd'>Pacientes Adicionados</h3>
           {pacientes.map(paciente => (
             <div key={paciente.id} className='paciente-card'>
               <Link to={`/PerfilPaciente/${paciente.id}`}>
-                <p><strong>Nome:</strong> {paciente.nome}</p>
-                <p><strong>Sobrenome:</strong> {paciente.sobrenome}</p>
-                <p><strong>Código do paciente:</strong> {paciente.uid}</p>
+              <div className='pacienteInfo'>
                 {paciente.imageUrl && <img src={paciente.imageUrl} alt={`${paciente.nome} ${paciente.sobrenome}`} className='paciente-imagem' />}
+              <div>
+                <p className='pacienteNome'>{paciente.nome} {paciente.sobrenome}</p>
+                <p className='pacienteCodigo'><strong>Código do paciente:</strong> {paciente.uid}</p>
+              </div>
+              </div>  
               </Link>
             </div>
           ))}
+          <div>
+          </div>
         </div>
       </div>
+      <div className='containerPerfil'>
+        <Profile />
+        </div>
     </div>
   );
 };
