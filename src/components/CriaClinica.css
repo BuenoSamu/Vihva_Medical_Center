@@ -1,0 +1,167 @@
+/* src// components//CriaClinica.css */
+
+.CriaClinica-container {
+    max-width: 400px; /* Largura máxima do container */
+    margin: 100px auto; /* Centraliza o container verticalmente e adiciona espaçamento no topo */
+    padding: 20px; /* Padding interno do container */
+    border: 1px solid #ADD8E6; /* Borda do container */
+    border-radius: 5px; /* Bordas arredondadas */
+    background-color: white; /* Cor de fundo do container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
+    display: flex; /* Define o display como flexbox */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+    text-align: center; /* Centraliza o texto e os elementos inline */
+}
+
+.inputNomeCria, .inputDadosCria {
+    width: 200px; /* Largura total dos inputs */
+    height: 70px; /* Altura dos inputs */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Sombra dos inputs */
+    color: #6096a8; /* Cor do texto dos inputs */
+    padding-left: 10px; /* Padding interno dos inputs */
+    font-size: 20px; /* Tamanho da fonte dos inputs */
+    font-family: Cloudb; /* Fonte dos inputs */
+    border-radius: 20px; /* Bordas arredondadas */
+    border: 2px solid #6096a8; /* Borda dos inputs */
+    margin-bottom: 15px; /* Espaço abaixo dos inputs */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.inputNomeCria:focus, .inputDadosCria:focus {
+    border-color: #007ca5; /* Cor da borda ao focar */
+    outline: none; /* Remove o outline padrão */
+}
+
+.fileLabel {
+    display: inline-block; /* Exibição em bloco */
+    width: 150px; /* Largura da label */
+    height: 150px; /* Altura da label */
+    border-radius: 50%; /* Bordas arredondadas (círculo) */
+    background-color: #6096a8; /* Cor de fundo da label */
+    color: #fff; /* Cor do texto da label */
+    text-align: center; /* Centraliza o texto */
+    line-height: 150px; /* Altura da linha para centralizar verticalmente */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre a label */
+    transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassar */
+    position: relative; /* Posicionamento relativo */
+    margin-bottom: 10px; /* Espaço abaixo da label */
+}
+
+.fileLabel:hover {
+    background-color: #0056b3; /* Cor de fundo ao passar o mouse */
+}
+
+.profile-photoCria {
+    width: 100%; /* Largura total da foto */
+    height: 100%; /* Altura total da foto */
+    display: block; /* Exibição em bloco */
+    object-fit: cover; /* Ajusta a foto dentro do container */
+    border-radius: 50%; /* Bordas arredondadas (círculo) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da foto */
+}
+
+.ContainerClinica {
+    font-family: Cloudb; /* Fonte do container */
+    width: 800px; /* Largura do container */
+    color: white; /* Cor do texto */
+    background-color: #6096a8; /* Cor de fundo */
+    display: flex; /* Define o display como flexbox */
+    justify-content: center; /* Centraliza os filhos horizontalmente */
+    align-items: center; /* Centraliza os filhos verticalmente */
+    margin: 0; /* Remove as margens */
+    padding: 0; /* Remove o padding */
+    position: absolute; /* Posicionamento absoluto */
+    right: 0; /* Alinha à direita */
+    top: 0; /* Alinha ao topo */
+    height: 100%; /* Altura total */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+}
+
+.titleCriaClinica {
+    width: 100%; /* Largura total */
+    text-align: center; /* Centraliza o texto */
+    font-size: 70px; /* Tamanho da fonte */
+    color: white; /* Cor do texto */
+    font-family: Cloudb; /* Fonte */
+    font-weight: 100; /* Peso da fonte */
+    margin-bottom: 30px; /* Espaço abaixo do título */
+    left: 0; /* Alinha à esquerda */
+    right: 0; /* Alinha à direita */
+}
+
+.Ccriaclinica {
+    height: 650px; /* Altura do container */
+    margin-right: 800px; /* Margem à direita */
+    width: 700px; /* Largura do container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra do container */
+    background-color: white; /* Cor de fundo */
+    border: 2px solid #6096a8; /* Borda */
+    border-radius: 30px; /* Bordas arredondadas */
+    margin-top: 50px; /* Espaço acima do container */
+    padding: 20px; /* Padding interno do container */
+    display: flex; /* Define o display como flexbox */
+    flex-direction: column; /* Organiza os filhos em uma coluna */
+    align-items: center; /* Centraliza os filhos horizontalmente */
+    justify-content: center; /* Centraliza os filhos verticalmente */
+    text-align: center; /* Centraliza o texto e os elementos inline */
+}
+
+/* Estiliza o formulário dentro do container da clínica */
+.CriaClinica-container form {
+    width: 100%; /* Largura total do formulário */
+}
+
+/* Estiliza os inputs do formulário da clínica */
+.CriaClinica-container input[type="text"] {
+    width: 100%; /* Largura total dos inputs */
+    padding: 10px; /* Padding interno dos inputs */
+    font-size: 16px; /* Tamanho da fonte dos inputs */
+    border: 1px solid #ccc; /* Borda dos inputs */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-bottom: 15px; /* Espaço abaixo dos inputs */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+/* Estiliza o botão de submit da clínica */
+.CriaClinica-container button {
+    padding: 10px 15px; /* Padding dentro do botão */
+    font-size: 16px; /* Tamanho da fonte do botão */
+    color: white; /* Cor do texto do botão */
+    background-color: #ADD8E6; /* Cor de fundo do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
+    width: 100%; /* Largura total do botão */
+    max-width: 150px; /* Largura máxima do botão */
+    margin: 10px auto 0; /* Centraliza o botão horizontalmente */
+}
+
+/* Estiliza o botão ao passar o mouse por cima na clínica */
+.CriaClinica-container button:hover {
+    background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+}
+
+/* Estiliza links e texto dentro da clínica */
+.CriaClinica-container p {
+    margin-top: 20px; /* Espaço acima do texto */
+    text-align: center; /* Centraliza o texto */
+}
+
+.CriaClinica-container a {
+    color: #007BFF; /* Cor do link */
+    text-decoration: none; /* Remove a decoração do link */
+}
+
+.CriaClinica-container a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estiliza a mensagem de erro dentro da clínica */
+.CriaClinica-container .error-message {
+    color: red; /* Cor da mensagem de erro */
+    margin-bottom: 15px; /* Espaço abaixo da mensagem de erro */
+    text-align: center; /* Centraliza a mensagem de erro */
+}

@@ -5,7 +5,7 @@ import { db } from './firebaseConfig';
 import { motion } from 'framer-motion';
 import { updateDoc, doc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'; // Certifique-se de que sua versão do Firebase suporte essas importações
+import { getStorage, ref, uploadBytes, getDownloadURL } from 'firebase/storage'; 
 import './Criaperfil.css';
 
 const Criaperfil = () => {
@@ -14,7 +14,6 @@ const Criaperfil = () => {
   const [sobrenome, setSobrenome] = useState('');
   const [crm, setCrm] = useState('');
   const [especializacao, setEspecializacao] = useState('');
-  const [centroMedico, setCentroMedico] = useState('');
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const [error, setError] = useState('');
@@ -59,7 +58,7 @@ const Criaperfil = () => {
 
       const uid = user.uid;
 
-      if (!nome || !sobrenome || !crm || !especializacao || !centroMedico) {
+      if (!nome || !sobrenome || !crm || !especializacao) {
         throw new Error('Por favor, preencha todos os campos.');
       }
 
@@ -77,11 +76,10 @@ const Criaperfil = () => {
         sobrenome,
         crm,
         especializacao,
-        centroMedico,
         imageUrl,
       });
 
-      navigate('/Principal');
+      navigate('/CriaClinica');
     } catch (error) {
       setError('Erro ao salvar perfil. Tente novamente.');
       console.error('Erro ao salvar perfil:', error);
@@ -144,15 +142,6 @@ const Criaperfil = () => {
                 placeholder="Especialização"
                 value={especializacao}
                 onChange={(e) => setEspecializacao(e.target.value)}
-                className='inputDadosCria'
-              />
-            </div>
-            <div className='inputContainer'>
-              <input
-                type="text"
-                placeholder="Centro Médico"
-                value={centroMedico}
-                onChange={(e) => setCentroMedico(e.target.value)}
                 className='inputDadosCria'
               />
             </div>

@@ -43,7 +43,7 @@ const Profile = () => {
   }, []);
 
   const handleEditProfile = () => {
-    navigate('/EditarPerfil'); // Rota para a pagina de edição
+    navigate('/EditarPerfil'); // Rota para a página de edição
   };
 
   if (loading) {
@@ -69,7 +69,13 @@ const Profile = () => {
           <p><strong>Sobrenome:</strong> {profileData.sobrenome}</p>
           <p><strong>CRM:</strong> {profileData.crm}</p>
           <p><strong>Especialização:</strong> {profileData.especializacao}</p>
-          <p><strong>Centro Médico:</strong> {profileData.centroMedico}</p>
+          {profileData.nomeClinica && <p><strong>Nome da Clínica:</strong> {profileData.nomeClinica}</p>}
+          {profileData.localiza && <p><strong>Localização:</strong> {profileData.localiza}</p>}
+          {profileData.detalhesClinica && <p><strong>Detalhes da Clínica:</strong> {profileData.detalhesClinica}</p>}
+          {profileData.fotoUm && <img src={profileData.fotoUm} alt="Foto 1 da Clínica" className="clinic-photo" />}
+          {profileData.fotoDois && <img src={profileData.fotoDois} alt="Foto 2 da Clínica" className="clinic-photo" />}
+          {profileData.fotoTres && <img src={profileData.fotoTres} alt="Foto 3 da Clínica" className="clinic-photo" />}
+
           <button onClick={handleEditProfile} className="edit-profile-button">Editar Perfil</button>
         </div>
       )}
