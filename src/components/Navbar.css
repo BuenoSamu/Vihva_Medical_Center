@@ -3,36 +3,32 @@
   background-color: #6096a8;
   color: white;
   padding: 20px;
-  height: 95vh;
-  margin-top: 3px;
-  margin-left: 5px;
-  border-radius: 30px;
-  text-align: center;
+  height: 100vh;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
   font-family: Cloudb;
   position: fixed;
-  align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* Alinha o conteúdo à esquerda, por padrão */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .imgNavbar {
   width: 120px;
   height: 120px;
-}
-
-.iconNavbar {
-  width: 25px;
-  height: 25px;
-  margin-right: 10px;
+  margin: 0 auto 20px auto; /* Centraliza horizontalmente e adiciona espaço abaixo */
 }
 
 .navbar h2 {
   margin-top: auto;
   font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 32px;
+  text-align: center;
 }
 
 .navbar ul {
@@ -42,30 +38,27 @@
   width: 100%;
 }
 
-.link {
-  text-decoration: none;
-}
-
 .navbar ul li {
-  justify-content: center;
   width: 100%;
-  border-radius: 15px;
   margin-top: 10px;
   font-size: 20px;
-  border-color: white;
+  border-radius: 15px;
   height: 45px;
   display: flex;
-  align-items: center;
+  align-items: center; /* Alinha verticalmente o ícone e o texto */
+  line-height: 1; /* Ajusta a altura da linha para alinhar melhor o texto */
 }
 
 .navbar ul li a {
   color: white;
-  display: block;
+  display: flex; /* Torna o link um contêiner flexível */
+  align-items: center; /* Alinha verticalmente o ícone e o texto */
   width: 100%;
   text-decoration: none;
   padding: 10px 15px;
   border-radius: 15px; 
-  transition: background-color 0.5s; 
+  transition: background-color 0.5s;
+  line-height: 1; /* Garante que o texto e o ícone estejam alinhados */
 }
 
 .navbar ul li.active {
@@ -73,17 +66,19 @@
   border-radius: 15px;
 }
 
-.navbar ul li.active a {
-  color: #6096a8;
-  color: white;
-}
-
-
 .navbar ul li:hover {
   background-color: #007ca5;
-  transition: 0.5s; 
+  transition: 0.5s;
 }
 
 .navbar ul li:hover a {
   text-decoration: none;
+}
+
+.iconNavbar {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  position: relative;
+  top: -4px;
 }

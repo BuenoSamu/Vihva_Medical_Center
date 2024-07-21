@@ -115,27 +115,25 @@ const Lembretes = () => {
   };
 
   return (
-    <div className='principal-container'>
-      <Navbar />
-      <div className='content'>
-        <h2 className="title">Área do médico</h2>
-
+      <div className='ContainerLembre'>
         <div className='add-reminder-container'>
           <h3>Adicionar Lembrete</h3>
           <input
+          className='inputLembre'
             type='text'
             placeholder='Título'
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <textarea
+          className='inputLembre'
             placeholder='Conteúdo'
             value={content}
             onChange={(e) => setContent(e.target.value)}
           />
-          <button onClick={addReminder}>Adicionar</button>
+          <button className='buttonAddlembre' onClick={addReminder}>Adicionar</button>
         </div>
-
+        <h1 style={{alignItems:'center'}}>Lembretes</h1>
         <div className='reminder-list-container'>
           {reminders.map((reminder, index) => (
             <div key={index} className='reminder-item'>
@@ -166,7 +164,6 @@ const Lembretes = () => {
           ))}
         </div>
       </div>
-    </div>
   );
 };
 

@@ -18,33 +18,106 @@
 .containerAdicionarPac {
   font-family: Cloudb;
   align-items: center;
-  width: 700px;
+  width: 350px;
+  margin-right: 15px;
+  color: #6096a8;
+  height: 200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border: 2px solid #6096a8;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  margin-top: 50px;
+}
+
+.data {
+  display: flex;
+  align-items: end; /* Alinha os itens verticalmente ao centro */
+  font-family: CloudB;
+  border-radius: 30px;
+  padding: 15px;
+  padding-right: 20px;
+  background-color: #6096a8;
+  color: white;
+  font-size: 20px;
+}
+
+.imgData {
+  width: 30px;
+  align-items: end;
+  height: 30px;
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+
+.inputCod{
+  width: 350px; /* Largura total dos inputs */
+  height: 60px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px;
+  color: #6096a8;
+  padding-right: 10px;
+  padding-left: 10px; /* Padding interno dos inputs */
+  font-size: 20px; /* Tamanho da fonte dos inputs */
+  font-family: Cloudb;
+  border-radius: 20px;
+  border: 2px solid #6096a8; /* Borda dos inputs */
+  margin-bottom: 15px; /* Espaço abaixo dos inputs */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.inputCod:focus{
+  border-color: #007BFF;
+  outline: none; 
+}
+
+.TitleDash{
+  font-family: CloudB;
+  color: #6096a8;
+  width: 30px;
+  font-size: 30px;
+  top: 0;
+  left: 0;
+}
+
+.ulSolicitacao{
+  height: 200px;
+}
+
+.descDash {
+  font-family: Cloudb;
+  height: 80px;
+  font-size: 20px;
+  display: flex; /* Adicionado */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center;
+  border-radius: 20px;
+  color: #eee;
+  background: linear-gradient(to bottom, #7380b7, #9096af);
+  margin-top: 30px;
+}
+
+
+/* Container Paciente */
+.containerPac {
+  font-family: Cloudb;
+  align-items: center;
+  margin-right: 15px;
   color: #6096a8;
   height: 340px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: white;
   border: 2px solid #6096a8;
   border-radius: 30px;
-  padding: 20px;
-  margin-top: 50px;
-}
-
-/* Container Paciente */
-.containerPac {
-  font-family: Cloudb;
-  margin-top: 20px;
-  margin-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 700px;
-  height: 340px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: white;
-  border: 2px solid #6096a8;
-  border-radius: 30px;
-  padding: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 70px;
 }
 
 /* Container Perfil */
@@ -93,6 +166,8 @@
   font-family: Cloudb;
   color: #6096a8;
   font-size: 30px;
+  text-align: left;
+  left: 0;
 }
 
 /* Estilo do input */
@@ -109,6 +184,29 @@
 .adicionar-paciente input:focus {
   border-color: #007BFF;
   outline: none;
+}
+
+.buttonAddpac{
+  padding: 10px 15px;
+  width: 100%; 
+  font-size: 18px;
+  color: white; 
+  background-color: #6096a8; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.buttonAddpac:hover{
+  background-color: #007ca5;
+  border: 2px solid #FFFAF5;
+  color: #FFFAF5; 
 }
 
 /* Estilo do botão */
@@ -153,16 +251,14 @@
 .paciente-card {
   position: relative;
   padding: 15px;
-  width: 450px;
-  min-height: 170px;
-  margin-bottom: 70px;
+  width: 730px;
   background: linear-gradient(to bottom, #B2DAE7, #D5E5EB);
   border-radius: 20px;
   border: 2px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
   display: flex;
-  flex-direction: column; /* Alinha o conteúdo verticalmente */
+  flex-direction: row;
 }
 
 /* Efeito de hover no card */
@@ -189,7 +285,6 @@ a {
 
 .pacienteCodigo {
   position: absolute;
-  margin-top: 40px;
   left: 25px;
   color: #247894;
   font-size: 15px;
@@ -197,8 +292,8 @@ a {
 
 /* Imagem do paciente */
 .paciente-imagem {
-  width: 150px;
-  height: 150px;
+  width: 60px;
+  height: 60px;
   border: solid 2px #247894;
   border-radius: 50%;
   margin-right: 15px;
