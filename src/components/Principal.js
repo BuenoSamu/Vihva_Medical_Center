@@ -134,10 +134,13 @@ const Principal = () => {
           <tbody>
             <tr>
               <th colSpan="2" scope='row'>
-                <div className='header-wrapper'>
-                  <h1 className='TitleDash'>Dashboard</h1>
-                  <h3 className="data"><img className="imgData" src={calendario} alt="Calendário" />{dataAtual}</h3>
-                </div>
+              <div className='header-wrapper'>
+              <h1 className='TitleDash'>Dashboard</h1>
+              <span className="data">
+              <img className="imgData" src={calendario} alt="Calendário" />
+              <h3 className='textData'>{dataAtual}</h3>
+              </span>
+              </div>
               </th>
             </tr>
             <tr>

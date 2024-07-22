@@ -133,7 +133,7 @@ const Lembretes = () => {
           />
           <button className='buttonAddlembre' onClick={addReminder}>Adicionar</button>
         </div>
-        <h1 style={{alignItems:'center'}}>Lembretes</h1>
+        <h1>Lembretes</h1>
         <div className='reminder-list-container'>
           {reminders.map((reminder, index) => (
             <div key={index} className='reminder-item'>

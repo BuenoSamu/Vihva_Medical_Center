@@ -19,7 +19,8 @@
 .imgNavbar {
   width: 120px;
   height: 120px;
-  margin: 0 auto 20px auto; /* Centraliza horizontalmente e adiciona espaço abaixo */
+  color: #6096a8;
+  margin: 0 auto 15px auto; /* Centraliza horizontalmente e adiciona espaço abaixo */
 }
 
 .navbar h2 {
@@ -41,9 +42,10 @@
 .navbar ul li {
   width: 100%;
   margin-top: 10px;
-  font-size: 20px;
+  font-size: 18px;
+  margin-bottom: 5px;
   border-radius: 15px;
-  height: 45px;
+  height: 40px;
   display: flex;
   align-items: center; /* Alinha verticalmente o ícone e o texto */
   line-height: 1; /* Ajusta a altura da linha para alinhar melhor o texto */
@@ -80,5 +82,5 @@
   height: 25px;
   margin-right: 10px;
   position: relative;
-  top: -4px;
+  top: -2px;
 }
