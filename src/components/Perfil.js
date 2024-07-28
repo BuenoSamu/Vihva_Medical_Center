@@ -59,7 +59,7 @@ const Profile = () => {
       <Navbar />
       {profileData?.imageUrl && (
         <div>
-          <img src={profileData.imageUrl} alt="Foto do Médico" className="profile-photo" />
+          <img src={profileData.imageUrl} alt="Foto do Médico" className="imgNavbar" />
         </div>
       )}
       <h2>Perfil do Médico</h2>

@@ -115,24 +115,23 @@ const Lembretes = () => {
   };
 
   return (
-      <div className='ContainerLembre'>
-        <div className='add-reminder-container'>
-          <h3>Adicionar Lembrete</h3>
-          <input
+    <div className='containerLembretes'>
+      <div className='add-reminder-container'>
+        <h3>Adicionar Lembrete</h3>
+        <input
           className='inputLembre'
-            type='text'
-            placeholder='Título'
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-          <textarea
+          type='text'
+          placeholder='Título'
+          value={title}
+          onChange={(e) => setTitle(e.target.value)} />
+        <textarea
           className='inputLembre'
-            placeholder='Conteúdo'
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-          <button className='buttonAddlembre' onClick={addReminder}>Adicionar</button>
-        </div>
+          placeholder='Conteúdo'
+          value={content}
+          onChange={(e) => setContent(e.target.value)} />
+        <button className='buttonAddlembre' onClick={addReminder}>Adicionar</button>
+      </div>
+      <div className='reminder-list-section'>
         <h1>Lembretes</h1>
         <div className='reminder-list-container'>
           {reminders.map((reminder, index) => (
@@ -142,12 +141,10 @@ const Lembretes = () => {
                   <input
                     type='text'
                     value={editTitle}
-                    onChange={(e) => setEditTitle(e.target.value)}
-                  />
+                    onChange={(e) => setEditTitle(e.target.value)} />
                   <textarea
                     value={editContent}
-                    onChange={(e) => setEditContent(e.target.value)}
-                  />
+                    onChange={(e) => setEditContent(e.target.value)} />
                   <button onClick={saveEditReminder} className="edit-button">Salvar</button>
                 </div>
               ) : (
@@ -164,7 +161,9 @@ const Lembretes = () => {
           ))}
         </div>
       </div>
+    </div>
   );
+  
 };
 
 export default Lembretes;

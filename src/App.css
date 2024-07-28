@@ -1,11 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -98,38 +91,6 @@
     transform: rotate(360deg);
   }
 }
-/* src/App.css */
-.login-container, .signup-container, .dashboard-container {
-  max-width: 400px; /* Largura máxima do container */
-  margin-left: 800px;
-  width: 300px;
-  padding: 20px; /* Padding interno do container */
-  border: 1px solid #6096a8; /* Borda do container */
-  border-radius: 10px; /* Bordas arredondadas */
-  background-color: white; /* Cor de fundo do container */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
-  display: flex; /* Define o display como flexbox */
-  flex-direction: column; /* Organiza os filhos em uma coluna */
-  align-items: center; /* Centraliza os filhos horizontalmente */
-  justify-content: center; /* Centraliza os filhos verticalmente */
-  text-align: center; /* Centraliza o texto e os elementos inline */
-}
-
-.login-container, .signup-container, .dashboard-container {
-  max-width: 400px; /* Largura máxima do container */
-  margin-left: 800px;
-  width: 300px;
-  padding: 20px; /* Padding interno do container */
-  border: 1px solid #6096a8; /* Borda do container */
-  border-radius: 10px; /* Bordas arredondadas */
-  background-color: white; /* Cor de fundo do container */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para o container */
-  display: flex; /* Define o display como flexbox */
-  flex-direction: column; /* Organiza os filhos em uma coluna */
-  align-items: center; /* Centraliza os filhos horizontalmente */
-  justify-content: center; /* Centraliza os filhos verticalmente */
-  text-align: center; /* Centraliza o texto e os elementos inline */
-}
 
 .icon {
   position: absolute;
@@ -144,22 +105,6 @@
   bottom: 39px;
   color: #6096a8; 
   cursor: pointer;
-}
-
-.inputLogin{
-  width: 400px; /* Largura total dos inputs */
-  height: 70px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
-  margin-bottom: 30px;
-  color: #6096a8;
-  padding-right: 40px;
-  padding-left: 10px; /* Padding interno dos inputs */
-  font-size: 20px; /* Tamanho da fonte dos inputs */
-  font-family: Cloudb;
-  border-radius: 20px;
-  border: 2px solid #6096a8; /* Borda dos inputs */
-  margin-bottom: 15px; /* Espaço abaixo dos inputs */
-  box-sizing: border-box; /* Inclui padding e borda na largura total */
 }
 
 .textEsqueciSenha{
