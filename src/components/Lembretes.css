@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .containerLembretes {
   font-family: Cloudb;
   width: 650px;
@@ -89,10 +90,263 @@ h1 {
   cursor: pointer;
   width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+=======
+/* Define o fundo da página e remove margens e preenchimentos padrão */
+body {
+  background-color: #FFFAF5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ContainerLembre {
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: #6096a8;
+  padding: 20px;
+  height: 100vh;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  text-align: center;
+  font-family: Cloudb;
+  position: fixed;
+  align-items: center;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1{
+  text-align: left;
+  color: white;
+  left: 0;
+  margin-left: 0;
+}
+
+.inputLembre{
+  width: 350px; /* Largura total dos inputs */
+  height: 60px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px;
+  color: #7380b7;
+  padding-right: 10px;
+  padding-left: 10px; /* Padding interno dos inputs */
+  font-size: 20px; /* Tamanho da fonte dos inputs */
+  font-family: Cloudb;
+  border-radius: 20px;
+  border: 2px solid #5160a1; /* Borda dos inputs */
+  margin-bottom: 15px; /* Espaço abaixo dos inputs */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.inputLembre:focus{
+  border-color: #5160a1;
+  outline: none; 
+}
+
+/* Estiliza o título principal no topo da página */
+.title {
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  color: #6096a8;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Estiliza o contêiner de adicionar lembrete */
+.add-reminder-container {
+  background: white;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 30px;
+  border: 2px solid #7380b7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  padding: 30px;
+  max-width: 600px;
+  margin-bottom: 5px;
+  color: #7380b7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-reminder-container input,
+.add-reminder-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Define o tamanho fixo do campo de conteúdo */
+.add-reminder-container textarea {
+  height: 100px;
+  resize: none; /* Desativa o redimensionamento */
+}
+
+.buttonAddlembre{
+  padding: 10px 15px; 
+  font-size: 18px;
+  color: white; 
+  background-color: #7380b7; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
   margin-top: 10px;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
+.buttonAddlembre:hover{
+  background-color: #5160a1;
+  border: 2px solid #FFFAF5;
+  color: #FFFAF5; 
+}
+
+/* Estiliza os lembretes individuais */
+.reminder-item {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  border: 2px solid #5160a1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+}
+
+.parent-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente se necessário */
+  flex-direction: column; /* Empilha os itens verticalmente */
+  width: 100%; /* Certifique-se de que o contêiner pai ocupe a largura total */
+  height: 100%; /* Ajuste conforme necessário */
+}
+
+.reminder-item h4 {
+  margin: 0 0 10px 0;
+  color: #6096A8;
+  text-align: center;
+}
+
+.reminder-item p {
+  margin: 0 0 10px 0;
+  height: 50px; /* Define um tamanho fixo para o conteúdo */
+  overflow: hidden; /* Esconde o texto excedente */
+  text-overflow: ellipsis; /* Adiciona reticências no texto excedente */
+  width: 100%;
+  text-align: center;
+}
+
+.reminder-item button {
+  padding: 10px 15px;
+  width: 100%; 
+  font-size: 18px;
+  color: white;
+  background-color: #6096a8; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.reminder-item .button-container {
+  display: flex;
+  justify-content: center; /* Centraliza os botões dentro do contêiner */
+  margin-top: 10px;
+}
+
+button.edit-button {
+  background-color: #6096a8;
+}
+
+button.delete-button {
+  background-color: #FF4500;
+  margin-left: 10px;
+}
+
+/* Adiciona um espaço superior ao botão quando o modo de edição está ativo */
+.edit-mode {
+  background: white;
+  padding: 20px;
+  font-size: 20px;
+  border-radius: 30px;
+  border: 2px solid #7380b7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  width: 80%;
+  padding: 30px;
+  max-width: 600px;
+  margin-bottom: 5px;
+  color: #7380b7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-mode input,
+.edit-mode textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 20px; 
+    border: 2px solid #5160a1; 
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+    font-size: 20px; 
+    color: black; 
+    font-family: Cloudb; 
+    box-sizing: border-box;
+}
+
+.edit-mode textarea{
+    height: 100px;
+    resize: none;
+}
+
+
+.edit-mode button{
+  padding: 10px 15px; 
+  font-size: 18px;
+  color: white; 
+  background-color: #7380b7; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+>>>>>>> 3b3489fd4f20cd38bdc324228141871d71a97b0c
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+<<<<<<< HEAD
 .buttonAddlembre:hover {
   background-color: #5160a1;
   border: 2px solid #FFFAF5;
@@ -212,3 +466,8 @@ button.delete-button {
   background-color: #507A89;
   transform: translateY(-3px);
 }
+=======
+.edit-mode button:hover{
+  background-color: #5160a1;
+}
+>>>>>>> 3b3489fd4f20cd38bdc324228141871d71a97b0c

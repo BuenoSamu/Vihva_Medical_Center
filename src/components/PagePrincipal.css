@@ -88,7 +88,11 @@ table{
   font-family: CloudB;
   color: #6096a8;
   margin-top: 25px;
+<<<<<<< HEAD
+  width: 20px;
+=======
   width: 320px;
+>>>>>>> e62a34508b428df35879d94b6ddb6f837b43c010
   font-size: 30px;
 }
 

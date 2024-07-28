@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { doc, getDoc, getDocs, collection, query, where } from "firebase/firestore";
 import { db } from './firebaseConfig';
 import Navbar from './Navbar';
@@ -89,6 +90,9 @@ const PerfilPaciente = () => {
           </li>
         ))}
       </ul>
+      <div className="chat-button">
+        <Link to={`/chat/${pacienteId}`} className="btn">Ir para o Chat</Link>
+      </div>
     </div>
   );
 };

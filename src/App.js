@@ -6,12 +6,13 @@ import Signup from './components/Signup';
 import Criaperfil from './components/Criaperfil';
 import CriaClinica from './components/CriaClinica';
 import Principal from './components/Principal'; 
-import Lembretes from './components/Lembretes'
+import Lembretes from './components/Lembretes';
 import Perfil from './components/Perfil';
 import EditarPerfil from './components/EditarPerfil';
 import Medicamentos from './components/Medicamentos';
 import PerfilPaciente from './components/PerfilPaciente';
 import DetalhesMedicamentos from './components/DetalhesMedicamentos';
+
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/Criaperfil" element={<Criaperfil />} />
-          <Route path="/CriaClinica" element={<CriaClinica/>} />
+          <Route path="/CriaClinica" element={<CriaClinica />} />
           <Route path="/Principal" element={<Principal />} /> 
           <Route path="/Lembretes" element={<Lembretes />} />
           <Route path="/Perfil" element={<Perfil />} />
