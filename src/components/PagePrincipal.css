@@ -1,6 +1,7 @@
 /* Container principal */
 .principal-container {
   display: flex;
+  background-color: white;
   align-items: center;
   font-family: 'Arial', sans-serif;
   padding: 20px;
@@ -8,6 +9,7 @@
 
 /* Conteúdo */
 .content {
+  background-color: white;
   flex-direction: column;
   margin-top: 20px;
   margin-right: 100px;
@@ -21,7 +23,7 @@
   width: 350px;
   color: #6096a8;
   height: 200px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: white;
   border: 2px solid #6096a8;
   border-radius: 30px;
@@ -56,12 +58,15 @@
    font-size: 17px;
 }
 
-
+table{
+  margin-top: 3%;
+  margin-left: 250px;
+}
 
 .inputCod{
   width: 350px; /* Largura total dos inputs */
   height: 60px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); 
   margin-bottom: 30px;
   color: #6096a8;
   padding-right: 10px;
@@ -84,10 +89,12 @@
   font-family: CloudB;
   color: #6096a8;
   margin-top: 25px;
+<<<<<<< HEAD
   width: 20px;
+=======
+  width: 320px;
+>>>>>>> e62a34508b428df35879d94b6ddb6f837b43c010
   font-size: 30px;
-  top: 0;
-  left: 0;
 }
 
 .ulSolicitacao{
@@ -115,7 +122,7 @@
   margin-right: 15px;
   color: #6096a8;
   height: 340px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: white;
   border: 2px solid #6096a8;
   border-radius: 30px;
@@ -302,5 +309,5 @@ a {
   height: 60px;
   border: solid 2px #247894;
   border-radius: 50%;
-  margin-right: 15px;
+  margin-right: 15px;
 }
