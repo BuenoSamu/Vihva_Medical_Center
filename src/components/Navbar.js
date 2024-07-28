@@ -60,20 +60,23 @@ const Profile = () => {
   }
 
   return (
-    <div>
+    <div className="profile-section">
       {profileData?.imageUrl && (
-        <div>
-          <img src={profileData.imageUrl} alt="Foto do Médico" className="profile-photo" />
-        </div>
+        <img src={profileData.imageUrl} alt="Foto do Médico" className="profile-photo" />
       )}
+      <div className="profile-info">
+        <p className="nomeNavbar">{profileData.nome} {profileData.sobrenome}</p>
+        <p className="crmNavbar">CRM: {profileData.crm}</p>
+      </div>
     </div>
   );
 };
 
+
 const Navbar = () => {
   const location = useLocation();
 
-  return (
+return (
     <nav className="navbar">
       <Profile />
       <ul>

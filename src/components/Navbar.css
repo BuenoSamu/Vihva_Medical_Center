@@ -1,26 +1,50 @@
 .navbar {
   width: 200px;
-  background-color: #6096a8;
+  background: #6096a8;
   color: white;
   padding: 20px;
-  height: 100vh;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  height: 90vh;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-left: 10px;
   font-family: Cloudb;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Alinha o conteúdo à esquerda, por padrão */
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
-.imgNavbar {
-  width: 120px;
-  height: 120px;
-  color: #6096a8;
-  margin: 0 auto 15px auto; /* Centraliza horizontalmente e adiciona espaço abaixo */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Ajuste a margem conforme necessário */
+}
+
+.profile-photo {
+  width: 80px; /* Ajuste o tamanho da foto conforme necessário */
+  height: 80px; /* Ajuste o tamanho da foto conforme necessário */
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.nomeNavbar {
+  margin: 0;
+  font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+.crmNavbar {
+  margin: 0;
+  font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
 }
 
 .navbar h2 {
@@ -34,7 +58,7 @@
 
 .navbar ul {
   list-style-type: none;
-  margin-top: 30px;
+
   padding: 0;
   width: 100%;
 }
