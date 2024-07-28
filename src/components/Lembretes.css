@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 .containerLembretes {
   font-family: Cloudb;
   width: 650px;
@@ -90,7 +90,7 @@ h1 {
   cursor: pointer;
   width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-=======
+}
 /* Define o fundo da página e remove margens e preenchimentos padrão */
 body {
   background-color: #FFFAF5;
@@ -341,12 +341,10 @@ button.delete-button {
   width: 250px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   align-self: center; 
->>>>>>> 3b3489fd4f20cd38bdc324228141871d71a97b0c
   margin-top: 10px;
   transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-<<<<<<< HEAD
 .buttonAddlembre:hover {
   background-color: #5160a1;
   border: 2px solid #FFFAF5;
@@ -466,8 +464,7 @@ button.delete-button {
   background-color: #507A89;
   transform: translateY(-3px);
 }
-=======
 .edit-mode button:hover{
   background-color: #5160a1;
 }
->>>>>>> 3b3489fd4f20cd38bdc324228141871d71a97b0c
+
