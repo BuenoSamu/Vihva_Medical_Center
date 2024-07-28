@@ -55,29 +55,41 @@ const Profile = () => {
   }
 
   return (
-    <div className="profile-container">
+    <div>
       <Navbar />
+      <div>
+        <div className='profile-container'>
       {profileData?.imageUrl && (
         <div>
-          <img src={profileData.imageUrl} alt="Foto do Médico" className="imgNavbar" />
+          <img src={profileData.imageUrl} alt="Foto do Médico" className="imgPerfil" />
         </div>
       )}
-      <h2>Perfil do Médico</h2>
+      <div className='profileNomecontainer'>
+       <h2>{profileData.nome} {profileData.sobrenome}</h2>
+       <div className='profileInfocontainer'>
+          <h3 className='h3Perfil'>CRM: {profileData.crm}</h3>
+          <h3 className='h3Perfil'>Especialização: {profileData.especializacao}</h3>
+          <button onClick={handleEditProfile} className="edit-profile-button">Editar Perfil</button>
+          </div>
+          </div>
+          
+      </div>
+      </div>
       {profileData && (
+        <div className="profile-details-container">
         <div className="profile-details">
-          <p><strong>Nome:</strong> {profileData.nome}</p>
-          <p><strong>Sobrenome:</strong> {profileData.sobrenome}</p>
-          <p><strong>CRM:</strong> {profileData.crm}</p>
-          <p><strong>Especialização:</strong> {profileData.especializacao}</p>
+          <h3>Informações</h3>
           {profileData.nomeClinica && <p><strong>Nome da Clínica:</strong> {profileData.nomeClinica}</p>}
           {profileData.localiza && <p><strong>Localização:</strong> {profileData.localiza}</p>}
           {profileData.detalhesClinica && <p><strong>Detalhes da Clínica:</strong> {profileData.detalhesClinica}</p>}
-          {profileData.fotoUm && <img src={profileData.fotoUm} alt="Foto 1 da Clínica" className="clinic-photo" />}
-          {profileData.fotoDois && <img src={profileData.fotoDois} alt="Foto 2 da Clínica" className="clinic-photo" />}
-          {profileData.fotoTres && <img src={profileData.fotoTres} alt="Foto 3 da Clínica" className="clinic-photo" />}
-
-          <button onClick={handleEditProfile} className="edit-profile-button">Editar Perfil</button>
         </div>
+        <div className="profile-images">
+          <h3>Imagens da clínica</h3>
+          {profileData.fotoUm && <img src={profileData.fotoUm} alt="Foto 1 da Clínica" className='imgClinica' />}
+          {profileData.fotoDois && <img src={profileData.fotoDois} alt="Foto 2 da Clínica" className='imgClinica' />}
+          {profileData.fotoTres && <img src={profileData.fotoTres} alt="Foto 3 da Clínica" className='imgClinica' />}
+        </div>
+    </div>
       )}
     </div>
   );

@@ -1,19 +1,45 @@
-/* src/components/Profile.css */
-
-/* Estilização do container principal do perfil */
 .profile-container {
-    width: 80%; /* Largura do container */
-    max-width: 600px; /* Largura máxima */
+    width: 100%; /* Largura do container */
     background-color: white; /* Cor de fundo branca */
     padding: 20px; /* Espaçamento interno */
-    border: 1px solid #ADD8E6; /* Borda suave */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Sombra para o contêiner */
+    border: 1px solid #6096a8;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin: 20px auto; /* Centraliza o container na tela com espaçamento */
     display: flex; /* Define o display como flexbox */
-    flex-direction: column; /* Alinha os filhos em coluna */
+    flex-direction: row; /* Alinha os filhos em coluna */
     align-items: center; /* Centraliza os filhos horizontalmente */
   }
+
+  .profileNomecontainer{
+    font-family: Cloudb;
+    font-size: 20px;
+    margin-top: 5%;
+    margin-left: 5%;
+    display: flex;
+    color: #6096a8;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+
+  .h3Perfil{
+    margin: 0;
+  }
+
+  .profileInfocontainer{
+    margin-left: 1%;
+    font-size: 15px;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 15%;
+  } 
   
   /* Estilização da foto do perfil */
   .profile-photo {
@@ -25,12 +51,49 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da foto */
     border: 3px solid #ADD8E6; /* Borda ao redor da foto */
   }
-  
+
+  .imgPerfil{
+    width: 180px; /* Ajuste o tamanho da foto conforme necessário */
+    height: 180px; /* Ajuste o tamanho da foto conforme necessário */
+    border-radius: 50%;
+  }
+
+  .profile-details-container{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .profile-images{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Cloudb;
+    width: 100%; /* Largura do container */
+    background-color: white; /* Cor de fundo branca */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #6096a8;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    margin-left: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
   /* Estilização dos detalhes do perfil */
   .profile-details {
-    width: 100%; /* Largura total */
-    padding: 10px 0; /* Espaçamento interno vertical */
-    text-align: center; /* Centraliza o texto */
+    font-family: Cloudb;
+    width: 20%; /* Largura do container */
+    background-color: white; /* Cor de fundo branca */
+    padding: 20px; /* Espaçamento interno */
+    border: 1px solid #6096a8;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
   /* Estilização do texto dos detalhes do perfil */
@@ -85,6 +148,11 @@
     margin-top: 15px; /* Espaçamento acima */
     text-align: center; /* Centraliza a mensagem de erro */
   }
+
+  .imgClinica{
+    width: 100px;
+    height: 100px;
+  }
   
   /* Estilização do corpo para centralização */
   body {
@@ -101,16 +169,20 @@
   
   /* Estilização do botão de edição */
 .edit-profile-button {
-    padding: 10px 15px; 
-    font-size: 16px; 
-    color: white; 
-    background-color: #007BFF; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    margin-top: 20px; 
-    width: 100%; 
-    max-width: 200px; 
+  padding: 10px 15px;
+  width: 100%; 
+  font-size: 18px;
+  color: white; 
+  background-color: #6096a8; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 10px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
   }
   
   /* Estiliza o botão ao passar o mouse por cima */

@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import moment from 'moment';
 import calendario from './calendario.png';
 import medica from './medica_recortada.png';
+import notificacoes from './notificacoes.png'
 import 'moment/locale/pt-br';
 import { auth, db } from './firebaseConfig';
 import { onAuthStateChanged } from "firebase/auth";
@@ -68,15 +69,19 @@ const Principal = () => {
 
           await addDoc(collection(db, 'solicitacoesAmizade'), solicitacaoAmizade);
           alert('Solicitação de amizade enviada!');
+          setUid('');
         } else {
           alert('Nenhum paciente encontrado com o UID fornecido.');
+          setUid('');
         }
       } catch (error) {
         console.error('Erro ao buscar paciente:', error);
         alert('Ocorreu um erro ao buscar o paciente.');
+        setUid('');
       }
     } else {
       alert('Médico não autenticado.');
+      setUid('');
     }
   };
 
@@ -155,10 +160,15 @@ const Principal = () => {
               <th colSpan="3" scope="row">
                 <div className='header-wrapper'>
                   <h1 className='TitleDash'>Área do médico</h1>
+                  <div className='secaoDireita'>
+                  <span className='fundoNotific'>
+                    <img className='imgNotific' src={notificacoes} alt='Notificações'/>
+                  </span>
                   <span className="data">
                     <img className="imgData" src={calendario} alt="Calendário" />
                     <h3 className='textData'>{dataAtual}</h3>
                   </span>
+                  </div>
                 </div>
               </th>
             </tr>
@@ -187,9 +197,9 @@ const Principal = () => {
                 </div>
               </td>
               <td>
-                <div className='containerAdicionarPac'>
+                <div className='containerSolicitacao'>
                   <h3>Solicitações de Amizade</h3>
-                  <ul className='ulSocilitacao'>
+                  <ul className='ulSolicitacao'>
                     {solicitacoes.map((solicitacao) => (
                       <li key={solicitacao.id}>
                         {solicitacao.pacienteId} - {solicitacao.status}

@@ -86,6 +86,7 @@ return (
         <NavItem to="/Perfil" icon={perfil} text="Perfil" currentPath={location.pathname} />
         <NavItem to="/settings" icon={config} text="Configurações" currentPath={location.pathname} />
       </ul>
+      <hr/>
       <h2>
         Produzido por<br />
         <span style={{ fontFamily: 'Peanut', fontWeight: 'normal', fontSize: '25px' }}>Vihva Company</span>

@@ -118,6 +118,9 @@ const Lembretes = () => {
     <div className='containerLembretes'>
       <div className='add-reminder-container'>
         <h3>Adicionar Lembrete</h3>
+        <p className='pLembrete'>
+          Adicione seus lembretes para não esquecer de suas futuras tarefas!
+        </p>
         <input
           className='inputLembre'
           type='text'
@@ -150,7 +153,7 @@ const Lembretes = () => {
               ) : (
                 <>
                   <h4>{reminder.title}</h4>
-                  <p>{reminder.content}</p>
+                  <p className='pLembrete'>{reminder.content}</p>
                   <div className='button-container'>
                     <button onClick={() => startEditReminder(index)} className="edit-button">Editar</button>
                     <button onClick={() => deleteReminder(reminder)} className="delete-button">Excluir</button>
