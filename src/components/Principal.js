@@ -15,13 +15,16 @@ const Principal = () => {
   const [uid, setUid] = useState('');
   const [solicitacoes, setSolicitacoes] = useState([]);
   const [medicoId, setMedicoId] = useState(null);
+  const [medicoNome, setMedicoNome] = useState('');
+  const [medicoSobrenome, setMedicoSobrenome] = useState('');
   const dataAtual = moment().format('DD [de] MMMM');
   const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setMedicoId(user.uid);
+        await fetchProfileData(user.uid);
         fetchPacientes(user.uid);
       } else {
         setMedicoId(null);
@@ -31,6 +34,22 @@ const Principal = () => {
 
     return () => unsubscribe();
   }, []);
+
+  const fetchProfileData = async (uid) => {
+    try {
+      const userDoc = await getDoc(doc(db, 'medicos', uid));
+
+      if (userDoc.exists()) {
+        const data = userDoc.data();
+        setMedicoNome(data.nome);
+        setMedicoSobrenome(data.sobrenome);
+      } else {
+        throw new Error('Perfil não encontrado.');
+      }
+    } catch (error) {
+      console.error('Erro ao carregar perfil:', error);
+    }
+  };
 
   const handleAdicionarPaciente = async () => {
     if (medicoId) {
@@ -130,82 +149,81 @@ const Principal = () => {
     <>
       <Navbar />
       <div style={{backgroundColor: "white"}}>
-  <table>
-    <thead>
-      <tr>
-        <th colSpan="3" scope="row">
-          <div className='header-wrapper'>
-            <h1 className='TitleDash'>Área do médico</h1>
-            <span className="data">
-              <img className="imgData" src={calendario} alt="Calendário" />
-              <h3 className='textData'>{dataAtual}</h3>
-            </span>
-          </div>
-        </th>
-      </tr>
-      <tr>
-        <th colSpan="3" scope="row">
-          <p className='descDash'>Bem vindo fulano de tal!</p>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          <div className='header-wrapper'>
-            <div className='containerAdicionarPac'>
-              <h3>Adicionar Paciente</h3>
-              <div>
-                <input
-                  className='inputCod'
-                  type='text'
-                  value={uid}
-                  onChange={(e) => setUid(e.target.value)}
-                  placeholder='Digite o código do paciente' />
-                <button className='buttonAddpac' onClick={handleAdicionarPaciente}>Adicionar Paciente</button>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div className='containerAdicionarPac'>
-            <h3>Solicitações de Amizade</h3>
-            <ul className='ulSocilitacao'>
-              {solicitacoes.map((solicitacao) => (
-                <li key={solicitacao.id}>
-                  {solicitacao.pacienteId} - {solicitacao.status}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </td>
-        <td rowSpan="2">
-          <Lembretes />
-        </td>
-      </tr>
-      <tr>
-        <td colSpan="2">
-          <div className='containerPac'>
-            <h3 className='textPacAdd'>Seus Pacientes</h3>
-            {pacientes.map(paciente => (
-              <div key={paciente.id} className='paciente-card'>
-                <Link to={`/PerfilPaciente/${paciente.id}`}>
-                  {paciente.imageUrl && <img src={paciente.imageUrl} alt={`${paciente.nome} ${paciente.sobrenome}`} className='paciente-imagem' />}
-                  <p className='pacienteNome'>{paciente.nome} {paciente.sobrenome}</p>
-                  <p className='pacienteCodigo'>Código do paciente:{paciente.uid}</p>
-                </Link>
-              </div>
-            ))}
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+        <table>
+          <thead>
+            <tr>
+              <th colSpan="3" scope="row">
+                <div className='header-wrapper'>
+                  <h1 className='TitleDash'>Área do médico</h1>
+                  <span className="data">
+                    <img className="imgData" src={calendario} alt="Calendário" />
+                    <h3 className='textData'>{dataAtual}</h3>
+                  </span>
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th colSpan="3" scope="row">
+                <p className='descDash'>Bem vindo(a) Dr(a) {medicoNome} {medicoSobrenome}!</p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div className='header-wrapper'>
+                  <div className='containerAdicionarPac'>
+                    <h3>Adicionar Paciente</h3>
+                    <div>
+                      <input
+                        className='inputCod'
+                        type='text'
+                        value={uid}
+                        onChange={(e) => setUid(e.target.value)}
+                        placeholder='Digite o código do paciente' />
+                      <button className='buttonAddpac' onClick={handleAdicionarPaciente}>Adicionar Paciente</button>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <div className='containerAdicionarPac'>
+                  <h3>Solicitações de Amizade</h3>
+                  <ul className='ulSocilitacao'>
+                    {solicitacoes.map((solicitacao) => (
+                      <li key={solicitacao.id}>
+                        {solicitacao.pacienteId} - {solicitacao.status}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </td>
+              <td rowSpan="2">
+                <Lembretes />
+              </td>
+            </tr>
+            <tr>
+              <td colSpan="2">
+                <div className='containerPac'>
+                  <h3 className='textPacAdd'>Seus Pacientes</h3>
+                  {pacientes.map(paciente => (
+                    <div key={paciente.id} className='paciente-card'>
+                      <Link to={`/PerfilPaciente/${paciente.id}`}>
+                        {paciente.imageUrl && <img src={paciente.imageUrl} alt={`${paciente.nome} ${paciente.sobrenome}`} className='paciente-imagem' />}
+                        <p className='pacienteNome'>{paciente.nome} {paciente.sobrenome}</p>
+                        <p className='pacienteCodigo'>Código do paciente: {paciente.uid}</p>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div className='containerPerfil'></div>
     </>
   );
-  
 }
 
 export default Principal;

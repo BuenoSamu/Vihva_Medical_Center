@@ -24,6 +24,10 @@
   transform-origin: left;
 }
 
+body {
+  background-color: white; 
+}
+
 .slide-out {
   position: fixed;
   top: 0;
