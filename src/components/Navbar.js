@@ -48,7 +48,7 @@ const Profile = () => {
   }, []);
 
   const handleEditProfile = () => {
-    navigate('/EditarPerfil'); // Rota para a página de edição
+    navigate('/EditarPerfil'); 
   };
 
   if (loading) {
