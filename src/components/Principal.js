@@ -161,9 +161,6 @@ const Principal = () => {
                 <div className='header-wrapper'>
                   <h1 className='TitleDash'>Área do médico</h1>
                   <div className='secaoDireita'>
-                  <span className='fundoNotific'>
-                    <img className='imgNotific' src={notificacoes} alt='Notificações'/>
-                  </span>
                   <span className="data">
                     <img className="imgData" src={calendario} alt="Calendário" />
                     <h3 className='textData'>{dataAtual}</h3>
@@ -216,6 +213,7 @@ const Principal = () => {
               <td colSpan="2">
                 <div className='containerPac'>
                   <h3 className='textPacAdd'>Seus Pacientes</h3>
+                  <div className='containerscrollPacientes'>
                   {pacientes.map(paciente => (
                     <div key={paciente.id} className='paciente-card'>
                       <Link to={`/PerfilPaciente/${paciente.id}`}>
@@ -223,8 +221,9 @@ const Principal = () => {
                         <p className='pacienteNome'>{paciente.nome} {paciente.sobrenome}</p>
                         <p className='pacienteCodigo'>Código do paciente: {paciente.uid}</p>
                       </Link>
-                    </div>
+                    </div>          
                   ))}
+                  </div>
                 </div>
               </td>
             </tr>

@@ -33,6 +33,12 @@
   margin-right: 10px;
 }
 
+.containerscrollPacientes{
+  max-height: 210px;
+  overflow-y: auto;
+}
+
+
 .containerSolicitacao{
   font-family: Cloudb;
   align-items: center;

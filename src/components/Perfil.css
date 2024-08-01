@@ -1,19 +1,18 @@
 .profile-container {
-    width: 100%; /* Largura do container */
-    background-color: white; /* Cor de fundo branca */
-    padding: 20px; /* Espaçamento interno */
-    border: 1px solid #6096a8;
-    border-radius: 30px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 20px auto; /* Centraliza o container na tela com espaçamento */
-    display: flex; /* Define o display como flexbox */
-    flex-direction: row; /* Alinha os filhos em coluna */
-    align-items: center; /* Centraliza os filhos horizontalmente */
-  }
+  width: 70%; /* Largura do container */
+  height: 600px; /* Aumenta a altura do container */
+  background-color: white; /* Cor de fundo branca */
+  padding: 20px; /* Espaçamento interno */
+  border: 1px solid #6096a8;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px auto; /* Centraliza o container na tela com espaçamento */
+  display: flex; /* Define o display como flexbox */
+  flex-direction: row; /* Alinha os filhos em coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  overflow: auto; /* Adiciona rolagem se o conteúdo for maior que o container */
+}
+
 
   .profileNomecontainer{
     font-family: Cloudb;

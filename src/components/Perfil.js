@@ -57,40 +57,67 @@ const Profile = () => {
   return (
     <div>
       <Navbar />
-      <div>
-        <div className='profile-container'>
-      {profileData?.imageUrl && (
-        <div>
-          <img src={profileData.imageUrl} alt="Foto do Médico" className="imgPerfil" />
+      <div className='profile-container'>
+        {profileData?.imageUrl && (
+          <div>
+            <img 
+              src={profileData.imageUrl} 
+              alt="Foto do Médico" 
+              className="imgPerfil" 
+            />
+          </div>
+        )}
+        <div className='profileNomecontainer'>
+          <h2>{profileData.nome} {profileData.sobrenome}</h2>
+          <div className='profileInfocontainer'>
+            <h3 className='h3Perfil'>CRM: {profileData.crm}</h3>
+            <h3 className='h3Perfil'>Especialização: {profileData.especializacao}</h3>
+            <button 
+              onClick={handleEditProfile} 
+              className="edit-profile-button"
+            >
+              Editar Perfil
+            </button>
+          </div>
         </div>
-      )}
-      <div className='profileNomecontainer'>
-       <h2>{profileData.nome} {profileData.sobrenome}</h2>
-       <div className='profileInfocontainer'>
-          <h3 className='h3Perfil'>CRM: {profileData.crm}</h3>
-          <h3 className='h3Perfil'>Especialização: {profileData.especializacao}</h3>
-          <button onClick={handleEditProfile} className="edit-profile-button">Editar Perfil</button>
-          </div>
-          </div>
-          
-      </div>
-      </div>
+      
       {profileData && (
-        <div className="profile-details-container">
-        <div className="profile-details">
+        <div>
           <h3>Informações</h3>
-          {profileData.nomeClinica && <p><strong>Nome da Clínica:</strong> {profileData.nomeClinica}</p>}
-          {profileData.localiza && <p><strong>Localização:</strong> {profileData.localiza}</p>}
-          {profileData.detalhesClinica && <p><strong>Detalhes da Clínica:</strong> {profileData.detalhesClinica}</p>}
-        </div>
-        <div className="profile-images">
+          {profileData.nomeClinica && (
+            <p><strong>Nome da Clínica:</strong> {profileData.nomeClinica}</p>
+          )}
+          {profileData.localiza && (
+            <p><strong>Localização:</strong> {profileData.localiza}</p>
+          )}
+          {profileData.detalhesClinica && (
+            <p><strong>Detalhes da Clínica:</strong> {profileData.detalhesClinica}</p>
+          )}
           <h3>Imagens da clínica</h3>
-          {profileData.fotoUm && <img src={profileData.fotoUm} alt="Foto 1 da Clínica" className='imgClinica' />}
-          {profileData.fotoDois && <img src={profileData.fotoDois} alt="Foto 2 da Clínica" className='imgClinica' />}
-          {profileData.fotoTres && <img src={profileData.fotoTres} alt="Foto 3 da Clínica" className='imgClinica' />}
+          {profileData.fotoUm && (
+            <img 
+              src={profileData.fotoUm} 
+              alt="Foto 1 da Clínica" 
+              className='imgClinica' 
+            />
+          )}
+          {profileData.fotoDois && (
+            <img 
+              src={profileData.fotoDois} 
+              alt="Foto 2 da Clínica" 
+              className='imgClinica' 
+            />
+          )}
+          {profileData.fotoTres && (
+            <img 
+              src={profileData.fotoTres} 
+              alt="Foto 3 da Clínica" 
+              className='imgClinica' 
+            />
+          )}
         </div>
-    </div>
       )}
+    </div>
     </div>
   );
 };
