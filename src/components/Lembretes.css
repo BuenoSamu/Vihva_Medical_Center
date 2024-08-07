@@ -262,7 +262,14 @@ button.edit-button {
 }
 
 button.delete-button {
-  background-color: #FF4500;
+  background-color: #ccc;
+  color: black;
+  margin-left: 10px;
+}
+
+button.delete-button:hover {
+  background-color: #c63637;
+  color: white;
   margin-left: 10px;
 }
 
@@ -392,11 +399,12 @@ button.delete-button {
 }
 
 button.edit-button {
-  background-color: #6096a8;
+  background-color: #7380b7;
 }
 
 button.delete-button {
-  background-color: #FF4500;
+  background-color: #ccc;
+  color: black;
   margin-left: 10px;
 }
 

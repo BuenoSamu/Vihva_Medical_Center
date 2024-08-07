@@ -153,7 +153,7 @@ const Principal = () => {
   return (
     <>
       <Navbar />
-      <div style={{backgroundColor: "white"}}>
+      <div >
         <table>
           <thead>
             <tr>

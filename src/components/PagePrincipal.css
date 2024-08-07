@@ -6,6 +6,16 @@
   padding: 20px;
 }
 
+body {
+  font-family: Arial, sans-serif; /* Define a fonte padrão */
+  margin: 0; /* Remove a margem padrão */
+  padding: 0; /* Remove o padding padrão */
+  height: 100vh; /* Define a altura da página para ocupar 100% da tela */
+  display: flex; /* Define o display como flexbox */
+  flex-direction: column; /* Organiza os filhos em uma coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  justify-content: center; /* Centraliza os filhos verticalmente */
+}
 /* Conteúdo */
 .content {
   flex-direction: column;

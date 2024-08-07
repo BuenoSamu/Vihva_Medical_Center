@@ -1,10 +1,10 @@
-// src/components/Profile.js
 import React, { useEffect, useState } from 'react';
 import { getAuth } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
-import './Perfil.css';
 import Navbar from './Navbar';
+import Carroussel from './carroussel'; // Importar o componente do carrossel
+import './Perfil.css';
 import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
@@ -43,7 +43,7 @@ const Profile = () => {
   }, []);
 
   const handleEditProfile = () => {
-    navigate('/EditarPerfil'); 
+    navigate('/EditarPerfil');
   };
 
   if (loading) {
@@ -55,69 +55,75 @@ const Profile = () => {
   }
 
   return (
-    <div>
+    <div className='alinhamento'>
       <Navbar />
       <div className='profile-container'>
-        {profileData?.imageUrl && (
+        <div className='profiletudocontainer'>
+          {profileData?.imageUrl && (
+            <div className='profileImgcontainer'>
+              <img 
+                src={profileData.imageUrl} 
+                alt="Foto do Médico" 
+                className="imgPerfil" 
+              />
+            </div>
+          )}     
+          <div className='profileNomecontainer'>
+            <div className='alinhamento2'>
+              <h2>{profileData.nome} {profileData.sobrenome}</h2>          
+              <button 
+                onClick={handleEditProfile} 
+                className='editprofileButton'
+              >
+                Editar Perfil
+              </button>
+            </div>
+            <div className='profileInfocontainer'>
+              <h3 className='h3Perfil'>CRM: {profileData.crm}</h3>
+              <h3 className='h3Perfil' style={{width: "250px"}}>Especialização: {profileData.especializacao}</h3>
+            </div>
+          </div>
+        </div>
+        <div className='flex-container'>
+          <div className='infoClinica'>
+            <h3 className='tituloDesc'>Informações</h3>
+            <table>
+              <tbody>
+                {profileData.nomeClinica && (
+                  <tr>
+                    <td><span style={{color: '#6096a8', fontSize: 'larger'}}>Nome da Clínica:</span></td>
+                    <td>{profileData.nomeClinica}</td>
+                  </tr>
+                )}
+                {profileData.localiza && (
+                  <tr>
+                    <td><span style={{color: '#6096a8', fontSize: 'larger'}}>Localização:</span></td>
+                    <td>{profileData.localiza}</td>
+                  </tr>
+                )}
+                {profileData.detalhesClinica && (
+                  <tr>
+                    <td><span style={{color: '#6096a8', fontSize: 'larger'}}>Detalhes da Clínica:</span></td>
+                    <td>{profileData.detalhesClinica}</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+          <hr className='hrPerfil'/>
           <div>
-            <img 
-              src={profileData.imageUrl} 
-              alt="Foto do Médico" 
-              className="imgPerfil" 
-            />
-          </div>
-        )}
-        <div className='profileNomecontainer'>
-          <h2>{profileData.nome} {profileData.sobrenome}</h2>
-          <div className='profileInfocontainer'>
-            <h3 className='h3Perfil'>CRM: {profileData.crm}</h3>
-            <h3 className='h3Perfil'>Especialização: {profileData.especializacao}</h3>
-            <button 
-              onClick={handleEditProfile} 
-              className="edit-profile-button"
-            >
-              Editar Perfil
-            </button>
+          <h3 className='tituloDescimagens'>Imagens da clínica</h3>
+          <div className='image-gallery-container'>
+        
+            {profileData.fotoUm || profileData.fotoDois || profileData.fotoTres ? (
+              <Carroussel images={[profileData.fotoUm, profileData.fotoDois, profileData.fotoTres]} />
+            ) : (
+              <p>Nenhuma imagem disponível</p>
+            )}
+            </div>
           </div>
         </div>
-      
-      {profileData && (
-        <div>
-          <h3>Informações</h3>
-          {profileData.nomeClinica && (
-            <p><strong>Nome da Clínica:</strong> {profileData.nomeClinica}</p>
-          )}
-          {profileData.localiza && (
-            <p><strong>Localização:</strong> {profileData.localiza}</p>
-          )}
-          {profileData.detalhesClinica && (
-            <p><strong>Detalhes da Clínica:</strong> {profileData.detalhesClinica}</p>
-          )}
-          <h3>Imagens da clínica</h3>
-          {profileData.fotoUm && (
-            <img 
-              src={profileData.fotoUm} 
-              alt="Foto 1 da Clínica" 
-              className='imgClinica' 
-            />
-          )}
-          {profileData.fotoDois && (
-            <img 
-              src={profileData.fotoDois} 
-              alt="Foto 2 da Clínica" 
-              className='imgClinica' 
-            />
-          )}
-          {profileData.fotoTres && (
-            <img 
-              src={profileData.fotoTres} 
-              alt="Foto 3 da Clínica" 
-              className='imgClinica' 
-            />
-          )}
-        </div>
-      )}
-    </div>
+      </div>
     </div>
   );
 };

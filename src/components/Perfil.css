@@ -1,190 +1,225 @@
 .profile-container {
-  width: 70%; /* Largura do container */
-  height: 600px; /* Aumenta a altura do container */
-  background-color: white; /* Cor de fundo branca */
-  padding: 20px; /* Espaçamento interno */
+  width: 1000px;
+  max-width: 100vw; 
+  height: 50em; 
+  background-color: white; 
   border: 1px solid #6096a8;
+  overflow-x: hidden;
+  overflow-y: hidden;
   border-radius: 30px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 20px auto; /* Centraliza o container na tela com espaçamento */
-  display: flex; /* Define o display como flexbox */
-  flex-direction: row; /* Alinha os filhos em coluna */
-  align-items: center; /* Centraliza os filhos horizontalmente */
-  overflow: auto; /* Adiciona rolagem se o conteúdo for maior que o container */
+  padding: 20px;
+  display: flex; 
+  flex-direction: column; 
+}
+
+.profileNomecontainer {
+  font-family: Cloudb;
+  font-size: 20px;
+  margin-top: 5%;
+  margin-left: 5%;
+  display: flex;
+  color: #6096a8;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+.alinhamento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.alinhamento2 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.hrPerfil {
+  width: 1px;
+  border: none;
+  height: 94%;
+  background-color: #6096a8;
+  margin: 0 20px;
+}
+
+.infoClinica {
+  font-family: CloudB;
+  width: 25%; 
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.infoClinica table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.infoClinica td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.infoClinica td span {
+  display: block;
+}
+
+.textProfile {
+  width: 290px;
+  font-size: medium;
+}
+
+.tituloDesc {
+  text-align: center;
+  font-family: Cloudb;
+  margin-left: 50px;
+  font-size: x-large;
+  color: #6096a8;
+}
+
+.tituloDescimagens{
+  text-align: center;
+  font-family: Cloudb;
+  margin-right: 80px;
+  font-size: x-large;
+  color: #6096a8;
+}
+
+.h3Perfil {
+  width: 100px;
+  margin-right: 15%;
+}
+
+.profileImgcontainer {
+  margin-left: 1%;
+  margin-top: 4%;
+  font-size: 15px;
+  display: flex;
+  align-items: start;
+}
+
+.profileInfocontainer {
+  margin-left: 1%;
+  font-size: 15px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
+.profiletudocontainer {
+  margin-left: 21%;
+  font-size: 15px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5%;
 }
 
 
-  .profileNomecontainer{
-    font-family: Cloudb;
-    font-size: 20px;
-    margin-top: 5%;
-    margin-left: 5%;
-    display: flex;
-    color: #6096a8;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 0;
-  }
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 3px solid #ADD8E6;
+}
 
-  .h3Perfil{
-    margin: 0;
-  }
+.imgPerfil {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
 
-  .profileInfocontainer{
-    margin-left: 1%;
-    font-size: 15px;
-    color: #333;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 15%;
-  } 
-  
-  /* Estilização da foto do perfil */
-  .profile-photo {
-    width: 150px; /* Largura fixa para a foto */
-    height: 150px; /* Altura fixa para a foto */
-    display: block; /* Exibição em bloco */
-    margin: 20px auto; /* Centraliza e adiciona espaçamento vertical */
-    border-radius: 50%; /* Bordas arredondadas (círculo) */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da foto */
-    border: 3px solid #ADD8E6; /* Borda ao redor da foto */
-  }
+.profile-details-container {
+  display: flex;
+  flex-direction: row;
+}
 
-  .imgPerfil{
-    width: 180px; /* Ajuste o tamanho da foto conforme necessário */
-    height: 180px; /* Ajuste o tamanho da foto conforme necessário */
-    border-radius: 50%;
-  }
-
-  .profile-details-container{
-    display: flex;
-    flex-direction: row;
-  }
-
-  .profile-images{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Cloudb;
-    width: 100%; /* Largura do container */
-    background-color: white; /* Cor de fundo branca */
-    padding: 20px; /* Espaçamento interno */
-    border: 1px solid #6096a8;
-    border-radius: 30px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    margin-left: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Estilização dos detalhes do perfil */
-  .profile-details {
-    font-family: Cloudb;
-    width: 20%; /* Largura do container */
-    background-color: white; /* Cor de fundo branca */
-    padding: 20px; /* Espaçamento interno */
-    border: 1px solid #6096a8;
-    border-radius: 30px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Estilização do texto dos detalhes do perfil */
-  .profile-details p {
-    margin: 10px 0; /* Espaçamento vertical */
-    font-size: 16px; /* Tamanho da fonte */
-    color: #333; /* Cor do texto */
-  }
-  
-  /* Estilização do título do perfil */
-  .profile-title {
-    font-size: 24px; /* Tamanho da fonte */
-    color: #6096a8; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    margin-bottom: 20px; /* Espaçamento abaixo */
-  }
-  
-  /* Estilização dos botões do perfil */
-  .profile-container button {
-    padding: 10px 15px; /* Padding dentro do botão */
-    font-size: 16px; /* Tamanho da fonte do botão */
-    color: white; /* Cor do texto do botão */
-    background-color: #ADD8E6; /* Cor de fundo do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
-    width: 100%; /* Largura total do botão */
-    max-width: 200px; /* Largura máxima do botão */
-    margin-top: 20px; /* Espaçamento acima */
-    align-self: center; /* Centraliza o botão */
-  }
-  
-  /* Estiliza o botão ao passar o mouse por cima */
-  .profile-container button:hover {
-    background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
-  }
-  
-  /* Estilização dos links do perfil */
-  .profile-details a {
-    color: #007BFF; /* Cor do link */
-    text-decoration: none; /* Remove a decoração do link */
-    margin-top: 15px; /* Espaçamento acima */
-  }
-  
-  .profile-details a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
-  }
-  
-  /* Estilização das mensagens de erro no perfil */
-  .error-message {
-    color: red; /* Cor da mensagem de erro */
-    margin-top: 15px; /* Espaçamento acima */
-    text-align: center; /* Centraliza a mensagem de erro */
-  }
-
-  .imgClinica{
-    width: 100px;
-    height: 100px;
-  }
-  
-  /* Estilização do corpo para centralização */
-  body {
-    background-color: #FFFAF5; /* Cor de fundo da página */
-    font-family: Arial, sans-serif; /* Define a fonte padrão */
-    margin: 0; /* Remove a margem padrão */
-    padding: 0; /* Remove o padding padrão */
-    height: 100vh; /* Define a altura da página para ocupar 100% da tela */
-    display: flex; /* Define o display como flexbox */
-    flex-direction: column; /* Organiza os filhos em uma coluna */
-    align-items: center; /* Centraliza os filhos horizontalmente */
-    justify-content: center; /* Centraliza os filhos verticalmente */
-  }
-  
-  /* Estilização do botão de edição */
-.edit-profile-button {
-  padding: 10px 15px;
-  width: 100%; 
-  font-size: 18px;
-  color: white; 
-  background-color: #6096a8; 
+.profile-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: Cloudb;
-  border: 2px solid white; 
+  width: 75%; /* Ajusta a largura para ocupar o restante do espaço */
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #6096a8;
+  border-radius: 30px;
+  margin-left: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-details {
+  font-family: Cloudb;
+  width: 20%;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #6096a8;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error-message {
+  color: red;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.imgClinica {
+  width: 200px;
+  height: 250px;
+}
+
+.editprofileButton {
+  padding: 10px 15px;
+  width: auto; /* Ajusta a largura do botão conforme o conteúdo */
+  font-size: 18px;
+  color: white;
+  background-color: #6baabe;
+  font-family: Cloudb;
+  border: 2px solid white;
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  align-self: center; 
-  margin-top: 10px;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-  }
-  
-  /* Estiliza o botão ao passar o mouse por cima */
-  .edit-profile-button:hover {
-    background-color: #0056b3;
-  }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0; /* Remove a margem inferior se necessário */
+}
+
+.editprofileButton:hover {
+  background-color: #0056b3;
+}
+
+.image-gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente */
+  width: 100%;
+  margin-right: 200px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
