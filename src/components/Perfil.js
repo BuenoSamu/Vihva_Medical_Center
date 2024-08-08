@@ -88,6 +88,7 @@ const Profile = () => {
           <div className='infoClinica'>
             <h3 className='tituloDesc'>Informações</h3>
             <table>
+              <div className='flex-containerInformacoes'>
               <tbody>
                 {profileData.nomeClinica && (
                   <tr>
@@ -97,17 +98,30 @@ const Profile = () => {
                 )}
                 {profileData.localiza && (
                   <tr>
-                    <td><span style={{color: '#6096a8', fontSize: 'larger'}}>Localização:</span></td>
-                    <td>{profileData.localiza}</td>
+                    <td><h3 className='tituloInformacoes'>Detalhes da Clínica</h3></td>
+                    <td></td>
                   </tr>
+                                    <tr>
+                                    <td>
+                                      <div>
+                                        
+                                        <p className='detalhesTexto'>{profileData.localiza}</p>
+                                      </div>
+                                    </td>
+                                  </tr>
                 )}
                 {profileData.detalhesClinica && (
                   <tr>
-                    <td><span style={{color: '#6096a8', fontSize: 'larger'}}>Detalhes da Clínica:</span></td>
-                    <td>{profileData.detalhesClinica}</td>
+                    <td>
+                      <div>
+                        <h3 className='tituloInformacoes'>Detalhes da Clínica</h3>
+                        <p className='detalhesTexto'>{profileData.detalhesClinica}</p>
+                      </div>
+                    </td>
                   </tr>
                 )}
               </tbody>
+              </div>
             </table>
           </div>
           <hr className='hrPerfil'/>
