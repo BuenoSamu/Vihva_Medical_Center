@@ -1,4 +1,3 @@
-// src/components/CarouselWrapper.js
 import React from 'react';
 
 const CarouselWrapper = ({ images }) => {
@@ -10,16 +9,38 @@ const CarouselWrapper = ({ images }) => {
         <head>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
           <style>
-            /* Aumenta o tamanho das imagens no carrossel */
+            /* Ajuste das imagens no carrossel */
             .carousel-item img {
-            margin-top: 40px;
-              width: 800px; /* Largura total do carrossel */
-              height: 400px; /* Define a altura desejada */
-              object-fit: cover; /* Garante que a imagem preencha o contêiner */
+              width: 101%; /* Garante que a imagem preencha a largura do carrossel */
+              height: 415px; /* Garante que a imagem preencha a altura do carrossel */
+              object-fit: cover; /* Cobre todo o espaço do quadrado, sem distorção */
+              border-radius: 20px;
+              box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Sombra dos inputs */
             }
+
+            body {
+              margin: 0;
+              padding: 0;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+            }
+
+            .carousel-inner {
+              width: 100%;
+              height: 100%;
+            }
+
+            .carousel {
+              width: 500px; /* Define a largura fixa do carrossel */
+              height: 400px; /* Define a altura fixa do carrossel */
+            }
+
+            /* Estilo das setas de navegação */
           </style>
         </head>
-        <body style="background-color: transparent;">
+        <body>
           <div id="carouselExampleIndicators" class="carousel slide">
             <ol class="carousel-indicators">
               ${images.map((_, index) => `
@@ -46,7 +67,9 @@ const CarouselWrapper = ({ images }) => {
         </body>
         </html>
       `}
-      style={{ border: 'none', width: '100%', height: '600px' }} // Ajuste a altura do iframe também se necessário
+      style={{ borderRadius: '20px', border: '2px solid #6096a8', width: '500px', height: '400px', marginRight: '3%' }}
+      frameBorder="0"
+      scrolling="no"
     />
   );
 };

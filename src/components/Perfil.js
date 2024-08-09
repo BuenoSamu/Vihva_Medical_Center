@@ -67,10 +67,10 @@ const Profile = () => {
                 className="imgPerfil" 
               />
             </div>
-          )}     
+          )}
           <div className='profileNomecontainer'>
             <div className='alinhamento2'>
-              <h2>{profileData.nome} {profileData.sobrenome}</h2>          
+              <h2>{profileData.nome} {profileData.sobrenome}</h2>
               <button 
                 onClick={handleEditProfile} 
                 className='editprofileButton'
@@ -80,35 +80,34 @@ const Profile = () => {
             </div>
             <div className='profileInfocontainer'>
               <h3 className='h3Perfil'>CRM: {profileData.crm}</h3>
-              <h3 className='h3Perfil' style={{width: "250px"}}>Especialização: {profileData.especializacao}</h3>
+              <h3 className='h3Perfil' style={{ width: "250px" }}>Especialização: {profileData.especializacao}</h3>
             </div>
           </div>
         </div>
         <div className='flex-container'>
           <div className='infoClinica'>
             <h3 className='tituloDesc'>Informações</h3>
-            <table>
-              <div className='flex-containerInformacoes'>
+            <table style={{ margin: '0', marginLeft: '95px',  overflowY: 'auto'}}>
               <tbody>
                 {profileData.nomeClinica && (
-                  <tr>
-                    <td><span style={{color: '#6096a8', fontSize: 'larger'}}>Nome da Clínica:</span></td>
-                    <td>{profileData.nomeClinica}</td>
+                  <tr style={{height: '90px'}}>
+                    <td>
+                      <div >
+                        <h3 className='tituloInformacoes'>Nome da Clínica</h3>
+                        <p className='detalhesTexto'>{profileData.nomeClinica}</p>
+                      </div>
+                    </td>
                   </tr>
                 )}
                 {profileData.localiza && (
-                  <tr>
-                    <td><h3 className='tituloInformacoes'>Detalhes da Clínica</h3></td>
-                    <td></td>
+                  <tr style={{height: '10px'}}>
+                    <td>
+                      <div>
+                        <h3 className='tituloInformacoes'>Localização</h3>
+                        <p className='detalhesTexto'>{profileData.localiza}</p>
+                      </div>
+                    </td>
                   </tr>
-                                    <tr>
-                                    <td>
-                                      <div>
-                                        
-                                        <p className='detalhesTexto'>{profileData.localiza}</p>
-                                      </div>
-                                    </td>
-                                  </tr>
                 )}
                 {profileData.detalhesClinica && (
                   <tr>
@@ -121,19 +120,17 @@ const Profile = () => {
                   </tr>
                 )}
               </tbody>
-              </div>
             </table>
           </div>
-          <hr className='hrPerfil'/>
+          <hr className='hrPerfil' />
           <div>
-          <h3 className='tituloDescimagens'>Imagens da clínica</h3>
-          <div className='image-gallery-container'>
-        
-            {profileData.fotoUm || profileData.fotoDois || profileData.fotoTres ? (
-              <Carroussel images={[profileData.fotoUm, profileData.fotoDois, profileData.fotoTres]} />
-            ) : (
-              <p>Nenhuma imagem disponível</p>
-            )}
+            <h3 className='tituloDescimagens'>Imagens da clínica</h3>
+            <div className='image-gallery-container'>
+              {profileData.fotoUm || profileData.fotoDois || profileData.fotoTres ? (
+                <Carroussel images={[profileData.fotoUm, profileData.fotoDois, profileData.fotoTres]} />
+              ) : (
+                <p>Nenhuma imagem disponível</p>
+              )}
             </div>
           </div>
         </div>

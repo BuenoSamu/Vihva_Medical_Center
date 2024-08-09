@@ -159,7 +159,6 @@ table {
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
   text-align: center;
-  border-radius: 20px;
   border: 1px solid white;
   color: white;
   background: linear-gradient(to right, #6096a8, #7380b7);
