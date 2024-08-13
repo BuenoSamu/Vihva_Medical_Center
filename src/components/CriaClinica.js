@@ -107,45 +107,42 @@ const CriaClinica = () => {
                     <h2 className='descTitle'>Insira os dados da clinica ou centro médico</h2>
                     <form onSubmit={handleSubmit}>
                         <div className='imageUploaderContainerUM'>
-                            <input
-                                type="file"
-                                id="fileUm"
-                                onChange={(e) => handleFileChange(e, setFotoUm, setPreviewUm)}
-                                style={{ display: 'none' }}
-                            />
-                            <label htmlFor="fileUm" className="fileLabel">
-                                {previewUm ? (
-                                    <img src={previewUm} alt="Preview" className="profile-photoCria" />
-                                ) : (
-                                    "Escolher Foto"
-                                )}
-                            </label>
-                        </div>
+                        <input
+                            type="file"
+                            id="fileUm"
+                            onChange={(e) => handleFileChange(e, setFotoUm, setPreviewUm)}
+                            style={{ display: 'none' }}
+                        />
+                        <label htmlFor="fileUm" className="fileLabel" style={{ marginRight: '10px', cursor: 'pointer',  fontFamily: 'Cloudb' }}>
+                            {previewUm ? (
+                            <img src={previewUm} alt="Preview" className="profile-photoCria" />
+                            ) : (
+                                "Escolher Foto"
+                            )}
+                        </label>
 
-                        <div className='imageUploaderContainerDois'>
+
                             <input
                                 type="file"
                                 id="fileDois"
                                 onChange={(e) => handleFileChange(e, setFotoDois, setPreviewDois)}
                                 style={{ display: 'none' }}
                             />
-                            <label htmlFor="fileDois" className="fileLabel">
+                            <label htmlFor="fileDois" className="fileLabel" style={{ marginRight: '10px', cursor: 'pointer', fontFamily: 'Cloudb' }}>
                                 {previewDois ? (
                                     <img src={previewDois} alt="Preview" className="profile-photoCria" />
                                 ) : (
                                     "Escolher Foto"
                                 )}
                             </label>
-                        </div>
 
-                        <div className='imageUploaderContainerTres'>
                             <input
                                 type="file"
                                 id="fileTres"
                                 onChange={(e) => handleFileChange(e, setFotoTres, setPreviewTres)}
                                 style={{ display: 'none' }}
                             />
-                            <label htmlFor="fileTres" className="fileLabel">
+                            <label htmlFor="fileTres" className="fileLabel" style={{ marginRight: '5px', cursor: 'pointer', fontFamily: 'Cloudb' }}>
                                 {previewTres ? (
                                     <img src={previewTres} alt="Preview" className="profile-photoCria" />
                                 ) : (
@@ -154,33 +151,38 @@ const CriaClinica = () => {
                             </label>
                         </div>
 
-                        <div className='inputContainer'>
+                        <div className='inputDadosClinica'>
+                            <div>
                             <input
                                 type="text"
                                 placeholder="Nome da Clínica"
                                 value={nomeClinica}
                                 onChange={(e) => setNomeClinica(e.target.value)}
-                                className='inputNomeCria'
+                                className='inputDadosCriaPerfil'
                             />
+                            </div>
+                            <div>
                             <input
                                 type="text"
                                 placeholder="Localização"
                                 value={localiza}
                                 onChange={(e) => setLocaliza(e.target.value)}
-                                className='inputNomeCria'
+                                className='inputDadosCriaPerfil'
                             />
+                            </div>
+                            <div>
                             <input
                                 type="text"
                                 placeholder="Detalhes da Clínica"
                                 value={detalhesClinica}
                                 onChange={(e) => setDetalhesClinica(e.target.value)}
-                                className='inputNomeCria'
+                                className='inputDadosCriaPerfil'
                             />
                         </div>
-
+                        </div>
                         {error && <p className="error-message">{error}</p>}
 
-                        <button type="submit" className='submitButton'>Salvar Perfil</button>
+                        <button type="submit" className='buttonLogin'>Salvar Perfil</button>
                     </form>
                 </div>
             </div>

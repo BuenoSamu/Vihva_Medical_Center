@@ -155,6 +155,7 @@ table {
   font-family: Cloudb;
   height: 80px;
   font-size: 20px;
+  border-radius: 20px;
   display: flex; /* Adicionado */
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */

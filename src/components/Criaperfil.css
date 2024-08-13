@@ -60,8 +60,10 @@
   }
   
   
-  .inputDadosCria{
-    width: 410px; /* Largura total dos inputs */
+
+
+  .inputDadosCriaPerfil{
+    width: 100%; /* Largura total dos inputs */
     height: 70px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
     margin-bottom: 30px;
@@ -76,6 +78,12 @@
   }
 
   .inputDadosCria:focus{
+    border-color: #007ca5;
+    outline: none; 
+  }
+
+  
+  .inputDadosCriaPerfil:focus{
     border-color: #007ca5;
     outline: none; 
   }

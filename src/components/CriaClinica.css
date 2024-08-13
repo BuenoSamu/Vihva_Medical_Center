@@ -15,6 +15,11 @@
     text-align: center; /* Centraliza o texto e os elementos inline */
 }
 
+.containerDadosClinica{
+    display: flex;
+    flex-direction: column;
+}
+
 .inputNomeCria, .inputDadosCria {
     width: 200px; /* Largura total dos inputs */
     height: 70px; /* Altura dos inputs */

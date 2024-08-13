@@ -1,9 +1,8 @@
-/* src/components/EditarPerfil.css */
-
-.editar-perfil-container {
-  max-width: 600px; /* Aumentei a largura máxima para 600px */
+/* Estiliza o container principal do perfil */
+.Criaperfil-container {
+  max-width: 400px; /* Largura máxima do container */
   margin: 100px auto; /* Centraliza o container verticalmente e adiciona espaçamento no topo */
-  padding: 50px; /* Padding interno do container */
+  padding: 20px; /* Padding interno do container */
   border: 1px solid #ADD8E6; /* Borda do container */
   border-radius: 5px; /* Bordas arredondadas */
   background-color: white; /* Cor de fundo do container */
@@ -12,48 +11,188 @@
   flex-direction: column; /* Organiza os filhos em uma coluna */
   align-items: center; /* Centraliza os filhos horizontalmente */
   justify-content: center; /* Centraliza os filhos verticalmente */
-  margin-right: 50px; /* Adiciona margem à direita para aumentar o espaço do container */
+  text-align: center; /* Centraliza o texto e os elementos inline */
 }
 
-.editar-perfil-container h2 {
-  font-size: 24px;
-  color: #333333;
-  margin-bottom: 20px;
+.inputNomeCria{
+  width: 200px; /* Largura total dos inputs */
+  height: 70px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px;
+  margin-right: 10px;
+  color: #6096a8;
+  padding-left: 10px; /* Padding interno dos inputs */
+  font-size: 20px; /* Tamanho da fonte dos inputs */
+  font-family: Cloudb;
+  border-radius: 20px;
+  border: 2px solid #6096a8; /* Borda dos inputs */
+  margin-bottom: 15px; /* Espaço abaixo dos inputs */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.fileLabel {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #6096a8;
+  color: #fff;
   text-align: center;
+  line-height: 150px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
 }
 
-.editar-perfil-form {
+.fileLabel:hover {
+  background-color: #0056b3;
+}
+
+.profile-photoCria {
+  width: 100%; /* Largura fixa para a foto */
+  height: 100%; /* Altura fixa para a foto */
+  display: block;
+  object-fit: cover; /* Exibição em bloco */
+  border-radius: 50%; /* Bordas arredondadas (círculo) */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da foto */
+}
+
+
+
+
+.inputDadosCriaPerfil{
+  width: 100%; /* Largura total dos inputs */
+  height: 70px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 30px;
+  color: #6096a8;
+  padding-left: 10px; /* Padding interno dos inputs */
+  font-size: 20px; /* Tamanho da fonte dos inputs */
+  font-family: Cloudb;
+  border-radius: 20px;
+  border: 2px solid #6096a8; /* Borda dos inputs */
+  margin-bottom: 15px; /* Espaço abaixo dos inputs */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.inputDadosCria:focus{
+  border-color: #007ca5;
+  outline: none; 
+}
+
+
+.inputDadosCriaPerfil:focus{
+  border-color: #007ca5;
+  outline: none; 
+}
+
+.inputNomeCria:focus{
+  border-color: #007ca5;
+  outline: none; 
+}
+
+.ContainerCria{
+  font-family: Cloudb;
+  width: 800px;
+  color: white;
+  background-color: #6096a8;
   display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin: 0; 
+  padding: 0; 
+  position: absolute; 
+  right: 0;
+  top: 0; 
+  height: 100%; 
   flex-direction: column;
 }
 
-.editar-perfil-form label {
-  margin-bottom: 15px;
-  font-size: 16px;
+
+.titleCriaperfil {
+  width: 100%; 
+  text-align: center; 
+  font-size: 70px;
+  color: white; 
+  font-family: Cloudb;
+  font-weight: 100;
+  margin-bottom: 30px;
+  left: 0; 
+  right: 0;
 }
 
-.editar-perfil-form input {
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.Ccriaperfil{
+  height: 650px;
+  margin-right: 800px;
+  width: 700px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: white;
+  border: 2px solid #6096a8;
+  border-radius: 30px;
+  margin-top: 50px;
+  padding: 20px; /* Padding interno do container */
+  display: flex; /* Define o display como flexbox */
+  flex-direction: column; /* Organiza os filhos em uma coluna */
+  align-items: center; /* Centraliza os filhos horizontalmente */
+  justify-content: center; /* Centraliza os filhos verticalmente */
+  text-align: center; /* Centraliza o texto e os elementos inline */
 }
 
-.editar-perfil-button {
-  padding: 10px 15px;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #007bff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 150px;
-  align-self: center;
-  margin-top: 20px;
+/* Estiliza o formulário dentro do container do perfil */
+.Criaperfil-container form {
+  width: 100%; /* Largura total do formulário */
 }
 
-.editar-perfil-button:hover {
-  background-color: #0056b3;
+/* Estiliza os inputs do formulário do perfil */
+.Criaperfil-container input[type="text"] {
+  width: 100%; /* Largura total dos inputs */
+  padding: 10px; /* Padding interno dos inputs */
+  font-size: 16px; /* Tamanho da fonte dos inputs */
+  border: 1px solid #ccc; /* Borda dos inputs */
+  border-radius: 5px; /* Bordas arredondadas */
+  margin-bottom: 15px; /* Espaço abaixo dos inputs */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+/* Estiliza o botão de submit do perfil */
+.Criaperfil-container button {
+  padding: 10px 15px; /* Padding dentro do botão */
+  font-size: 16px; /* Tamanho da fonte do botão */
+  color: white; /* Cor do texto do botão */
+  background-color: #ADD8E6; /* Cor de fundo do botão */
+  border: none; /* Remove a borda do botão */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para pointer ao passar sobre o botão */
+  width: 100%; /* Largura total do botão */
+  max-width: 150px; /* Largura máxima do botão */
+  margin: 10px auto 0; /* Centraliza o botão horizontalmente */
+}
+
+/* Estiliza o botão ao passar o mouse por cima no perfil */
+.Criaperfil-container button:hover {
+  background-color: #0056b3; /* Muda a cor de fundo do botão ao passar o mouse */
+}
+
+/* Estiliza links e texto dentro do perfil */
+.Criaperfil-container p {
+  margin-top: 20px; /* Espaço acima do texto */
+  text-align: center; /* Centraliza o texto */
+}
+
+.Criaperfil-container a {
+  color: #007BFF; /* Cor do link */
+  text-decoration: none; /* Remove a decoração do link */
+}
+
+.Criaperfil-container a:hover {
+  text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+/* Estiliza a mensagem de erro dentro do perfil */
+.Criaperfil-container .error-message {
+  color: red; /* Cor da mensagem de erro */
+  margin-bottom: 15px; /* Espaço abaixo da mensagem de erro */
+  text-align: center; /* Centraliza a mensagem de erro */
 }

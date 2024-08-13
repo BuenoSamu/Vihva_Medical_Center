@@ -3,8 +3,14 @@ import { getAuth } from 'firebase/auth';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
 import { useNavigate } from 'react-router-dom';
-import './EditarPerfil.css'; 
-import Navbar from './Navbar';
+import './EditarPerfil.css';
+import { motion } from 'framer-motion';
+import Navbar from './Navbar'; // Certifique-se de que o Navbar esteja importado corretamente
+
+const loginOpacityAnimation = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.5 } }
+};
 
 const EditarPerfil = () => {
   const [profileData, setProfileData] = useState(null);
@@ -23,12 +29,12 @@ const EditarPerfil = () => {
         }
 
         const uid = user.uid;
-        console.log(`Fetching data for UID: ${uid}`); // Log para verificação
+        console.log(`Fetching data for UID: ${uid}`);
 
         const userDoc = await getDoc(doc(db, 'medicos', uid));
 
         if (userDoc.exists()) {
-          console.log('Documento encontrado:', userDoc.data()); // Log para verificação
+          console.log('Documento encontrado:', userDoc.data());
           setProfileData(userDoc.data());
         } else {
           throw new Error('Perfil não encontrado.');
@@ -36,7 +42,7 @@ const EditarPerfil = () => {
 
         setLoading(false);
       } catch (error) {
-        console.error('Erro ao carregar perfil:', error); // Log detalhado
+        console.error('Erro ao carregar perfil:', error);
         setError('Erro ao carregar perfil. Verifique sua conexão e tente novamente.');
         setLoading(false);
       }
@@ -61,14 +67,14 @@ const EditarPerfil = () => {
       }
 
       const uid = user.uid;
-      console.log('Atualizando documento:', profileData); // Log para verificação
+      console.log('Atualizando documento:', profileData);
 
       await updateDoc(doc(db, 'medicos', uid), profileData);
-      console.log('Perfil salvo com sucesso'); // Log para confirmação
+      console.log('Perfil salvo com sucesso');
 
-      navigate('/Perfil'); 
+      navigate('/Perfil');
     } catch (error) {
-      console.error('Erro ao salvar perfil:', error); // Log detalhado
+      console.error('Erro ao salvar perfil:', error);
       setError('Erro ao salvar perfil. Verifique os dados e tente novamente.');
     }
   };
@@ -83,58 +89,82 @@ const EditarPerfil = () => {
 
   return (
     <div className="editar-perfil-container">
-      <Navbar />
-      <h2>Editar Perfil</h2>
-      {profileData && (
-        <form className="editar-perfil-form" onSubmit={handleSave}>
-          <label>
-            Nome:
-            <input
-              type="text"
-              name="nome"
-              value={profileData.nome || ''}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Sobrenome:
-            <input
-              type="text"
-              name="sobrenome"
-              value={profileData.sobrenome || ''}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            CRM:
-            <input
-              type="text"
-              name="crm"
-              value={profileData.crm || ''}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Especialização:
-            <input
-              type="text"
-              name="especializacao"
-              value={profileData.especializacao || ''}
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Centro Médico:
-            <input
-              type="text"
-              name="centroMedico"
-              value={profileData.centroMedico || ''}
-              onChange={handleChange}
-            />
-          </label>
-          <button type="submit" className="editar-perfil-button">Salvar</button>
-        </form>
-      )}
+      <motion.div className='ContainerCria'>
+        <motion.h1
+          className='titleCriaperfil'
+          initial="hidden"
+          animate="show"
+          variants={loginOpacityAnimation}
+        >
+          Edição de Perfil
+        </motion.h1>
+        <motion.p
+          className='slogan'
+          initial="hidden"
+          animate="show"
+          variants={loginOpacityAnimation}
+        >
+          Atualize suas informações para mostrarmos aos seus pacientes!
+        </motion.p>
+      </motion.div>
+      <div className="Ccriaperfil">
+        <h2 className='descTitle'>Atualize seus dados</h2>
+        {profileData && (
+          <form onSubmit={handleSave} style={{width: '80%'}}>
+            <div className='inputContainer'>
+              <input
+              placeholder='Nome'
+                type="text"
+                name="nome"
+                value={profileData.nome || ''}
+                onChange={handleChange}
+                className='inputDadosCriaPerfil'
+              />
+            </div>
+            <div className='inputContainer'>
+              <input
+              placeholder='Sobrenome'
+                type="text"
+                name="sobrenome"
+                value={profileData.sobrenome || ''}
+                onChange={handleChange}
+                className='inputDadosCriaPerfil'
+              />
+            </div>
+            <div className='inputContainer'>
+              <input
+              placeholder='CRM'
+                type="text"
+                name="crm"
+                value={profileData.crm || ''}
+                onChange={handleChange}
+                className='inputDadosCriaPerfil'
+              />
+            </div>
+            <div className='inputContainer'>
+              <input
+              placeholder='Especialização'
+                type="text"
+                name="especializacao"
+                value={profileData.especializacao || ''}
+                onChange={handleChange}
+                className='inputDadosCriaPerfil'
+              />
+            </div>
+            <div className='inputContainer'>
+              <input
+              placeholder='Centro Médico'
+                type="text"
+                name="centroMedico"
+                value={profileData.centroMedico || ''}
+                onChange={handleChange}
+                className='inputDadosCriaPerfil'
+              />
+            </div>
+            <button type="submit" className="buttonLogin">Salvar</button>
+          </form>
+        )}
+      </div>
     </div>
   );
 };

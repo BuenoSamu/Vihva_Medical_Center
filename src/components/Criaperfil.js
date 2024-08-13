@@ -133,7 +133,7 @@ const Criaperfil = () => {
                 placeholder="CRM"
                 value={crm}
                 onChange={(e) => setCrm(e.target.value)}
-                className='inputDadosCria'
+                className='inputDadosCriaPerfil'
               />
             </div>
             <div className='inputContainer'>
@@ -142,7 +142,7 @@ const Criaperfil = () => {
                 placeholder="Especialização"
                 value={especializacao}
                 onChange={(e) => setEspecializacao(e.target.value)}
-                className='inputDadosCria'
+                className='inputDadosCriaPerfil'
               />
             </div>
             {error && <p>{error}</p>}
