@@ -14,8 +14,15 @@
     text-align: center; /* Centraliza o texto e os elementos inline */
   }
 
+  .inputContainerCriaperfil {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 410px;
+  }
+
   .inputNomeCria{
-    width: 200px; /* Largura total dos inputs */
+    width: 250px; /* Largura total dos inputs */
     height: 70px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
     margin-bottom: 30px;
@@ -58,12 +65,8 @@
     border-radius: 50%; /* Bordas arredondadas (círculo) */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ao redor da foto */
   }
-  
-  
-
 
   .inputDadosCriaPerfil{
-    width: 100%; /* Largura total dos inputs */
     height: 70px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); 
     margin-bottom: 30px;

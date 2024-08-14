@@ -107,10 +107,10 @@ const EditarPerfil = () => {
           Atualize suas informações para mostrarmos aos seus pacientes!
         </motion.p>
       </motion.div>
-      <div className="Ccriaperfil">
+      <div className="Ceditarperfil">
         <h2 className='descTitle'>Atualize seus dados</h2>
         {profileData && (
-          <form onSubmit={handleSave} style={{width: '80%'}}>
+          <form onSubmit={handleSave} style={{width: '60%'}}>
             <div className='inputContainer'>
               <input
               placeholder='Nome'

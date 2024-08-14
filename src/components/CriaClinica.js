@@ -96,7 +96,7 @@ const CriaClinica = () => {
         <div>
             <motion.div className='ContainerClinica'>
                 <motion.h1 className='titleCriaClinica' initial="hidden" animate="show" variants={loginOpacityAnimation}>
-                    Criação do perfil da clinia
+                    Criação do perfil da clinica
                 </motion.h1>
                 <motion.p className='slogan' initial="hidden" animate="show" variants={loginOpacityAnimation}>
                     Insira as informações da clinica ou hospital para mostrarmos ao seus pacientes!

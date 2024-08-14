@@ -111,7 +111,7 @@ const Criaperfil = () => {
                 )}
               </label>
             </div>
-            <div className='inputContainer'>
+            <div className='inputContainerCriaperfil'>
               <input
                 type="text"
                 placeholder="Nome"
