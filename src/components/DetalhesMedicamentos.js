@@ -129,18 +129,18 @@ const DetalhesMedicamentos = () => {
 
   return (
     <div className="medicamento-detalhes-container">
-      <Navbar />
       <h1>{medicamento.nome}</h1>
       {medicamento.Url && <img src={medicamento.Url} alt={medicamento.nome} />}
-      {medicamento.nomecomercial && <p><strong>Nome Comercial:</strong> {medicamento.nomecomercial}</p>}
-      {medicamento.administracao && <p><strong>Administração:</strong> {medicamento.administracao}</p>}
-      {medicamento.efeitoscolaterais && <p><strong>Efeitos Colaterais:</strong> {medicamento.efeitoscolaterais}</p>}
-      {medicamento.tipo && <p><strong>Tipo:</strong> {medicamento.tipo}</p>}
-      {medicamento.descricao && <p><strong>Descrição:</strong> {medicamento.descricao}</p>}
+      {medicamento.nomecomercial && <p>Nome Comercial:{medicamento.nomecomercial}</p>}
+      {medicamento.administracao && <p>strongAdministração: {medicamento.administracao}</p>}
+      {medicamento.efeitoscolaterais && <p>Efeitos Colaterais: {medicamento.efeitoscolaterais}</p>}
+      {medicamento.tipo && <p>Tipo:{medicamento.tipo}</p>}
+      <h3 className="titleDescMed">Descrição</h3>
+      {medicamento.descricao && <p>{medicamento.descricao}</p>}
 
       {/* Lista suspensa para selecionar pacientes */}
-      <div>
-        <label htmlFor="paciente">Selecione um paciente:</label>
+      <div className="custom-select">
+        <h4 htmlFor="paciente">Selecione um paciente</h4>
         <select id="paciente" value={pacienteSelecionado ?? ""} onChange={handleSelecionarPaciente}>
           <option value="">Selecionar pacientes</option>
           {pacientes.map(paciente => (
@@ -154,7 +154,7 @@ const DetalhesMedicamentos = () => {
       {/* Botão para adicionar remédio */}
       {pacienteSelecionado && (
         <div>
-          <button onClick={handleAdicionarRemedio}>Adicionar Remédio</button>
+          <button className="buttonAddRemedio" onClick={handleAdicionarRemedio}>Adicionar Remédio</button>
           {aviso && <p>{aviso}</p>}
         </div>
       )}

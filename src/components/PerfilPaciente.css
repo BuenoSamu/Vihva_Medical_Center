@@ -1,93 +1,147 @@
+/* PerfilPaciente.css */
+.profiletudocontainer {
+  margin-left: 50px;
+  font-size: 15px;
+  color: #333;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5%;
+}
 
-.perfil-paciente {
-  max-height: 100vh; 
-  overflow-y: auto; 
-  padding: 20px;
-  max-width: 800px;
-  margin: auto;
-  background-color: white;
-  border: 1px solid #ADD8E6;
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+.imgprofileDoencas {
+  width: 50px;
+  height: 50px;
+  margin-top: 3px;
+  border: 1px solid #6096a8;
+  border-radius: 15px;
+}
+
+.imgprofileRemedios {
+  width: 50px;
+  height: 50px;
+  margin-top: 3px;
+  border: 1px solid #60AD9C;
+  border-radius: 20px;
+}
+
+.tituloDescPac {
+  text-align: center;
+  font-family: Cloudb;
+  margin-left: 150px;
+  margin-bottom: 0;
+  justify-content: center;
+  font-size: x-large;
+  color: #6096a8;
+}
+
+.infoClinicaPac {
+  font-family: CloudB;
+  width: 25%;
+  margin-left: 3%; 
+  align-items: center;
+  text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+.uldoencasPac {
   align-items: center;
-}
-
-/* Outras regras existentes */
-.perfil-paciente img.perfil-imagem {
-  max-width: 150px;
+  width: 100%;
   height: auto;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-  border: 3px solid #ADD8E6; 
+  list-style-type: none; /* Removes the bullet points */
+  padding-left: 0; /* Removes the default padding */
+  margin-top: 0; /* Removes the default margin */
+  overflow-y: auto;
+  max-height: 300px;
 }
 
-.perfil-paciente ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.perfil-paciente ul li {
-  margin-bottom: 10px;
-}
-
-.perfil-paciente ul li img {
-  max-width: 100px;
-  height: auto;
-  margin-left: 10px;
-  border-radius: 10px; 
-}
-
-.profile-title {
-  font-size: 24px;
+.textDoencasprofile {
   color: #6096a8;
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 18px;
+  margin-left: 10px;
 }
 
-.profile-details {
-  width: 100%;
-  padding: 10px 0;
-  text-align: center;
+.textRemediosprofile {
+  color: #60AD9C;
+  font-size: 18px;
+  margin-left: 10px;
 }
 
-.profile-details p {
-  margin: 10px 0;
-  font-size: 16px;
-  color: #333;
+.h3PerfilPac {
+  margin-top: 0;
+  width: 120px;
+  margin-right: 5%;
 }
 
-.perfil-paciente button {
-  padding: 10px 15px;
-  font-size: 16px;
-  color: white;
-  background-color: #ADD8E6;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  max-width: 200px;
+.ContainerMedPac {
+  width: 450px; 
+  height: 250px;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column; /* Organiza as doenças em uma coluna */
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  margin-left: 180px;
+  margin-bottom: 0;
+}
+
+.cardDoencaPac {
+  width: 380px;
+  height: 60px;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid white;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #B2DAE7, #D5E5EB);
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 15px;
+}
+
+.ContainerRemPac {
+  width: 450px; 
+  height: 300px;
+  display: flex;
+  border-radius: 20px;
+  flex-direction: column; /* Organiza as medicações em uma coluna */
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  margin-bottom: 190px; /* Espaçamento abaixo do contêiner */
+  margin-top: 0;
+  margin-left: 180px;
+}
+
+.cardRemedioPac {
+  width: 380px;
+  height: 60px;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid white;
+  border-radius: 20px;
+  background: linear-gradient(to left , #D4EBE8, #B0E8DF);
+  flex-direction: row;
+  margin-top: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-right: 5px;
+  margin-left: 15px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: space-between;
   margin-top: 20px;
-  align-self: center;
 }
 
-.perfil-paciente button:hover {
-  background-color: #0056b3;
-}
-
-.profile-details a {
-  color: #007BFF;
-  text-decoration: none;
-  margin-top: 15px;
-}
-
-.profile-details a:hover {
-  text-decoration: underline;
-}
-
-.error-message {
-  color: red;
-  margin-top: 15px;
-  text-align: center;
+.biografia-container {
+  width: 430px;
+  height: 400px;
+  padding: 20px;
+  border: 1px solid #6096a8;
+  margin-top: 30px;
+  border-radius: 10px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

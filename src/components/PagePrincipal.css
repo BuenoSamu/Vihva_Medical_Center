@@ -230,6 +230,8 @@ table {
 .textPacAdd {
   font-family: Cloudb;
   color: #6096a8;
+  margin-left: 5px;
+  margin-bottom: 10px;
   font-size: 30px;
   text-align: left;
 }
@@ -354,7 +356,7 @@ a {
   height: 15%;
   width: 90%; 
   max-width: 730px;
-  background: linear-gradient(to bottom, #B2DAE7, #D5E5EB);
+  background: linear-gradient(to right, #B2DAE7, #D5E5EB);
   border-radius: 20px;
   border: 2px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

@@ -1,41 +1,140 @@
-/* src/components/DetalhesMedicamentos.css */
 
 .medicamento-detalhes-container {
-    max-width: 800px;
-    margin: 100px auto;
-    padding: 50px;
-    border: 1px solid #ADD8E6;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .medicamento-detalhes-container h1 {
-    font-size: 32px;
-    color: #333333;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .medicamento-detalhes-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .medicamento-detalhes-container p {
-    font-size: 18px;
-    color: #555555;
-    margin-bottom: 15px;
-    text-align: center;
-  }
-  
-  .medicamento-detalhes-container p strong {
-    color: #333333;
-  }
-  
+  max-width: 800px;
+  padding-right: 100px; 
+  font-family: Cloudb;
+  margin-left: 10px;
+  padding: 50px;
+  border: 1px solid #60AD9C;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 540px; /* Altura fixa para o container */
+  overflow: auto; /* Adiciona rolagem se o conteúdo for maior que a altura fixa */
+}
+
+
+
+.medicamento-detalhes-container h1 {
+  font-size: 32px;
+  color: #60AD9C;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-select select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 300px;
+  font-size: 15px;
+  font-family: Cloudb;
+  padding: 5px 19px 5px 19px;
+  background-color: #FFFFFF;
+  border: 1px solid #60AD9C;
+  border-radius: 20px;
+  color: #000000;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 2px 5px 1px #E2E2E2;
+}
+
+.custom-select select:focus {
+  background: #F2F2F2;
+  border: 2px solid #60AD9C;
+  border-radius: 20px;
+}
+
+.custom-select::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 83%;
+  right: 24px;
+  transform: translate(0, -50%);
+  width: 13px;
+  height: 13px;
+  background-color: #000000;
+  clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
+}
+
+.imgDescRemedio{
+  width: 250px;
+  border-radius: 20px;
+  height: 250px;
+}
+
+.titleDescMed {
+  color: #60AD9C;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 25px;
+}
+
+.titleSelectMed {
+  color: #60AD9C;
+  text-align: center;
+  font-size: 20px;
+}
+
+.medicamento-detalhes-container img {
+  max-width: 70%;
+  height: auto;
+  border: 2px solid #60AD9C;
+  border-radius: 30px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.medicamento-detalhes-container p {
+  font-size: 18px;
+  color: #383838;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.textDescRemedio{
+  margin-left: 100px;
+  margin-right: 100px;
+  text-align: center;
+}
+
+.buttonAddRemedio {
+  padding: 10px 15px; 
+  font-size: 18px;
+  color: white; 
+  background-color: #60AD9C; 
+  font-family: Cloudb;
+  border: 2px solid white; 
+  border-radius: 20px;
+  cursor: pointer;
+  justify-content: center;
+  text-decoration: none;
+  width: 250px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  align-self: center; 
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.hr {
+  border: 0; /* Remove a borda padrão */
+  height: 1px; /* Define a altura da linha */
+  background: #60AD9C; /* Define a cor da linha */
+  width: 100%; /* Faz com que a linha ocupe toda a largura disponível */
+  margin: 20px 0; /* Adiciona espaço acima e abaixo da linha */
+}
+
+.buttonAddRemedio:hover {
+  background-color: #519788;
+  transition: 0.5s;
+}

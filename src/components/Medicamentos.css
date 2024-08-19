@@ -1,114 +1,17 @@
-/* src/components/Medicamentos.css */
 
-.card {
-  background-color: #FFFFFF;
-  border: 1px solid #ADD8E6;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  width: 200px;
-  transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  background-color: #f8f9fa;
-}
-
-.card-image {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-bottom: 1px solid #dee2e6;
-  transition: filter 0.3s;
-}
-
-.card-image:hover {
-  filter: brightness(0.9);
-}
-
-.card-no-image {
-  width: 100%;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f0f0f0;
-  border-bottom: 1px solid #dee2e6;
-  color: #999;
-}
-
-.card-content {
-  padding: 15px;
-  text-align: center;
-}
-
-.card-content h3 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  color: #6096a8;
-}
-
-.card-content p {
-  font-size: 0.9em;
-  color: #6c757d;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  .medicamentos-container {
-      gap: 15px;
-      padding: 15px;
-  }
-  
-  .card {
-      width: 45%;
-  }
-  
-  .card-content h3 {
-      font-size: 1em;
-  }
-  
-  .card-content p {
-      font-size: 0.85em;
-  }
-}
-
-@media (max-width: 480px) {
-  .medicamentos-container {
-      gap: 10px;
-      padding: 10px;
-  }
-  
-  .card {
-      width: 100%;
-  }
-  
-  .card-content h3 {
-      font-size: 0.9em;
-  }
-  
-  .card-content p {
-      font-size: 0.8em;
-  }
-}
-
-/*Carrossel*/
-.carousel-container {
-  max-width: 800px; 
-  margin: 0 auto; 
-}
-
-.slick-slide {
-  padding: 0 10px; 
-}
-
-/*Barra de pesquisa*/
 .search-bar-container {
   text-align: center;
   padding: 20px 0;
 }
+
+
+.medicamentos-table{
+  width: 1520px;
+  height: 100%;
+  margin-bottom: 60px;
+}
+
+
 
 .search-bar-input {
   padding: 10px;
@@ -117,4 +20,171 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.pacienteNomeRemedios {
+  text-align: center;
+  color: #247894;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-bottom: 0;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.descDashMed {
+  font-family: Cloudb;
+  height: 80px;
+  font-size: 20px;
+  border-radius: 20px;
+  display: flex; /* Adicionado */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  text-align: center;
+  border: 1px solid white;
+  color: white;
+  background: linear-gradient(to right, #6096a8, #60AD9C);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dataMed {
+  display: flex;
+  align-items: center;
+  font-family: CloudB;
+  border-radius: 30px;
+  height: 25px;
+  padding: 10px 20px;
+  background-color: #60AD9C;
+  color: white;
+  border: 1px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 18px;
+}
+
+.lista-medicamentos {
+  display: flex;
+  font-family: Cloudb;
+  max-height: 170px;
+  overflow: auto;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.medicamento-card {
+  display: flex;
+  align-items: center;
+  width: 470px;
+  padding: 10px;
+  margin-left: 5px;
+  background: linear-gradient(to left , #D4EBE8, #B0E8DF);
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+
+.medicamento-card:hover {
+  background-color: #f0f0f0;
+}
+
+.medicamento-imagem {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #60AD9C;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.medicamento-nome {
+  font-size: 16px;
+  color: #488679;
+}
+
+.containerscrollPacientes{
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.containerMed {
+  font-family: Cloudb;
+  align-items: center;
+  justify-content: center;
+  width: 550px;
+  height: 270px;
+  color: #6096a8;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border: 1px solid #6096a8;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+.containerMedPac {
+  font-family: Cloudb;
+  align-items: center;
+  width: 550px;
+  color: #6096a8;
+  height: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border: 1px solid #6096a8;
+  border-radius: 30px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.listaRemediosPac {
+  display: flex;
+  color: #6096a8;
+  margin-top: 0;
+  padding-left: 0;
+  text-decoration: none; 
+  color: inherit; 
+  flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte se necessário */
+  gap: 10px; /* Espaçamento entre os itens */
+}
+
+.listaRemediosPac li {
+  color: #247894;
+  list-style-type: none; /* Remove os marcadores da lista */
+  margin-left: 10px;
+}
+
+.imgRemedioPac {
+  width: 50px;
+  height: 50px;
+  margin-top: 0;
+  border-radius: 20px;
+  border: 1px solid #60AD9C;
+  object-fit: cover; /* Ajusta a imagem para preencher a área definida */
+  display: block; /* Remove espaços extras abaixo da imagem */
+}
+
+.paciente-cardMed {
+  display: flex;
+  align-items: center; 
+  gap: 15px; 
+  padding: 15px;
+  height: 10%;
+  width: 90%; 
+  max-width: 730px;
+  background: linear-gradient(to bottom, #B2DAE7, #D5E5EB);
+  border-radius: 20px;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  margin-bottom: 10px;
 }

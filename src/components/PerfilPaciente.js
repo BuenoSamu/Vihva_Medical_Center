@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { doc, getDoc, getDocs, collection, query, where } from "firebase/firestore";
 import { db } from './firebaseConfig';
 import Navbar from './Navbar';
@@ -56,42 +55,61 @@ const PerfilPaciente = () => {
   }
 
   return (
-    <div className='perfil-paciente'>
+    <div className='alinhamento'>
       <Navbar />
-      <h1 className="profile-title">Perfil do Paciente</h1>
-      {paciente.imageUrl && <img src={paciente.imageUrl} alt={`${paciente.nome} ${paciente.sobrenome}`} className='perfil-imagem' />}
-      <div className="profile-details">
-        <p><strong>Nome:</strong> {paciente.nome}</p>
-        <p><strong>Sobrenome:</strong> {paciente.sobrenome}</p>
-        <p><strong>Altura:</strong> {paciente.altura} cm</p>
-        <p><strong>Peso:</strong> {paciente.peso} kg</p>
-        <p><strong>Gênero:</strong> {paciente.genero}</p>
-        <p><strong>Biografia:</strong> {paciente.biografia}</p>
-        <p><strong>Idade:</strong> {paciente.idade}</p>
-      </div>
-
-      <h3>Faz uso de:</h3>
-      <ul>
-        {remedios.map((remedio, index) => (
-          <li key={index}>
-            <p><strong>Nome do medicamento:</strong> {remedio.nome}</p>
-            <p><strong>Foto do medicamento:</strong></p>
-            {remedio.Url && <img src={remedio.Url} alt={remedio.Url} />}
-          </li>
-        ))}
-      </ul>
-
-      <h3>Portador de:</h3>
-      <ul>
-        {doenca.map((doenca, index) => (
-          <li key={index}>
-            <p><strong>Nome da doença:</strong> {doenca.nome}</p>
-            {doenca.Url && <img src={doenca.Url} alt={doenca.nome} />}
-          </li>
-        ))}
-      </ul>
-      <div className="chat-button">
-        <Link to={`/chat/${pacienteId}`} className="btn">Ir para o Chat</Link>
+      <div className='profile-container'>
+        <div className='profiletudocontainer'>
+          {paciente.imageUrl && (
+            <div className='profileImgcontainer'>
+              <img 
+                src={paciente.imageUrl} 
+                alt={`${paciente.nome} ${paciente.sobrenome}`} 
+                className='imgPerfil' 
+              />
+            </div>
+          )}
+          <div className='profileNomecontainer'>
+            <div className='alinhamento2'>
+              <h2>{paciente.nome} {paciente.sobrenome}</h2>
+            </div>
+            <div className='profileInfocontainer'>
+              <h3 className='h3PerfilPac'><span style={{color: "#6096a8"}}>Altura</span><br/> {paciente.altura} cm</h3>
+              <h3 className='h3PerfilPac'><span style={{color: "#6096a8"}}>Peso </span><br/>  {paciente.peso} kg</h3>
+              <h3 className='h3PerfilPac'><span style={{color: "#6096a8"}}>Gênero</span><br/>  {paciente.genero}</h3>             
+              <h3 className='h3PerfilPac'><span style={{color: "#6096a8"}}>Idade</span><br/>  {paciente.idade}</h3>
+            </div>
+          </div>
+        </div>
+        <div className='table-container'>
+          <div className='infoClinicaPac'>
+            <div className='ContainerMedPac'>
+              <h3 className='tituloDescPac'>Enfermidades</h3>
+              <ul className='uldoencasPac'>
+                {doenca.map((doenca, index) => (
+                  <li key={index} className='cardDoencaPac'>
+                    {doenca.Url && <img src={doenca.Url} alt={doenca.nome} className='imgprofileDoencas' />}
+                    <p className='textDoencasprofile'>{doenca.nome}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className='ContainerRemPac'>
+              <h3 className='tituloDescPac' style={{color: "#60AD9C"}}>Medicação</h3>
+              <ul className='uldoencasPac'>
+                {remedios.map((remedio, index) => (
+                  <li key={index} className='cardRemedioPac'>
+                    {remedio.Url && <img src={remedio.Url} alt={remedio.nome} className='imgprofileRemedios' />}
+                    <p className='textRemediosprofile'>{remedio.nome}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className='biografia-container'>
+            <h3 className='h3Perfil'>Biografia</h3>
+            <p>{paciente.biografia}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
