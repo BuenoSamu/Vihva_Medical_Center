@@ -1,0 +1,92 @@
+.searchDoencas{
+    border-radius: 50px;
+    color: #60AD9C;
+    border: 2px solid #6096a8;
+    height: 20px;
+    width: 70%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.searchDoencas:focus{
+    border: 2px solid #60AD9C;
+    transition: 0.3s;
+    outline: none;
+}
+
+
+.diagnostico-card {
+    display: flex;
+    align-items: center;
+    width: 470px;
+    padding: 10px;
+    margin-left: 5px;
+    background: linear-gradient(to bottom, #B2DAE7, #D5E5EB);
+    border: 1px solid white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .diagnostico-imagem{
+    width: 50px;
+    height: 50px;
+    border: 2px solid #247894;
+    border-radius: 20px;
+    margin-right: 10px;
+  }
+
+  .dianostico-nome {
+    font-size: 16px;
+    color: #247894;
+  }
+
+  .diagnostico-detalhes-container {
+    max-width: 800px;
+    padding-right: 100px; 
+    font-family: Cloudb;
+    margin-left: 10px;
+    padding: 50px;
+    border: 1px solid #6096a8;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 540px; /* Altura fixa para o container */
+    overflow: auto; /* Adiciona rolagem se o conteúdo for maior que a altura fixa */
+  }
+
+  .imgDescDiagnostico{
+    width: 250px;
+    border: 2px solid #6096a8;
+    border-radius: 20px;
+    height: 250px;
+    margin-bottom: 20px;
+  }
+
+  .nomedoencaPac{
+    text-align: center;
+  }
+
+  .imgDiagnosticoPac {
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    margin-top: 0;
+    border-radius: 20px;
+    border: 2px solid #6096a8;
+    object-fit: cover; /* Ajusta a imagem para preencher a área definida */
+    display: block; /* Remove espaços extras abaixo da imagem */
+  }
+
+  .img-container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;    /* Centraliza verticalmente */
+    display: flex;
+    flex-direction: column;
+  }

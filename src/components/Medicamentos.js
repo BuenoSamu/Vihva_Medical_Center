@@ -211,11 +211,11 @@ const Medicamentos = () => {
             <tr>
               <td style={{ width: "1%" }}>
                 <div className="containerMed">
-                  <div className="search-bar-container">
+                  <div className="search-bar-container" style={{padding: '0'}}>
                     <input
                       type="text"
                       placeholder="Pesquisar medicamentos..."
-                      className="search-bar-input"
+                      className="searchDoencas"
                       value={searchTerm}
                       onChange={handleSearchInputChange}
                     />

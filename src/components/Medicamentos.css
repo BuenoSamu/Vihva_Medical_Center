@@ -168,7 +168,7 @@
   height: 50px;
   margin-top: 0;
   border-radius: 20px;
-  border: 1px solid #60AD9C;
+  border: 2px solid #60AD9C;
   object-fit: cover; /* Ajusta a imagem para preencher a área definida */
   display: block; /* Remove espaços extras abaixo da imagem */
 }

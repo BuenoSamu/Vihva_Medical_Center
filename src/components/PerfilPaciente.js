@@ -57,7 +57,7 @@ const PerfilPaciente = () => {
   return (
     <div className='alinhamento'>
       <Navbar />
-      <div className='profile-container'>
+      <div className='profile-containerPac'>
         <div className='profiletudocontainer'>
           {paciente.imageUrl && (
             <div className='profileImgcontainer'>
@@ -73,10 +73,10 @@ const PerfilPaciente = () => {
               <h2>{paciente.nome} {paciente.sobrenome}</h2>
             </div>
             <div className='profileInfocontainer'>
-              <h3 className='h3PerfilPac'><span style={{color: "#6096a8"}}>Altura</span><br/> {paciente.altura} cm</h3>
-              <h3 className='h3PerfilPac'><span style={{color: "#6096a8"}}>Peso </span><br/>  {paciente.peso} kg</h3>
-              <h3 className='h3PerfilPac'><span style={{color: "#6096a8"}}>Gênero</span><br/>  {paciente.genero}</h3>             
-              <h3 className='h3PerfilPac'><span style={{color: "#6096a8"}}>Idade</span><br/>  {paciente.idade}</h3>
+              <h3 className='h3PerfilPac'><span style={{color: "#247894"}}>Altura</span><br/> {paciente.altura} cm</h3>
+              <h3 className='h3PerfilPac'><span style={{color: "#247894"}}>Peso </span><br/>  {paciente.peso} kg</h3>
+              <h3 className='h3PerfilPac'><span style={{color: "#247894"}}>Gênero</span><br/>  {paciente.genero}</h3>             
+              <h3 className='h3PerfilPac'><span style={{color: "#247894"}}>Idade</span><br/>  {paciente.idade}</h3>
             </div>
           </div>
         </div>

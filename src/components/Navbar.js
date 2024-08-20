@@ -7,6 +7,7 @@ import { db } from './firebaseConfig';
 import './Navbar.css';
 import logo from './vivah_logo_500x.png'; 
 import casa from './home.png';
+import virus from './virus.png';
 import config from './opcoes.png'; 
 import remedio from './remedio.png';
 import perfil from './perfil.png';
@@ -83,10 +84,11 @@ return (
         <NavItem to="/Principal" icon={casa} text="Início" currentPath={location.pathname} />
         <NavItem to="/consultas" icon={calendario} text="Consultas" currentPath={location.pathname} />
         <NavItem to="/Medicamentos" icon={remedio} text="Medicamentos" currentPath={location.pathname} />
+        <NavItem to="/Doencas" icon={virus} text="Diagnósticos" currentPath={location.pathname} />
         <NavItem to="/Perfil" icon={perfil} text="Perfil" currentPath={location.pathname} />
         <NavItem to="/settings" icon={config} text="Configurações" currentPath={location.pathname} />
       </ul>
-      <hr/>
+      <hr />
       <h2>
         Produzido por<br />
         <span style={{ fontFamily: 'Peanut', fontWeight: 'normal', fontSize: '25px' }}>Vihva Company</span>
