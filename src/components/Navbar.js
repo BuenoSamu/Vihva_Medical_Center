@@ -82,7 +82,7 @@ return (
       <Profile />
       <ul>
         <NavItem to="/Principal" icon={casa} text="Início" currentPath={location.pathname} />
-        <NavItem to="/consultas" icon={calendario} text="Consultas" currentPath={location.pathname} />
+        <NavItem to="/Consultas" icon={calendario} text="Consultas" currentPath={location.pathname} />
         <NavItem to="/Medicamentos" icon={remedio} text="Medicamentos" currentPath={location.pathname} />
         <NavItem to="/Doencas" icon={virus} text="Diagnósticos" currentPath={location.pathname} />
         <NavItem to="/Perfil" icon={perfil} text="Perfil" currentPath={location.pathname} />

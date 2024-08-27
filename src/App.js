@@ -6,6 +6,7 @@ import Signup from './components/Signup';
 import Criaperfil from './components/Criaperfil';
 import CriaClinica from './components/CriaClinica';
 import Principal from './components/Principal'; 
+import Consultas from './components/Consultas';
 import Lembretes from './components/Lembretes';
 import Perfil from './components/Perfil';
 import EditarPerfil from './components/EditarPerfil';
@@ -25,6 +26,7 @@ function App() {
           <Route path="/Criaperfil" element={<Criaperfil />} />
           <Route path="/CriaClinica" element={<CriaClinica />} />
           <Route path="/Principal" element={<Principal />} /> 
+          <Route path="/Consultas" element={<Consultas />}/>
           <Route path="/Lembretes" element={<Lembretes />} />
           <Route path="/Perfil" element={<Perfil />} />
           <Route path="/EditarPerfil" element={<EditarPerfil />} />

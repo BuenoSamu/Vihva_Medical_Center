@@ -114,7 +114,7 @@ const PerfilPaciente = () => {
               <h3 className='h3Bio'>Hábitos</h3>
               <ul className='uldoencasPac'>
                 {paciente.habitos && Array.isArray(paciente.habitos) && paciente.habitos.map((habito, index) => (
-                  <li key={index} className='cardDoencaPac'>
+                  <li key={index} >
                     {habito}
                   </li>
                 ))}
