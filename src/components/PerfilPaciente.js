@@ -106,8 +106,20 @@ const PerfilPaciente = () => {
             </div>
           </div>
           <div className='biografia-container'>
-            <h3 className='h3Perfil'>Biografia</h3>
-            <p>{paciente.biografia}</p>
+            <div className='espaçoBio'>
+              <h3 className='h3Bio'>Biografia</h3>
+              <p>{paciente.biografia}</p>
+            </div>
+            <div>
+              <h3 className='h3Bio'>Hábitos</h3>
+              <ul className='uldoencasPac'>
+                {paciente.habitos && Array.isArray(paciente.habitos) && paciente.habitos.map((habito, index) => (
+                  <li key={index} className='cardDoencaPac'>
+                    {habito}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

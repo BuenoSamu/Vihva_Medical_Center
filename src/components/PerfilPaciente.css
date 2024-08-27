@@ -64,7 +64,8 @@
 
 .uldoencasPac {
   align-items: center;
-  width: 100%;
+  width: 105%;
+  text-align: center;
   height: 300px;
   list-style-type: none; /* Removes the bullet points */
   padding-left: 0; /* Removes the default padding */
@@ -106,6 +107,8 @@
   width: 380px;
   height: 60px;
   display: flex;
+  color: #6096a8;
+  font-size: 18px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid white;
   border-radius: 20px;
@@ -155,11 +158,29 @@
 
 .biografia-container {
   width: 430px;
-  height: 400px;
-  padding: 20px;
-  border: 1px solid #6096a8;
-  margin-top: 30px;
+  text-align: center;
+  height: 520px;
+  font-family: CloudB;
   border-radius: 10px;
-  margin-right: 20px;
+  margin-right: 50px;
+}
+
+.h3Bio{
+  text-align: center;
+  color: #6096a8;
+  margin-bottom: 10px;
+  font-size: x-large;
+}
+
+.textBio{
+  color: #333;
+}
+
+.espaçoBio{
+  height: 250px;
+  width: 100%;
+  border: 1px solid #6096a8;
+  border-radius: 20px;
+  margin-bottom: 40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
