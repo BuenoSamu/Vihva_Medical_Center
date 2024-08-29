@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { getAuth } from 'firebase/auth';
 import { collection, query, orderBy, startAt, endAt, getDocs } from 'firebase/firestore';
-import { useNavigate } from 'react-router-dom';
 import { db } from './firebaseConfig';
 import Calendar from 'react-calendar';
 import Navbar from './Navbar';
 
 const Consultas = () => {
-    const [consultas, setConsultas] = useState([]);
     const [pacientes, setPacientes] = useState([]);
-    const [calendario, setCalendario] = useState(null);
     const [date, setDate] = useState(new Date());
-    const [pacienteSelecionado, setPacienteSelecionado] = useState(null);
-    const [searchTerm, setSearchTerm] = useState(''); // Adicionei isso para lidar com a busca
+    const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
         const fetchPacientes = async () => {
@@ -47,17 +41,17 @@ const Consultas = () => {
         };
 
         fetchPacientes();
-    }, [searchTerm]); 
-    
+    }, [searchTerm]);
 
     return (
         <>
             <Navbar />
-            <div>
-                <h1>Marcar consultas</h1>
+            <div className="container">
+                <h1>Marcar Consultas</h1>
                 <Calendar
                     onChange={setDate}
                     value={date}
+                    className="custom-calendar"
                 />
                 <p>Data selecionada: {date.toDateString()}</p>
             </div>

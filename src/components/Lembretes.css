@@ -275,12 +275,12 @@ button.delete-button:hover {
 
 /* Adiciona um espaço superior ao botão quando o modo de edição está ativo */
 .edit-mode {
-  background: white;
-  padding: 20px;
-  font-size: 20px;
-  border-radius: 30px;
-  border: 2px solid #7380b7;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 30px;
+  border: 2px solid #5160a1;
   width: 80%;
   padding: 30px;
   max-width: 600px;
@@ -408,25 +408,23 @@ button.delete-button {
   margin-left: 10px;
 }
 
-.edit-mode {
-  margin-bottom: 20px;
-  background: #F5F5F5;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+
 
 .edit-mode input,
 .edit-mode textarea {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 16px;
+}
+
+.edit-mode input:focus,
+.edit-mode textarea {
+  border: 2px solid #47538d;
+  transition: 0.5s;
+  text-decoration: none;
+  outline: none;
 }
 
 .edit-mode textarea {
@@ -437,10 +435,10 @@ button.delete-button {
 .edit-mode button {
   width: 100%;
   padding: 10px;
-  background-color: #6096a8;
+  background-color: #7380b7;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;

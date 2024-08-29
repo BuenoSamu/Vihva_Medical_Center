@@ -141,6 +141,7 @@ const Lembretes = () => {
             <div key={index} className='reminder-item'>
               {editIndex === index ? (
                 <div className="edit-mode">
+                  <h2>Editar</h2>
                   <input
                     type='text'
                     value={editTitle}

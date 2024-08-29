@@ -79,8 +79,8 @@ const Profile = () => {
               </button>
             </div>
             <div className='profileInfocontainer'>
-              <h3 className='h3Perfil'>CRM: {profileData.crm}</h3>
-              <h3 className='h3Perfil' style={{ width: "250px" }}>Especialização: {profileData.especializacao}</h3>
+              <h3 className='h3Perfil'><span style={{color: "#247894"}}>CRM</span> {profileData.crm}</h3>
+              <h3 className='h3Perfil' style={{ width: "245px" }}><span style={{color: "#247894"}}>Especialização</span> {profileData.especializacao}</h3>
             </div>
           </div>
         </div>
