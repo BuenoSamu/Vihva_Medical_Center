@@ -2,13 +2,19 @@ import React, { useEffect, useState } from "react";
 import { db } from "./firebaseConfig";
 import { doc, getDoc, collection, addDoc, Timestamp } from "firebase/firestore";
 import Navbar from "./Navbar";
+import 'moment/locale/pt-br';
+import moment from 'moment';
+import CalendarioCustomizado from './Calendario'; // Importa corretamente o componente de calendário
+import calendarioImg from './calendario.png'; // Importa a imagem do calendário
 import { auth } from "./firebaseConfig";
+import './Consultas.css'
 
 const AdicionarLembrete = () => {
   const [lembrete, setLembrete] = useState({ titulo: "", descricao: "", data: "" });
   const [pacienteSelecionado, setPacienteSelecionado] = useState(null);
   const [pacientes, setPacientes] = useState([]);
   const [aviso, setAviso] = useState(null);
+  const dataAtual = moment().format('DD [de] MMMM');
 
   useEffect(() => {
     const fetchPacientesCompletos = async () => {
@@ -100,47 +106,81 @@ const AdicionarLembrete = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
-        <h1>Adicionar Lembrete</h1>
-        
-        <div className="custom-select">
-          <h4>Selecione um paciente</h4>
-          <select id="paciente" value={pacienteSelecionado ?? ""} onChange={handleSelecionarPaciente}>
-            <option value="">Selecionar pacientes</option>
-            {pacientes.map(paciente => (
-              <option key={paciente.id} value={paciente.id}>
-                {paciente.nome} {paciente.sobrenome}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <div className="lembrete-form">
-          <input
-            type="text"
-            name="titulo"
-            placeholder="Título do Lembrete"
-            value={lembrete.titulo}
-            onChange={handleInputChange}
-          />
-          <textarea
-            name="descricao"
-            placeholder="Descrição do Lembrete"
-            value={lembrete.descricao}
-            onChange={handleInputChange}
-          />
-          <input
-            type="date"
-            name="data"
-            value={lembrete.data}
-            onChange={handleInputChange}
-          />
-        </div>
-
-        {pacienteSelecionado && (
-          <button onClick={handleAdicionarLembrete}>Adicionar Lembrete</button>
-        )}
-        {aviso && <p>{aviso}</p>}
+      <div className="medicamentos-container">
+        <table className="consultas-table">
+          <thead>
+            <tr>
+              <th colSpan="3" scope="row">
+                <div className='header-wrapper'>
+                  <h1 className='TitleDash'>Área de Marcação de Consultas</h1>
+                  <div className='secaoDireita'>
+                    <span className="dataMed">
+                      <img className="imgData" src={calendarioImg} alt="Calendário" />
+                      <h3 className='textData'>{dataAtual}</h3>
+                    </span>
+                  </div>
+                </div>
+              </th>
+            </tr>
+            <tr>
+              <th colSpan="2">
+                <p className='descDashMed'>Marque consultas para seus pacientes!</p>
+              </th>
+            </tr>
+          </thead>
+            <tr style={{height: "10px"}}>
+              <td style={{ width: "1%"}}>
+                <div className="containerCon">
+                  <h3 style={{fontSize: "25px"}}>Selecione uma data</h3>
+                  <CalendarioCustomizado
+                    selectedDate={lembrete.data ? new Date(lembrete.data) : null} 
+                    onChange={(date) => handleInputChange({ target: { name: 'data', value: date.toISOString().split('T')[0] } })} 
+                  />
+                </div>
+              </td>
+              <td>
+                <div className="containerCondesc">
+                  <div className="organizadorcentro">
+                  <h3 style={{fontSize: "25px", textAlign: "center"}}>Descreva a consulta</h3>
+                  <div className="organizadorcentroCampos">
+                    <input
+                    className='inputTitulocon'
+                      type="text"
+                      name="titulo"
+                      placeholder="Título do Lembrete"
+                      value={lembrete.titulo}
+                      onChange={handleInputChange}
+                    />
+                    <textarea
+                    className='inputDesccon'
+                      name="descricao"
+                      placeholder="Descrição do Lembrete"
+                      value={lembrete.descricao}
+                      onChange={handleInputChange}
+                    />
+                    
+                  </div>
+                  <div className="custome-select">
+                  <h4 className="titleSelectMed" htmlFor="paciente" style={{color: "#6096a8", fontSize: "25px"}}>Selecione um paciente</h4>
+                
+                  <select id="paciente"  style={{border:"2px solid #6096a8"}} value={pacienteSelecionado ?? ""} onChange={handleSelecionarPaciente}>
+                    <option value="">Selecionar pacientes</option>
+                    {pacientes.map(paciente => (
+                      <option key={paciente.id} value={paciente.id}>
+                        {paciente.nome} {paciente.sobrenome}
+                      </option>
+                    ))}
+                  </select>
+                  </div>
+                  {pacienteSelecionado && (
+                    <button className="buttonaddCon" onClick={handleAdicionarLembrete}>Adicionar Consulta</button>
+                  )}
+                  {aviso && <p>{aviso}</p>}
+                  </div>
+                </div>
+              </td>
+            </tr>
+        </table>
       </div>
     </>
   );

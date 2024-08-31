@@ -1,0 +1,174 @@
+.consultasContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.consultas-table{
+    width: 1520px;
+    height: 930px;
+  }
+
+  .containerCon {
+    font-family: Cloudb;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    width: 550px;
+    margin-right: 10px;
+    margin-bottom: 90px;
+    height: 570px;
+    color: #6096a8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border: 1px solid #6096a8;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+  }
+
+  .containerCondesc {
+    font-family: Cloudb;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    width: 855px;
+    margin-right: 10px;
+    margin-bottom: 90px;
+    height: 570px;
+    color: #6096a8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border: 1px solid #6096a8;
+    border-radius: 30px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    
+  }
+
+  .inputDesccon {
+    width: 100%;
+    height: 150px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    color: #6096a8;
+    padding: 10px;
+    font-size: 18px;
+    font-family: Cloudb;
+    border-radius: 20px;
+    border: 2px solid #6096a8;
+    box-sizing: border-box;
+  }
+  
+  .inputDesccon:focus {
+    border-color: #007ca5;
+  outline: none; 
+  }
+
+  .custome-select select {
+    appearance: none;
+    justify-content: center;
+    align-items: center;
+    -webkit-appearance: none;
+    width: 300px;
+    align-items: center;
+    font-size: 15px;
+    font-family: Cloudb;
+    padding: 5px 19px 5px 19px;
+    background-color: #FFFFFF;
+    border: 1px solid #60AD9C;
+    border-radius: 20px;
+    color: #000000;
+    margin-left: 100px;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 1px 2px 5px 1px #E2E2E2;
+  }
+  
+  .custome-select select:focus {
+    background: #F2F2F2;
+    border: 2px solid #60AD9C;
+    border-radius: 20px;
+  }
+  
+  .custome-select::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    right: 115px;
+    top: 455px;
+    transform: translate(0, -50%);
+    width: 13px;
+    height: 13px;
+    background-color: #000000;
+    clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
+  }
+
+  .organizadorcentro {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    position: relative;
+    z-index: 1; /* Ajuste conforme necessário */
+  }
+
+  .organizadorcentroCampos {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1; /* Ajuste conforme necessário */
+  }
+
+  .inputTitulocon {
+    width: 100%; /* Largura total dos inputs */
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); 
+    margin-bottom: 30px;
+    color: #6096a8;
+    padding-right: 10px;
+    padding-left: 10px; /* Padding interno dos inputs */
+    font-size: 18px; /* Tamanho da fonte dos inputs */
+    font-family: Cloudb;
+    border-radius: 20px;
+    border: 2px solid #6096a8; /* Borda dos inputs */
+    margin-bottom: 15px; /* Espaço abaixo dos inputs */
+    box-sizing: border-box; /* Inclui padding e borda na largura total */
+  }
+  
+  .inputTitulocon:focus {
+    border-color: #007ca5;
+    transition: 0.2s;
+    outline: none; 
+  }
+
+  .buttonaddCon{
+    padding: 10px 15px; 
+    font-size: 18px;
+    color: white; 
+    background-color: #6096a8; 
+    font-family: Cloudb;
+    border: 2px solid white; 
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    align-self: center; 
+    margin-top: 500px;
+    position: absolute;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  }
+  
+  .buttonaddCon:hover{
+    background-color: #007ca5;
+    border: 2px solid #FFFAF5;
+    color: #FFFAF5; 
+  }
