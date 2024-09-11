@@ -46,6 +46,7 @@ body {
 .containerscrollPacientes{
   max-height: 210px;
   overflow-y: auto;
+  padding-top: 5px;
 }
 
 

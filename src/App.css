@@ -136,7 +136,8 @@ body {
 .buttonLogin:hover{
   background-color: #007ca5;
   border: 2px solid #FFFAF5;
-  color: #FFFAF5; 
+  color: #FFFAF5;
+  transition: 0.5s; 
 }
 
 form input {

@@ -8,6 +8,7 @@ import CalendarioCustomizado from './Calendario'; // Importa corretamente o comp
 import calendarioImg from './calendario.png'; // Importa a imagem do calendário
 import { auth } from "./firebaseConfig";
 import './Consultas.css'
+import { motion } from 'framer-motion'; 
 
 const AdicionarLembrete = () => {
   const [lembrete, setLembrete] = useState({ titulo: "", descricao: "", data: "" });
@@ -15,6 +16,19 @@ const AdicionarLembrete = () => {
   const [pacientes, setPacientes] = useState([]);
   const [aviso, setAviso] = useState(null);
   const dataAtual = moment().format('DD [de] MMMM');
+  const loginOpacityAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        ease: 'easeOut',
+        duration: 0.5,
+      },
+    },
+  };
 
   useEffect(() => {
     const fetchPacientesCompletos = async () => {
@@ -106,6 +120,12 @@ const AdicionarLembrete = () => {
   return (
     <>
       <Navbar />
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={loginOpacityAnimation}
+        className='principal-container'
+      >
       <div className="medicamentos-container">
         <table className="consultas-table">
           <thead>
@@ -182,6 +202,7 @@ const AdicionarLembrete = () => {
             </tr>
         </table>
       </div>
+      </motion.div>
     </>
   );
 };

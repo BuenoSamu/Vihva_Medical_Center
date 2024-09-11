@@ -4,7 +4,9 @@ import { db, auth } from "./firebaseConfig";
 import { collection, getDocs, query, orderBy, startAt, endAt, doc, getDoc, where, updateDoc, arrayUnion } from "firebase/firestore";
 import './Medicamentos.css';
 import './Doencas.css'
+import { motion } from 'framer-motion'; 
 import moment from 'moment';
+
 import Navbar from "./Navbar";
 import { onAuthStateChanged } from "firebase/auth";
 import 'moment/locale/pt-br';
@@ -19,6 +21,19 @@ const Doencas = () => {
   const [pacienteSelecionado, setPacienteSelecionado] = useState(null);
   const [aviso, setAviso] = useState(null);
   const dataAtual = moment().format('DD [de] MMMM');
+  const loginOpacityAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        ease: 'easeOut',
+        duration: 0.5,
+      },
+    },
+  };
 
   useEffect(() => {
     const fetchDoencas = async () => {
@@ -172,6 +187,12 @@ const Doencas = () => {
   return (
     <>
       <Navbar />
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={loginOpacityAnimation}
+        className='principal-container'
+      >
       <div className="medicamentos-container">
         <table className="medicamentos-table">
           <thead>
@@ -276,6 +297,7 @@ const Doencas = () => {
           </tbody>
         </table>
       </div>
+      </motion.div>
     </>
   );
 };

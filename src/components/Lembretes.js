@@ -4,6 +4,7 @@ import { doc, getDoc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firest
 import { db } from './firebaseConfig';
 import './Lembretes.css';
 import Navbar from './Navbar';
+import { motion } from 'framer-motion'; 
 
 const Lembretes = () => {
   const [title, setTitle] = useState('');
@@ -12,6 +13,20 @@ const Lembretes = () => {
   const [editIndex, setEditIndex] = useState(null);
   const [editTitle, setEditTitle] = useState('');
   const [editContent, setEditContent] = useState('');
+
+  const loginOpacityAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        ease: 'easeOut',
+        duration: 0.5,
+      },
+    },
+  };
 
   const fetchReminders = async () => {
     try {
@@ -132,7 +147,7 @@ const Lembretes = () => {
           placeholder='Conteúdo'
           value={content}
           onChange={(e) => setContent(e.target.value)} />
-        <button className='buttonAddlembre' onClick={addReminder}>Adicionar</button>
+        <button className='buttonLogin' onClick={addReminder}>Adicionar</button>
       </div>
       <div className='reminder-list-section'>
         <h1>Lembretes</h1>

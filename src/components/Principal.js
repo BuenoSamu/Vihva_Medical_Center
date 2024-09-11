@@ -5,12 +5,11 @@ import Lembretes from './Lembretes';
 import Navbar from './Navbar';
 import moment from 'moment';
 import calendario from './calendario.png';
-import medica from './medica_recortada.png';
-import notificacoes from './notificacoes.png'
 import 'moment/locale/pt-br';
 import { auth, db } from './firebaseConfig';
-import { onAuthStateChanged } from "firebase/auth";
-import { collection, query, where, getDocs, addDoc, onSnapshot, doc, updateDoc, arrayUnion, getDoc } from "firebase/firestore";
+import { onAuthStateChanged } from 'firebase/auth';
+import { collection, query, where, getDocs, addDoc, onSnapshot, doc, updateDoc, arrayUnion, getDoc } from 'firebase/firestore';
+import { motion } from 'framer-motion';  
 
 const Principal = () => {
   const [uid, setUid] = useState('');
@@ -20,6 +19,20 @@ const Principal = () => {
   const [medicoSobrenome, setMedicoSobrenome] = useState('');
   const dataAtual = moment().format('DD [de] MMMM');
   const [pacientes, setPacientes] = useState([]);
+
+  const loginOpacityAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        ease: 'easeOut',
+        duration: 0.5,
+      },
+    },
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -39,7 +52,6 @@ const Principal = () => {
   const fetchProfileData = async (uid) => {
     try {
       const userDoc = await getDoc(doc(db, 'medicos', uid));
-
       if (userDoc.exists()) {
         const data = userDoc.data();
         setMedicoNome(data.nome);
@@ -56,7 +68,6 @@ const Principal = () => {
     if (medicoId) {
       try {
         const pacienteSnapshot = await getDocs(query(collection(db, 'clientes'), where('uid', '==', uid)));
-
         if (!pacienteSnapshot.empty) {
           const pacienteDoc = pacienteSnapshot.docs[0];
           const pacienteId = pacienteDoc.id;
@@ -88,7 +99,7 @@ const Principal = () => {
   useEffect(() => {
     if (medicoId) {
       const unsubscribe = onSnapshot(
-        query(collection(db, 'solicitacoesAmizade'), where('medicoId', '==', medicoId)), 
+        query(collection(db, 'solicitacoesAmizade'), where('medicoId', '==', medicoId)),
         (snapshot) => {
           snapshot.docChanges().forEach(async (change) => {
             if (change.type === 'modified') {
@@ -131,10 +142,10 @@ const Principal = () => {
         if (medicoData.pacientes && medicoData.pacientes.length > 0) {
           const pacientesSnapshot = await Promise.all(
             medicoData.pacientes.map(async (pacienteUid) => {
-              const pacienteDoc = await getDocs(query(collection(db, 'clientes'), where('uid', '==', pacienteUid)));
-              if (!pacienteDoc.empty) {
-                const pacienteData = pacienteDoc.docs[0].data();
-                return { id: pacienteDoc.docs[0].id, ...pacienteData };
+              const pacienteSnapshot = await getDocs(query(collection(db, 'clientes'), where('uid', '==', pacienteUid)));
+              if (!pacienteSnapshot.empty) {
+                const pacienteData = pacienteSnapshot.docs[0].data();
+                return { id: pacienteSnapshot.docs[0].id, ...pacienteData };
               }
               return null;
             })
@@ -153,25 +164,30 @@ const Principal = () => {
   return (
     <>
       <Navbar />
-      <div >
-        <table>
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={loginOpacityAnimation}
+        className='principal-container'
+      >
+        <table className='animated-table'>
           <thead>
             <tr>
               <th colSpan="3" scope="row">
                 <div className='header-wrapper'>
                   <h1 className='TitleDash'>Área do médico</h1>
                   <div className='secaoDireita'>
-                  <span className="data">
-                    <img className="imgData" src={calendario} alt="Calendário" />
-                    <h3 className='textData'>{dataAtual}</h3>
-                  </span>
+                    <span className="dataMed">
+                      <img className="imgData" src={calendario} alt="Calendário" />
+                      <h3 className='textData'>{dataAtual}</h3>
+                    </span>
                   </div>
                 </div>
               </th>
             </tr>
             <tr>
               <th colSpan="3" scope="row">
-                <p className='descDash'>Bem vindo(a) Dr(a) {medicoNome} {medicoSobrenome}!</p>
+                <p className='descDashMed'>Bem-vindo(a) Dr(a) {medicoNome} {medicoSobrenome}!</p>
               </th>
             </tr>
           </thead>
@@ -187,8 +203,11 @@ const Principal = () => {
                         type='text'
                         value={uid}
                         onChange={(e) => setUid(e.target.value)}
-                        placeholder='Digite o código do paciente' />
-                      <button className='buttonAddpac' onClick={handleAdicionarPaciente}>Adicionar Paciente</button>
+                        placeholder='Digite o código do paciente'
+                      />
+                      <button className='buttonAddpac' onClick={handleAdicionarPaciente}>
+                        Adicionar Paciente
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -214,25 +233,35 @@ const Principal = () => {
                 <div className='containerPac'>
                   <h3 className='textPacAdd'>Seus Pacientes</h3>
                   <div className='containerscrollPacientes'>
-                  {pacientes.map(paciente => (
-                    <div key={paciente.id} className='paciente-card'>
-                      <Link to={`/PerfilPaciente/${paciente.id}`}>
-                        {paciente.imageUrl && <img src={paciente.imageUrl} alt={`${paciente.nome} ${paciente.sobrenome}`} className='paciente-imagem' />}
-                        <p className='pacienteNome'>{paciente.nome} {paciente.sobrenome}</p>
-                        <p className='pacienteCodigo'>Código do paciente: {paciente.uid}</p>
-                      </Link>
-                    </div>          
-                  ))}
+                    {pacientes.map(paciente => (
+                      <div key={paciente.id} className='paciente-card'>
+                        <Link to={`/PerfilPaciente/${paciente.id}`}>
+                          {paciente.imageUrl && (
+                            <img
+                              src={paciente.imageUrl}
+                              alt={`${paciente.nome} ${paciente.sobrenome}`}
+                              className='paciente-imagem'
+                            />
+                          )}
+                          <p className='pacienteNome'>
+                            {paciente.nome} {paciente.sobrenome}
+                          </p>
+                          <p className='pacienteCodigo'>
+                            Código do paciente: {paciente.uid}
+                          </p>
+                        </Link>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
-      </div>
+      </motion.div>
       <div className='containerPerfil'></div>
     </>
   );
-}
+};
 
 export default Principal;

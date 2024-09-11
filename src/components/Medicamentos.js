@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 import { onAuthStateChanged } from "firebase/auth";
 import 'moment/locale/pt-br';
 import calendario from './calendario.png';
+import { motion } from 'framer-motion'; 
 
 const Medicamentos = () => {
   const [medicamentos, setMedicamentos] = useState([]);
@@ -18,6 +19,21 @@ const Medicamentos = () => {
   const [pacienteSelecionado, setPacienteSelecionado] = useState(null); // Novo estado para paciente selecionado
   const [aviso, setAviso] = useState(null); // Novo estado para aviso
   const dataAtual = moment().format('DD [de] MMMM');
+  
+
+  const loginOpacityAnimation = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        ease: 'easeOut',
+        duration: 0.5,
+      },
+    },
+  };
 
   useEffect(() => {
     const fetchMedicamentos = async () => {
@@ -185,6 +201,12 @@ const Medicamentos = () => {
   return (
     <>
       <Navbar />
+      <motion.div
+        initial="hidden"
+        animate="show"
+        variants={loginOpacityAnimation}
+        className='principal-container'
+      >
       <div className="medicamentos-container">
         <table className="medicamentos-table">
           <thead>
@@ -291,6 +313,7 @@ const Medicamentos = () => {
           </tbody>
         </table>
       </div>
+      </motion.div>
     </>
   );
 };
