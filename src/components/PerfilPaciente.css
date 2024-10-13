@@ -51,6 +51,44 @@
   color: #6096a8;
 }
 
+.popup {
+  width: 300px;
+  height: 130px;
+  position: absolute;
+  font-family: Cloudb;
+  color: #247894;
+  background-color: white;
+  border: 1px solid #6096a8;
+  border-radius: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: 1.5s;
+  transform: translateY(10px); /* Inicia levemente abaixo */
+  pointer-events: none; /* Impede interações quando invisível */
+}
+
+.popupRemedios {
+  width: 300px;
+  height: 130px;
+  position: absolute;
+  font-family: Cloudb;
+  color: #60AD9C;
+  background-color: white;
+  border: 1px solid #60AD9C;
+  border-radius: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: 1.5s;
+  transform: translateY(10px); /* Inicia levemente abaixo */
+  pointer-events: none; /* Impede interações quando invisível */
+}
+
+
+
 .infoClinicaPac {
   font-family: CloudB;
   width: 25%;

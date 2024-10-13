@@ -10,6 +10,9 @@ const PerfilPaciente = () => {
   const [paciente, setPaciente] = useState(null);
   const [remedios, setRemedios] = useState([]);
   const [doenca, setDoenca] = useState([]);
+  const [hoveredRemedio, setHoveredRemedio] = useState(null);
+  const [hoveredDoenca, setHoveredDoenca] = useState(null);  
+  const [popupPosition, setPopupPosition] = useState({ top: 0, left: 0 });
 
   useEffect(() => {
     const fetchPaciente = async () => {
@@ -19,11 +22,13 @@ const PerfilPaciente = () => {
           const pacienteData = pacienteDoc.data();
           setPaciente(pacienteData);
 
+          // Buscar dados de medicamentos
           if (pacienteData.remedios && pacienteData.remedios.length > 0) {
             const remediosData = await fetchRelatedData('remedios', pacienteData.remedios);
             setRemedios(remediosData);
           }
 
+          // Buscar dados de doenças
           if (pacienteData.doenca && pacienteData.doenca.length > 0) {
             const doencaData = await fetchRelatedData('doenca', pacienteData.doenca);
             setDoenca(doencaData);
@@ -48,6 +53,22 @@ const PerfilPaciente = () => {
       console.error(`Erro ao buscar dados da coleção ${collectionName}:`, error);
       return [];
     }
+  };
+
+  const handleMouseEnter = (event, item, type) => {
+    const { clientX, clientY } = event;  
+    const popupHeight = 150; // Ajuste a altura do popup conforme necessário
+    setPopupPosition({ top: clientY - popupHeight, left: clientX + 15 });
+    if (type === 'remedio') {
+      setHoveredRemedio(item); 
+    } else if (type === 'doenca') {
+      setHoveredDoenca(item); 
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredRemedio(null);
+    setHoveredDoenca(null);
   };
 
   if (!paciente) {
@@ -85,26 +106,48 @@ const PerfilPaciente = () => {
             <div className='ContainerMedPac'>
               <h3 className='tituloDescPac'>Enfermidades</h3>
               <ul className='uldoencasPac'>
-                {doenca.map((doenca, index) => (
-                  <li key={index} className='cardDoencaPac'>
-                    {doenca.Url && <img src={doenca.Url} alt={doenca.nome} className='imgprofileDoencas' />}
-                    <p className='textDoencasprofile'>{doenca.nome}</p>
-                  </li>
-                ))}
-              </ul>
+  {paciente['prescriçõesDoença'] && paciente['prescriçõesDoença'].map((doencaItem, index) => (
+    <li 
+      key={index} 
+      className='cardDoencaPac'
+      onMouseEnter={(e) => handleMouseEnter(e, doencaItem, 'doenca')} 
+      onMouseLeave={handleMouseLeave}                            
+    >
+      {doencaItem.urlImagem && <img src={doencaItem.urlImagem} alt={doencaItem.nome} className='imgprofileDoencas' />}
+      <p className='textDoencasprofile'>{doencaItem.nome}</p>
+    </li>
+  ))}
+</ul>
             </div>
             <div className='ContainerRemPac'>
               <h3 className='tituloDescPac' style={{color: "#60AD9C"}}>Medicação</h3>
               <ul className='uldoencasPac'>
-                {remedios.map((remedio, index) => (
-                  <li key={index} className='cardRemedioPac'>
-                    {remedio.Url && <img src={remedio.Url} alt={remedio.nome} className='imgprofileRemedios' />}
+                {paciente['prescriçõesRemedio'] && paciente['prescriçõesRemedio'].map((remedio, index) => (
+                  <li 
+                    key={index} 
+                    className='cardRemedioPac'
+                    onMouseEnter={(e) => handleMouseEnter(e, remedio, 'remedio')}
+                    onMouseLeave={handleMouseLeave}                              
+                  >
                     <p className='textRemediosprofile'>{remedio.nome}</p>
                   </li>
                 ))}
               </ul>
             </div>
           </div>
+          {hoveredRemedio && (
+            <div className='popupRemedios' style={{ top: `${popupPosition.top}px`, left: `${popupPosition.left}px` }}>
+              <p><strong>Data da prescrição:</strong> {hoveredRemedio.dataPrescricao}</p>
+              <p><strong>Observação:</strong> {hoveredRemedio.observacao}</p>
+              <p><strong>Prescrito por:</strong> {hoveredRemedio.prescritoPor}</p>
+            </div>
+          )}
+          {hoveredDoenca && (
+            <div className='popup' style={{ top: `${popupPosition.top}px`, left: `${popupPosition.left}px` }}>
+              <p><strong>Data da prescrição:</strong> {hoveredDoenca.dataPrescricao}</p>
+              <p><strong>Prescrito por:</strong> {hoveredDoenca.prescritoPor}</p>
+            </div>
+          )}
           <div className='biografia-container'>
             <div className='espaçoBio'>
               <h3 className='h3Bio'>Biografia</h3>
@@ -114,7 +157,7 @@ const PerfilPaciente = () => {
               <h3 className='h3Bio'>Hábitos</h3>
               <ul className='uldoencasPac'>
                 {paciente.habitos && Array.isArray(paciente.habitos) && paciente.habitos.map((habito, index) => (
-                  <li key={index} >
+                  <li key={index} style={{marginRight: "10px"}}>
                     {habito}
                   </li>
                 ))}

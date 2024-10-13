@@ -19,10 +19,13 @@ import DetalhesMedicamentos from './components/DetalhesMedicamentos';
 function App() {
   return (
     <Router>
-      <AnimatePresence>
+      <AnimatePresence mode='wait'>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          </Routes>
+          </AnimatePresence>
+          <Routes>
           <Route path="/Criaperfil" element={<Criaperfil />} />
           <Route path="/CriaClinica" element={<CriaClinica />} />
           <Route path="/Principal" element={<Principal />} /> 
@@ -35,7 +38,7 @@ function App() {
           <Route path="/PerfilPaciente/:pacienteId" element={<PerfilPaciente />} /> 
           <Route path="/medicamento/:id" element={<DetalhesMedicamentos />} />
         </Routes>
-      </AnimatePresence>
+      
     </Router>
   );
 }
