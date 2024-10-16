@@ -86,9 +86,8 @@ return (
         <NavItem to="/Medicamentos" icon={remedio} text="Medicamentos" currentPath={location.pathname} />
         <NavItem to="/Doencas" icon={virus} text="Diagnósticos" currentPath={location.pathname} />
         <NavItem to="/Perfil" icon={perfil} text="Perfil" currentPath={location.pathname} />
-        <NavItem to="/settings" icon={config} text="Configurações" currentPath={location.pathname} />
       </ul>
-      <hr />
+      <hr style={{marginTop: "190px"}}/>
       <h2>
         Produzido por<br />
         <span style={{ fontFamily: 'Peanut', fontWeight: 'normal', fontSize: '25px' }}>Vihva Company</span>

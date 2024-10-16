@@ -111,6 +111,7 @@
 
   .organizadorcentro {
     display: flex;
+    height: 500px;
     flex-direction: column;
     margin-bottom: 100px;
     position: relative;

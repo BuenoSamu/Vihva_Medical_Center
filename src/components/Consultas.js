@@ -195,7 +195,7 @@ const AdicionarLembrete = () => {
                   {pacienteSelecionado && (
                     <button className="buttonaddCon" onClick={handleAdicionarLembrete}>Adicionar Consulta</button>
                   )}
-                  {aviso && <p>{aviso}</p>}
+                  {aviso && <p style={{marginTop: "90px", marginLeft: "90dp", textAlign: "center"}}>{aviso}</p>}
                   </div>
                 </div>
               </td>
