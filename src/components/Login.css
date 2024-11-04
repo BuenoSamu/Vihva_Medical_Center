@@ -208,6 +208,7 @@ input[type="password"] {
   bottom: 39px;
   color: #6096a8; 
   cursor: pointer;
+  display: none;
 }
 
 /* Estiliza o formulário dentro do container */

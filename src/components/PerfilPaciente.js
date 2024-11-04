@@ -55,14 +55,27 @@ const PerfilPaciente = () => {
     }
   };
 
-  const handleMouseEnter = (event, item, type) => {
-    const { clientX, clientY } = event;  
-    const popupHeight = 150; // Ajuste a altura do popup conforme necessário
+  const fetchMedicoNome = async (medicoId) => {
+    try {
+      const medicoDoc = await getDoc(doc(db, 'medicos', medicoId));
+      return medicoDoc.exists() ? medicoDoc.data().nome : 'Desconhecido';
+    } catch (error) {
+      console.error('Erro ao buscar nome do médico:', error);
+      return 'Erro ao buscar nome';
+    }
+  };
+
+  const handleMouseEnter = async (event, item, type) => {
+    const { clientX, clientY } = event;
+    const popupHeight = 150;
     setPopupPosition({ top: clientY - popupHeight, left: clientX + 15 });
+    
     if (type === 'remedio') {
-      setHoveredRemedio(item); 
+      const nomeMedico = await fetchMedicoNome(item.prescritoPor);
+      setHoveredRemedio({ ...item, prescritoPorNome: nomeMedico });
     } else if (type === 'doenca') {
-      setHoveredDoenca(item); 
+      const nomeMedico = await fetchMedicoNome(item.prescritoPor);
+      setHoveredDoenca({ ...item, prescritoPorNome: nomeMedico });
     }
   };
 
@@ -96,8 +109,10 @@ const PerfilPaciente = () => {
             <div className='profileInfocontainer'>
               <h3 className='h3PerfilPac'><span style={{color: "#247894"}}>Altura</span><br/> {paciente.altura} cm</h3>
               <h3 className='h3PerfilPac'><span style={{color: "#247894"}}>Peso </span><br/>  {paciente.peso} kg</h3>
-              <h3 className='h3PerfilPac'><span style={{color: "#247894"}}>Gênero</span><br/>  {paciente.genero}</h3>             
+              <h3 className='h3PerfilPac' style={{marginRight: "20px"}}><span style={{color: "#247894"}}>Gênero</span><br/>  {paciente.genero}</h3>             
               <h3 className='h3PerfilPac'><span style={{color: "#247894"}}>Idade</span><br/>  {paciente.idade}</h3>
+              <h3 className='h3PerfilPac' style={{width: "190px"}}><span style={{color: "#247894"}}>Distância percorrida</span><br/>  {paciente.distancia}</h3>
+              <h3 className='h3PerfilPac' style={{width: "100px"}}><span style={{color: "#247894"}}>Batimentos/min</span><br/>  {paciente.batimentos}</h3>
             </div>
           </div>
         </div>
@@ -106,18 +121,18 @@ const PerfilPaciente = () => {
             <div className='ContainerMedPac'>
               <h3 className='tituloDescPac'>Enfermidades</h3>
               <ul className='uldoencasPac'>
-  {paciente['prescriçõesDoença'] && paciente['prescriçõesDoença'].map((doencaItem, index) => (
-    <li 
-      key={index} 
-      className='cardDoencaPac'
-      onMouseEnter={(e) => handleMouseEnter(e, doencaItem, 'doenca')} 
-      onMouseLeave={handleMouseLeave}                            
-    >
-      {doencaItem.urlImagem && <img src={doencaItem.urlImagem} alt={doencaItem.nome} className='imgprofileDoencas' />}
-      <p className='textDoencasprofile'>{doencaItem.nome}</p>
-    </li>
-  ))}
-</ul>
+                {paciente['prescriçõesDoença'] && paciente['prescriçõesDoença'].map((doencaItem, index) => (
+                  <li 
+                    key={index} 
+                    className='cardDoencaPac'
+                    onMouseEnter={(e) => handleMouseEnter(e, doencaItem, 'doenca')} 
+                    onMouseLeave={handleMouseLeave}                            
+                  >
+                    {doencaItem.urlImagem && <img src={doencaItem.urlImagem} alt={doencaItem.nome} className='imgprofileDoencas' />}
+                    <p className='textDoencasprofile'>{doencaItem.nome}</p>
+                  </li>
+                ))}
+              </ul>
             </div>
             <div className='ContainerRemPac'>
               <h3 className='tituloDescPac' style={{color: "#60AD9C"}}>Medicação</h3>
@@ -139,13 +154,13 @@ const PerfilPaciente = () => {
             <div className='popupRemedios' style={{ top: `${popupPosition.top}px`, left: `${popupPosition.left}px` }}>
               <p><strong>Data da prescrição:</strong> {hoveredRemedio.dataPrescricao}</p>
               <p><strong>Observação:</strong> {hoveredRemedio.observacao}</p>
-              <p><strong>Prescrito por:</strong> {hoveredRemedio.prescritoPor}</p>
+              <p><strong>Prescrito por:</strong> {hoveredRemedio.prescritoPorNome}</p>
             </div>
           )}
           {hoveredDoenca && (
             <div className='popup' style={{ top: `${popupPosition.top}px`, left: `${popupPosition.left}px` }}>
               <p><strong>Data da prescrição:</strong> {hoveredDoenca.dataPrescricao}</p>
-              <p><strong>Prescrito por:</strong> {hoveredDoenca.prescritoPor}</p>
+              <p><strong>Prescrito por:</strong> {hoveredDoenca.prescritoPorNome}</p>
             </div>
           )}
           <div className='biografia-container'>
