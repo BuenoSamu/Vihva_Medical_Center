@@ -38,15 +38,21 @@ const CarouselWrapper = ({ images }) => {
             }
 
             /* Estilo das setas de navegação */
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+              background-color: black; /* Cor do fundo das setas */
+              border-radius: 40%;
+              padding: 10px;
+            }
           </style>
         </head>
         <body>
           <div id="carouselExampleIndicators" class="carousel slide">
-            <ol class="carousel-indicators">
+            <div class="carousel-indicators">
               ${images.map((_, index) => `
-                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}"></li>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="${index}" class="${index === 0 ? 'active' : ''}" aria-label="Slide ${index + 1}"></button>
               `).join('')}
-            </ol>
+            </div>
             <div class="carousel-inner">
               ${images.map((image, index) => `
                 <div class="carousel-item ${index === 0 ? 'active' : ''}">
