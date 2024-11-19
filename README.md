@@ -37,6 +37,10 @@ O **Vihva Medical Center** é uma plataforma avançada que permite aos médicos 
       <p align = "center">
 
   </p>
+   <p align = "center">
+<img src="https://github.com/user-attachments/assets/38f0b7ff-f42f-4c83-b952-6337e5cf807c" width="80%" align="center"> 
+    <img src="https://github.com/user-attachments/assets/f5c958f2-d575-48be-87d7-403b94cf87e6" width="80%" align="center"> 
+  </p>
 
   ## Contribuições
 Agradecemos imensamente o interesse em contribuir com o Vihva. Ficaremos honrados em receber suas ideias e sugestões para aprimorar ainda mais o nosso aplicativo.
