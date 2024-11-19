@@ -38,7 +38,7 @@ O **Vihva Medical Center** é uma plataforma avançada que permite aos médicos 
 
   </p>
    <p align = "center">
-<img src="https://github.com/user-attachments/assets/38f0b7ff-f42f-4c83-b952-6337e5cf807c" width="80%" align="center"> 
+<img src="https://github.com/user-attachments/assets/5c03a0f1-1237-46b9-ae5f-23fb39837042" width="80%" align="center"> 
     <img src="https://github.com/user-attachments/assets/f5c958f2-d575-48be-87d7-403b94cf87e6" width="80%" align="center"> 
   </p>
 
