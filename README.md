@@ -24,7 +24,7 @@ O **Vihva Medical Center** é uma plataforma avançada que permite aos médicos 
 
   </p>
   <p align="center">
-<img src="https://github.com/user-attachments/assets/60201380-b035-4baf-90a0-3683c697785b" width="90%" align="center">
+<img src="https://github.com/user-attachments/assets/60201380-b035-4baf-90a0-3683c697785b" width="30%" align="center">
   </p>
   
 - **Adição de consultas diretamente no app do paciente:** Adicione consultas e compromissos com seus pacientes de forma simples e prática, e envie diretamente para o aplicativo do usuário. Dessa maneira, você facilita a comunicação e a gestão de agendamentos, reduzindo o risco de esquecimentos, especialmente em pacientes mais velhos ou com limitações. Uma solução que fortalece a relação médico-paciente e garante um acompanhamento mais eficiente e humanizado.
