@@ -19,6 +19,13 @@ O **Vihva Medical Center** é uma plataforma avançada que permite aos médicos 
   <p align = "center">
 
   </p>
+
+  <p align = "center">
+<img src="https://github.com/user-attachments/assets/6a56a0b5-ae1c-42df-b3f4-89da5b0e3bf7" width="80%" align="center" > 
+    <img src="https://github.com/user-attachments/assets/3edb17c2-771f-4b0b-bf67-ac0ad7656847" width="80%" align="center"> 
+  </p>
+  </p>
+  
 - **Adição de lembretes pessoais**: Adicione lembretes na tela inicial para nunca esquecer os compromissos com seus pacientes, de forma prática e intuitiva.
 <p align = "center">
 
@@ -38,7 +45,7 @@ O **Vihva Medical Center** é uma plataforma avançada que permite aos médicos 
 
   </p>
    <p align = "center">
-<img src="https://github.com/user-attachments/assets/5c03a0f1-1237-46b9-ae5f-23fb39837042" width="80%" align="center" paddingtop+"20%"> 
+<img src="https://github.com/user-attachments/assets/5c03a0f1-1237-46b9-ae5f-23fb39837042" width="80%" align="center" > 
     <img src="https://github.com/user-attachments/assets/f5c958f2-d575-48be-87d7-403b94cf87e6" width="80%" align="center"> 
   </p>
 
