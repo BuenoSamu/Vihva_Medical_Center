@@ -72,7 +72,8 @@ Integration with the Vihva app: Offer efficient and quick control over your pati
   </p>
 
 - **Personal reminder addition:** Add reminders to the home screen to never forget appointments with your patients, in a practical and intuitive way.
-
+<p align = "center">
+  </p>
   <p align="center">
 <img src="https://github.com/user-attachments/assets/60201380-b035-4baf-90a0-3683c697785b" width="80%" align="center">
   </p>
