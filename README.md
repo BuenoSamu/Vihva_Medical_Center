@@ -68,6 +68,9 @@ Developed as part of the Final Year Project (TCC) by students of ETEC João Bela
 ## Key Features
 Integration with the Vihva app: Offer efficient and quick control over your patients' information, medications, and treatments in an intuitive and streamlined manner. In addition, provide the patient with secure and transparent access to their data and your clinic, building trust and strengthening the care relationship.
 
+<p align="center"> <img src="https://github.com/user-attachments/assets/6a56a0b5-ae1c-42df-b3f4-89da5b0e3bf7" width="80%" align="center"> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/3edb17c2-771f-4b0b-bf67-ac0ad7656847" width="80%" align="center"> </p>
+  </p>
+
 <p align = "center">
 </p>
 - **Personal reminder addition:** Add reminders to the home screen to never forget appointments with your patients, in a practical and intuitive way.
