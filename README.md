@@ -71,12 +71,8 @@ Integration with the Vihva app: Offer efficient and quick control over your pati
 <p align="center"> <img src="https://github.com/user-attachments/assets/6a56a0b5-ae1c-42df-b3f4-89da5b0e3bf7" width="80%" align="center"> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/3edb17c2-771f-4b0b-bf67-ac0ad7656847" width="80%" align="center"> </p>
   </p>
 
-<p align = "center">
-</p>
 - **Personal reminder addition:** Add reminders to the home screen to never forget appointments with your patients, in a practical and intuitive way.
 
-<p align = "center">
-</p>
   <p align="center">
 <img src="https://github.com/user-attachments/assets/60201380-b035-4baf-90a0-3683c697785b" width="80%" align="center">
   </p>
@@ -86,7 +82,8 @@ Integration with the Vihva app: Offer efficient and quick control over your pati
 <p align = "center"> 
 <img src="https://github.com/user-attachments/assets/ec2ae967-3559-49ff-a874-7290f49df6f4" width="80%" align="center">
 </p>
-- **Automatically add treatments and medications for your patients: Add medications and treatments for your patients directly through the Vihva Medical Center in the patient's <a href="https://github.com/Pedrolbtb/Vihva-app">Vihva</a> app, in an intuitive and real-time manner. This functionality ensures that your patients receive the information clearly and immediately, preventing forgetfulness and guaranteeing continuous and precise follow-up. A practical solution that strengthens care, safety, and trust in the treatment of each patient. <p align = "center">
+- **Automatically add treatments and medications for your patients: Add medications and treatments for your patients directly through the Vihva Medical Center in the patient's <a href="https://github.com/Pedrolbtb/Vihva-app">Vihva</a> app, in an intuitive and real-time manner. This functionality ensures that your patients receive the information clearly and immediately, preventing forgetfulness and guaranteeing continuous and precise follow-up. A practical solution that strengthens care, safety, and trust in the treatment of each patient.
+<p align = "center">
   <img src="https://github.com/user-attachments/assets/5c03a0f1-1237-46b9-ae5f-23fb39837042" width="80%" align="center"> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/f5c958f2-d575-48be-87d7-403b94cf87e6" width="80%" align="center">
 </p>
 
