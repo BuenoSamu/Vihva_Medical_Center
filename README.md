@@ -85,9 +85,8 @@ Integration with the Vihva app: Offer efficient and quick control over your pati
 </p>
 
 - **Automatically add treatments and medications for your patients: Add medications and treatments for your patients directly through the Vihva Medical Center in the patient's <a href="https://github.com/Pedrolbtb/Vihva-app">Vihva</a> app, in an intuitive and real-time manner. This functionality ensures that your patients receive the information clearly and immediately, preventing forgetfulness and guaranteeing continuous and precise follow-up. A practical solution that strengthens care, safety, and trust in the treatment of each patient.
-- 
-  </p>
 <p align="center"> <img src="https://github.com/user-attachments/assets/5c03a0f1-1237-46b9-ae5f-23fb39837042" width="80%" align="center"> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/f5c958f2-d575-48be-87d7-403b94cf87e6" width="80%" align="center"> </p>
+
 ## Contributions
 We greatly appreciate your interest in contributing to Vihva. We would be honored to receive your ideas and suggestions to further improve our app.
 
